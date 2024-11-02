@@ -168,7 +168,7 @@
     "references": {
         "citation": "von Birgelen, Alexander; Buratti, Davide; Mager, Jens; Niggemann, Oliver: Self-Organizing Maps for Anomaly Localization and Predictive Maintenance in Cyber-Physical Production Systems. In: 51st CIRP Conference on Manufacturing Systems (CIRP CMS 2018) CIRP-CMS, May 2018.",
         "bibitex": "@article{von2018self,\n  title={Self-organizing maps for anomaly localization and predictive maintenance in cyber-physical production systems},\n  author={Von Birgelen, Alexander and Buratti, Davide and Mager, Jens and Niggemann, Oliver},\n  journal={Procedia cirp},\n  volume={72},\n  pages={480--485},\n  year={2018},\n  publisher={Elsevier}\n}",
-        "manual_download": "",
+        "manual_download": "https://www.kaggle.com/datasets/inIT-OWL/one-year-industrial-component-degradation",
         "papers": [
             {}
         ]

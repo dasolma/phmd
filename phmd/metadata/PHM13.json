@@ -80,7 +80,7 @@
             "num_units": 10459
         }
     },
-    "license": "Public download available",
+    "license": "CC0",
     "features": {},
     "filters": {},
     "system": {
@@ -108,9 +108,9 @@
         }
     },
     "references": {
-        "citation": "PHM Society, \u201c2014 PHM society conference data challenge | PHM Society,\u201d 2014. [Online]. Available: http://www.phmsociety.org/competition/phm/13.",
-        "bibitex": "@misc{phmsocietyAnnualConference,\n\tauthor = {},\n\ttitle = {{A}nnual {C}onference of the {P}rognostics and {H}ealth {M}anagement {S}ociety 2013 - {P}{H}{M} {S}ociety --- phmsociety.org},\n\thowpublished = {\\url{http://www.phmsociety.org/competition/phm/13}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
-        "manual_download": "https://github.com/kidozh/keras_detect_tool_wear",
+        "citation": "PHM Society, \u201c2013 PHM society conference data challenge | PHM Society,\u201d 2013. [Online]. Available: http://www.phmsociety.org/competition/phm/13.",
+        "bibitex": "@misc{phmsocietyAnnualConference,\n\tauthor = {},\n\ttitle = {{A}nnual {C}onference of the {P}rognostics and {H}ealth {M}anagement {S}ociety 2013 - {P}{H}{M} {S}ociety --- phmsociety.org},\n\thowpublished = {\\url{http://www.phmsociety.org/competition/phm/13}},\n\tyear = {2013},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://c3.ndc.nasa.gov/dashlink/resources/842/",
         "papers": [
             {
                 "Katsouros, Vassilis et al.": "Katsouros, Vassilis, Vassilis Papavassiliou, and Christos Emmanouilidis. \"A Bayesian approach for maintenance action recommendation.\" International Journal of Prognostics and Health Management 4.2 (2013): 1-6.",

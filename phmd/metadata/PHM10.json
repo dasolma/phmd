@@ -100,7 +100,7 @@
         "citation": "PHM Society, \u201c2010 PHM society conference data challenge | PHM Society,\u201d 2010. [Online]. Available: http://www.phmsociety.org/competition/phm/10.",
         "bibitex": "@misc{phmsociety2010Society,\n\tauthor = {},\n\ttitle = {2010 {P}{H}{M} {S}ociety {C}onference {D}ata {C}hallenge - {P}{H}{M} {S}ociety --- phmsociety.org},\n\thowpublished = {\\url{http://www.phmsociety.org/competition/phm/10}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
         "DOI": "https://dx.doi.org/10.21227/jdxd-yy51",
-        "manual_download": "https://github.com/kidozh/keras_detect_tool_wear",
+        "manual_download": "https://ieee-dataport.org/documents/2010-phm-society-conference-data-challenge",
         "papers": [
             {
                 "": "",

@@ -84,7 +84,7 @@
             "nature": "time-series"
         }
     },
-    "license": "Public download available",
+    "license": "CC0",
     "features": {
         "stage": {
             "type": "status",
@@ -197,7 +197,7 @@
     "references": {
         "citation": "PHM Society, \u201c2018 PHM society conference data challenge | PHM Society,\u201d 2018. [Online]. Available: http://www.phmsociety.org/competition/phm/18.",
         "bibitex": "@misc{phmsocietyAnnualConference,\n\tauthor = {},\n\ttitle = {{A}nnual {C}onference of the {P}rognostics and {H}ealth {M}anagement {S}ociety 2018 - {P}{H}{M} {S}ociety --- phmsociety.org},\n\thowpublished = {\\url{http://www.phmsociety.org/competition/phm/18}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
-        "manual_download": "https://drive.google.com/file/d/15Jx9Scq9FqpIGn8jbAQB_lcHSXvIoPzb",
+        "manual_download": "https://c3.ndc.nasa.gov/dashlink/resources/1009/",
         "papers": [
             {
                 "Huang, Wei, et al.": "Huang, Wei, Hamed Khorasgani, Chetan Gupta, Ahmed Farahat, and Shuai Zheng. \"Remaining useful life estimation for systems with abrupt failures.\" In Annual conference of the PHM society. September, pp. 24-27. 2018."

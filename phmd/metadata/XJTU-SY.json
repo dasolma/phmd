@@ -57,7 +57,7 @@
             "mutually_exclusive": false
         }
     },
-    "license": "Public download available",
+    "license": "CC BY 4.0",
     "filters": {
         "Bearing": [
             "1",

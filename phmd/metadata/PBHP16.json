@@ -30,7 +30,7 @@
             "min_units_per_class": 2
         }
     },
-    "license": "Public download available",
+    "license": "CC BY 4.0",
     "features": {
         "vibration": {
             "type": "vibration",

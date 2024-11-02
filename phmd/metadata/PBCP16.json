@@ -34,7 +34,7 @@
             "min_units_per_class": 5
         }
     },
-    "license": "Creative Commons Attribution License",
+    "license": "CC BY 4.0",
     "features": {
         "vibration": {
             "type": "vibration",

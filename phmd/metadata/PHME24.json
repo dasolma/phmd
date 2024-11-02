@@ -37,7 +37,7 @@
             "nature": "time-series"
         }
     },
-    "license": "Public download available",
+    "license": "CC BY-NC-SA 4.0",
     "features": {
         "time": {
             "type": "time",

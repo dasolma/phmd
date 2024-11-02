@@ -24,7 +24,7 @@
             "nature": "time-series"
         }
     },
-    "license": "CC0",
+    "license": "Public Domain U.S. Government",
     "features": {
         "voltage_charger": {
             "type": "voltage",
@@ -73,7 +73,7 @@
     "references": {
         "citation": "Fricke, Kajetan, Renato Nascimento, Matteo Corbetta, Chetan Kulkarni, and Felipe Viana. \"Prognosis of Li-ion Batteries Under Large Load Variations Using Hybrid Physics-Informed Neural Networks.\" In Annual Conference of the PHM Society, vol. 15, no. 1. 2023.",
         "bibitex": "@inproceedings{fricke2023prognosis,\n  title={Prognosis of Li-ion Batteries Under Large Load Variations Using Hybrid Physics-Informed Neural Networks},\n  author={Fricke, Kajetan and Nascimento, Renato and Corbetta, Matteo and Kulkarni, Chetan and Viana, Felipe},\n  booktitle={Annual Conference of the PHM Society},\n  volume={15},\n  number={1},\n  year={2023}\n}\n",
-        "manual_download": "",
+        "manual_download": "https://data.nasa.gov/Raw-Data/Small-Satellite-Power-Simulation/cpqc-ztjh/about_data",
         "papers": [
             {}
         ]

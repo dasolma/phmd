@@ -33,7 +33,7 @@
             "nature": "time-series"
         }
     },
-    "license": "Public download available",
+    "license": "CC",
     "features": {
         "c1": {
             "type": "vibration",
