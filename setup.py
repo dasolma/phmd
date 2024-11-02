@@ -190,9 +190,9 @@ setup(name="phmd",
       entry_points={
           "console_scripts": []
       },
+      license = 'GNU GPL',
       classifiers=[
           "Programming Language :: Python :: 3.8",
-          "License :: GPL-3.0 license",
           "Operating System :: OS Independent",
       ],
       package_data={
@@ -203,7 +203,6 @@ setup(name="phmd",
       author_email="dsolis@us.es",
       maintainer="David Solís-Martín",
       maintainer_email="dsolis@us.es",
-      license="Apache",
       keywords=[
           "predictive maintenance", "condition monitoring", "datasets", "gear", "bearing", "battery", "AI",
           "artificial intelligence"
