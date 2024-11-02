@@ -191,8 +191,8 @@ setup(name="phmd",
           "console_scripts": []
       },
       classifiers=[
-          "Programming Language :: Python :: 3",
-          "License :: OSI Approved :: Apache Software License",
+          "Programming Language :: Python :: 3.8",
+          "License :: GPL-3.0 license",
           "Operating System :: OS Independent",
       ],
       package_data={
