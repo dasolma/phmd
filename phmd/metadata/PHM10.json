@@ -1,0 +1,121 @@
+{
+    "description": "This data set was reported in 2010 Prognostics and Health Management (PHM) data challenge. Aim of the challenge was to predict RUL using cutting force, vibration and acoustic emission data. Data is taken from the PHM Society. The data is in the form of time domain signals from dynamometer, accelerometer and acoustic emission sensors. The milling process in the experiments is to create an oblique plane surface on a workpiece by ball-nose end milling operation.",
+    "designation": "PHM Data Challenge 2010 - CNC milling machine cutters",
+    "publisher": "PHM Society",
+    "domain": "Manufacturing Process",
+    "application": "Milling",
+    "tasks": {
+        "Wear estimation": {
+            "identifier": [
+                "unit",
+                "cut"
+            ],
+            "split_by": [
+                "unit"
+            ],
+            "target": "wear",
+            "features": [
+                "FX",
+                "FY",
+                "FZ",
+                "VX",
+                "VY",
+                "VZ",
+                "AERMS"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "num_units": 3,
+            "min_ts_len": 127399,
+            "normalize_output": false
+        }
+    },
+    "license": "CC BY 4.0 DEED",
+    "features": {
+        "VX": {
+            "type": "vibration",
+            "description": "Vibration (g) in X dimension"
+        },
+        "VY": {
+            "type": "vibration",
+            "description": "Vibration (g) in Y dimension"
+        },
+        "VZ": {
+            "type": "vibration",
+            "description": "Vibration (g) in Z dimension"
+        },
+        "AERMS": {
+            "type": "acoustic",
+            "description": "Acoustic Emission RMS (V)"
+        },
+        "FX": {
+            "type": "force",
+            "description": "Force (N) in X dimension"
+        },
+        "FY": {
+            "type": "force",
+            "description": "Force (N) in Y dimension"
+        },
+        "FZ": {
+            "type": "force",
+            "description": "Force (N) in Z dimension"
+        }
+    },
+    "filters": {
+        "unit": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    "system": {
+        "1. type": "Rotatory machine :  CNC Milling",
+        "2. machine": "R\u00f6ders Tech RFM760",
+        "3. sensors": "3 Kistler piezo accelerometers, 1 Kistler acoustic emission (AE) sensor and 1 Kistler quartz 3-component platform dynamometer",
+        "4. adquisition board": "6NI DAQ PCI 1200 board with 12KHz frequency"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "6.6MB",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (train)": "32GB",
+                "Data set (test)": "26GB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (train)": "3min",
+                "Data set (test)": "3min"
+            },
+            "a) unzipped": {
+                "Data set (train)": "2:30min",
+                "Data set (test)": "2:30min"
+            }
+        }
+    },
+    "references": {
+        "citation": "PHM Society, \u201c2010 PHM society conference data challenge | PHM Society,\u201d 2010. [Online]. Available: http://www.phmsociety.org/competition/phm/10.",
+        "bibitex": "@misc{phmsociety2010Society,\n\tauthor = {},\n\ttitle = {2010 {P}{H}{M} {S}ociety {C}onference {D}ata {C}hallenge - {P}{H}{M} {S}ociety --- phmsociety.org},\n\thowpublished = {\\url{http://www.phmsociety.org/competition/phm/10}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "DOI": "https://dx.doi.org/10.21227/jdxd-yy51",
+        "manual_download": "https://github.com/kidozh/keras_detect_tool_wear",
+        "papers": [
+            {
+                "": "",
+                "summary": ""
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHM10_train.zip",
+            "md5sum": "663f0980b9058a2c83a6bf110054215c2f3230313025323050484d253230434e432532304d494c4c494e472f50484d31305f747261696e2e7a6970",
+            "reader": "read_train",
+            "unzipped_dir": "PHM10/data/train",
+            "type": "train"
+        }
+    ]
+}

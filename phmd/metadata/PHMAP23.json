@@ -1,0 +1,154 @@
+{
+    "description": "This dataset was utilized in the PHMAP 2023 Data Competition and was provided by the Japan Aerospace Exploration Agency (JAXA) with the objective of advancing Prognostics and Health Management (PHM) technology for spacecraft propulsion systems. Telemetry data that can be collected in orbit is limited due to constraints on sensor installations and downlink capacity. To address this, a numerical simulator was developed to predict the dynamic response of a spacecraft propulsion system with high accuracy, generating a dataset covering normal conditions and all anticipated fault scenarios in actual equipment.\n\nIn the experimental propulsion system, water pressurized to 2 MPa is used as the working fluid and is discharged through four solenoid valves (SV1 - SV4) simulating thrusters. The features P1 \u2013 P8 represent sensor measurements for pressure. Time series data is collected at a sampling rate of 1 kHz from 0 to 1200 ms. Opening and closing the solenoid valves induces pressure fluctuations due to water hammer, followed by acoustic modes inside the propulsion system.\n\nEach solenoid valve opens at 100 ms and closes at 300 ms. To accommodate for individual variations in solenoid valve behavior as observed in actual equipment, the valve movement introduces an uncertainty of 1 ms. Despite this uncertainty, the opening and closing times remain at 400 ms (e.g., open for 99.7 ms and close for 300.3 ms). This sequence is repeated three times successively, resulting in a total measurement duration of 1200 ms.",
+    "designation": "PHM Asia Pacific Data Challenge 2023 - Spacecraft Propulsion Systems",
+    "publisher": "PHM Society",
+    "domain": "Drive technology",
+    "application": "Spacecraft",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "P1",
+                "P2",
+                "P3",
+                "P4",
+                "P5",
+                "P6",
+                "P7"
+            ],
+            "target_labels": [
+                "normal",
+                "sv1_0",
+                "sv1_25",
+                "sv1_50",
+                "sv1_75",
+                "sv2_0",
+                "sv2_25",
+                "sv2_50",
+                "sv2_75",
+                "sv3_0",
+                "sv3_25",
+                "sv3_50",
+                "sv3_75",
+                "sv4_0",
+                "sv4_25",
+                "sv4_50",
+                "sv4_75",
+                "bp1",
+                "bp2",
+                "bp3",
+                "bp4",
+                "bp5",
+                "bp6",
+                "bp7",
+                "bv1"
+            ],
+            "target_distribution": [
+                0.59322034,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915,
+                0.01694915
+            ],
+            "type": "classification:multiclass",
+            "num_units": 177,
+            "min_ts_len": 1201,
+            "min_units_per_class": 3,
+            "split_by": [
+                "spacecraft"
+            ],
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "P1": {
+            "type": "pressure",
+            "description": "Pressure at the measurement on bubble 1"
+        },
+        "P2": {
+            "type": "pressure",
+            "description": "Pressure at the measurement on bubble 2"
+        },
+        "P3": {
+            "type": "pressure",
+            "description": "Pressure at the measurement on bubble 3"
+        },
+        "P4": {
+            "type": "pressure",
+            "description": "Pressure at the measurement on bubble 4"
+        },
+        "P5": {
+            "type": "pressure",
+            "description": "Pressure at the measurement on bubble 5"
+        },
+        "P6": {
+            "type": "pressure",
+            "description": "Pressure at the measurement on bubble 6"
+        },
+        "P7": {
+            "type": "pressure",
+            "description": "Pressure at the measurement on bubble 7"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "Data Challenge at PHM Asia Pacific 2023. https://phmap.jp/program-data/",
+        "manual_download": "https://phmap.jp/program-data/",
+        "bibitex": "@misc{phmap23,\n\tauthor = {PHM Asia Pacific 2023},\n\ttitle = {Data Challenge at PHM Asia Pacific 2023},\n\thowpublished = {\\url{https://phmap.jp/program-data/}},\n\tyear = {2023},\n\tnote = {},\n}",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHMAP23.zip",
+            "md5sum": "0ce2f292d1df355466c099392e2ac2542f3230323325323050484d41502f50484d415032332e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHMAP23/",
+            "type": "data"
+        }
+    ]
+}

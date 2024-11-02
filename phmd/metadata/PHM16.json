@@ -1,0 +1,172 @@
+{
+    "description": "The dataset comprises measurements collected during multiple runs of a CMP (Chemical Mechanical Planarization) tool for specific wafers over time. Each row in the data represents a snapshot of all measurement variables at a particular time during the CMP process. The objective is to predict the average rate of material removal from the wafer based on these measurements.",
+    "designation": "PHM Data Challenge 2016 - Semiconductor CMP",
+    "publisher": "PHM Society",
+    "application": "Industrial Plant",
+    "domain": "Production system",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "WAFER_ID"
+            ],
+            "target": "AVG_REMOVAL_RATE",
+            "features": [
+                "MACHINE_DATA",
+                "STAGE",
+                "CHAMBER",
+                "USAGE_OF_BACKING_FILM",
+                "USAGE_OF_DRESSER",
+                "USAGE_OF_POLISHING_TABLE",
+                "USAGE_OF_DRESSER_TABLE",
+                "PRESSURIZED_CHAMBER_PRESSURE",
+                "MAIN_OUTER_AIR_BAG_PRESSURE",
+                "CENTER_AIR_BAG_PRESSURE",
+                "RETAINER_RING_PRESSURE",
+                "RIPPLE_AIR_BAG_PRESSURE",
+                "USAGE_OF_MEMBRANE",
+                "USAGE_OF_PRESSURIZED_SHEET",
+                "SLURRY_FLOW_LINE_A",
+                "SLURRY_FLOW_LINE_B",
+                "SLURRY_FLOW_LINE_C",
+                "WAFER_ROTATION",
+                "STAGE_ROTATION",
+                "HEAD_ROTATION",
+                "DRESSING_WATER_STATUS",
+                "EDGE_AIR_BAG_PRESSURE"
+            ],
+            "type": "regression",
+            "nature": "features",
+            "num_units": 1994
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "MACHINE_DATA": {
+            "type": "position",
+            "description": "Numeric ID of wafer ring location in machine"
+        },
+        "STAGE": {
+            "type": "status",
+            "description": "0 or 1 represeting different type of processing stage"
+        },
+        "CHAMBER": {
+            "type": "position",
+            "description": "Chamber in machine for wafer processing"
+        },
+        "USAGE_OF_BACKING_FILM": {
+            "type": "",
+            "description": "A usage measure of polish-pad backing film"
+        },
+        "USAGE_OF_DRESSER": {
+            "type": "",
+            "description": "A usage measure of dresser"
+        },
+        "USAGE_OF_POLISHING_TABLE": {
+            "type": "",
+            "description": "A usage measure of polishing table"
+        },
+        "USAGE_OF_DRESSER_TABLE": {
+            "type": "",
+            "description": "A usage measure of dresser table"
+        },
+        "PRESSURIZED_CHAMBER_PRESSURE": {
+            "type": "pressure",
+            "description": "Chamber pressure"
+        },
+        "MAIN_OUTER_AIR_BAG_PRESSURE": {
+            "type": "pressure",
+            "description": "Presure related to wafer placement"
+        },
+        "CENTER_AIR_BAG_PRESSURE": {
+            "type": "pressure",
+            "description": "Presure related to wafer placement"
+        },
+        "RETAINER_RING_PRESSURE": {
+            "type": "pressure",
+            "description": "Presure related to wafer placement"
+        },
+        "RIPPLE_AIR_BAG_PRESSURE": {
+            "type": "pressure",
+            "description": "Presure related to wafer placement"
+        },
+        "USAGE_OF_MEMBRANE": {
+            "type": "",
+            "description": "A usage measure of polishing membrene"
+        },
+        "USAGE_OF_PRESSURIZED_SHEET": {
+            "type": "",
+            "description": "A usage measure of wafer carrier flexible sheet"
+        },
+        "SLURRY_FLOW_LINE_A": {
+            "type": "flow",
+            "description": "Flow rate of slurry type A"
+        },
+        "SLURRY_FLOW_LINE_B": {
+            "type": "flow",
+            "description": "Flow rate of slurry type B"
+        },
+        "SLURRY_FLOW_LINE_C": {
+            "type": "flow",
+            "description": "Flow rate of slurry type C"
+        },
+        "WAFER_ROTATION": {
+            "type": "rotation",
+            "description": "Rotation rate of wafer"
+        },
+        "STAGE_ROTATION": {
+            "type": "rotation",
+            "description": "Rotation rate of stage"
+        },
+        "HEAD_ROTATION": {
+            "type": "rotation",
+            "description": "Rotation rate of head"
+        },
+        "DRESSING_WATER_STATUS": {
+            "type": "status",
+            "description": "Status of dressing water"
+        },
+        "EDGE_AIR_BAG_PRESSURE": {
+            "type": "pressure",
+            "description": "Pressure of bag on edge of wafer"
+        }
+    },
+    "filters": {},
+    "system": {
+        "type": "Chemical-mechanical polishing (CMP)"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "7,8",
+            "b) unzipped": "131M",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "2.5s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "2.3s"
+            }
+        }
+    },
+    "references": {
+        "citation": "PHM Society, \u201c2016 PHM society conference data challenge | PHM Society,\u201d 2016. [Online]. Available: http://www.phmsociety.org/competition/phm/16.",
+        "bibitex": "@misc{phmsocietyAnnualConference,\n\tauthor = {},\n\ttitle = {{A}nnual {C}onference of the {P}rognostics and {H}ealth {M}anagement {S}ociety 2016 - {P}{H}{M} {S}ociety --- phmsociety.org},\n\thowpublished = {\\url{http://www.phmsociety.org/competition/phm/16}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://phmsociety.org/conference/annual-conference-of-the-phm-society/annual-conference-of-the-prognostics-and-health-management-society-2016/phm-data-challenge-4/",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHM16_train.zip",
+            "md5sum": "9a0a81e6da581050131cc5040229543e2f3230313625323050484d253230444154412532304348414c4c454e47452f50484d31365f747261696e2e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHM16/train",
+            "type": "data"
+        }
+    ]
+}

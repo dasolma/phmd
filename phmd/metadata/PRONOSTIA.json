@@ -1,0 +1,784 @@
+{
+    "description": "The IEEE PHM data challenge in 2012 utilized a renowned dataset provided by the FEMTO-ST Institute. The dataset originated from experiments conducted on a laboratory experimental platform known as PRONOSTIA, designed for accelerated degradation testing of bearings under various operating conditions. During these experiments, online health monitoring data including rotating speed, load force, temperature, and vibration were collected.\n\nThe dataset considered data from three different loads, encompassing rotating speed and load force variations. A total of 6 run-to-failure bearings were designated for building prognostic models, while an additional 11 bearings were allocated for testing purposes.\n\nOne notable characteristic of the challenge datasets was the relatively small amount of training data available, coupled with a high variability in experiment durations ranging from 1 to 7 hours. This variability posed a significant challenge in accurately estimating prognostic models, contributing to the excitement and complexity of the challenge.",
+    "designation": "PHM IEEE Data Challenge 2012 - FEMTO Bearing Data Set",
+    "publisher": "FEMTO-ST Institute",
+    "domain": "Mechanical component",
+    "application": "Bearing",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "V_acc",
+                "H_acc"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 1318400,
+            "num_units": 6
+        }
+    },
+    "license": "CC0",
+    "filters": {
+        "Bearing": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7"
+        ],
+        "Condition": [
+            "1",
+            "2",
+            "3"
+        ]
+    },
+    "system": {
+        "1. type": "rotatory machine:gear box:bearing",
+        "2. platform": "PRONOSTIA experimentation platform dedicated to test and validate bearings fault detection",
+        "3. fault component": "bearing",
+        "4. characteristics": {
+            "4.1 motor power": "250W",
+            "4.2 motor speed": "2830rpm",
+            "4.3 secondary shaft spped": "2000rpm"
+        }
+    },
+    "operating_conditions": {
+        "1": "1800 rpm and 4000 N",
+        "2": "1650 rpm and 4200 N",
+        "3": "1500 rpm and 5000 N"
+    },
+    "features": {
+        "V_acc": {
+            "type": "vibration",
+            "description": ""
+        },
+        "H_acc": {
+            "type": "vibration",
+            "description": ""
+        }
+    },
+    "features_aux": {
+        "1. vibration": {
+            "a) name": [
+                "V_acc",
+                "H_acc"
+            ],
+            "b) sampling frequency": "25.6Hz",
+            "c) recording": "2560 samples (1/10s) each 10 seconds",
+            "d) sensor": "DYTRAN 3035B (20g range, 100mV/g)"
+        },
+        "2. temperature": {
+            "a) name": [
+                "Temp"
+            ],
+            "b) sampling frequency": "10Hz",
+            "c) recording": "600 samples each minute",
+            "d) sensor": "platinum RTD PT100 PROSENSOR",
+            "e) note": "feature only presents in some experiments"
+        }
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "570MB",
+            "b) unzipped": "2.6GB",
+            "c) RAM": {
+                "Train set": "5GB",
+                "Test set": "21GB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Train set": "36s",
+                "Test set": "57s"
+            },
+            "a) unzipped": {
+                "Train set": "29s",
+                "Test set": "55s"
+            }
+        }
+    },
+    "references": {
+        "citation": "@inproceedings{nectoux2012pronostia,    \n    title={PRONOSTIA: An experimental platform for bearings accelerated degradation tests.},    \n    author={Nectoux, Patrick and Gouriveau, Rafael and Medjaher, Kamal and Ramasso, Emmanuel and Chebel-Morello, Brigitte and Zerhouni, Noureddine and Varnier, Christophe},    \n    booktitle={IEEE International Conference on Prognostics and Health Management, PHM'12.},    \n    pages={1--8},    \n    year={2012},    \n    organization={IEEE Catalog Number: CPF12PHM-CDR}    \n}",
+        "bibitex": "@inproceedings{nectoux2012pronostia,    \n    title={PRONOSTIA: An experimental platform for bearings accelerated degradation tests.},    \n    author={Nectoux, Patrick and Gouriveau, Rafael and Medjaher, Kamal and Ramasso, Emmanuel and Chebel-Morello, Brigitte and Zerhouni, Noureddine and Varnier, Christophe},    \n    booktitle={IEEE International Conference on Prognostics and Health Management, PHM'12.},    \n    pages={1--8},    \n    year={2012},    \n    organization={IEEE Catalog Number: CPF12PHM-CDR}    \n}",
+        "manual_download": "https://github.com/wkzs111/phm-ieee-2012-data-challenge-dataset",
+        "papers": {
+            "Y Chen, et al.": "Chen, Yuanhang, et al. \"A novel deep learning method based on attention mechanism for bearing remaining useful life prediction.\" Applied Soft Computing 86 (2020): 105919.",
+            "Sutrisno, Edwin, et al.": "Sutrisno, Edwin, et al. \"Estimation of remaining useful life of ball bearings using data driven methodologies.\" 2012 ieee conference on prognostics and health management. IEEE, 2012.",
+            "Guo, Liang, et al.": "Guo, Liang, et al. \"A recurrent neural network based health indicator for remaining useful life prediction of bearings.\" Neurocomputing 240 (2017): 98-109.",
+            "Hinchi, Ahmed Zakariae, et all.": "Hinchi, Ahmed Zakariae, and Mohamed Tkiouat. \"Rolling element bearing remaining useful life estimation based on a convolutional long-short-term memory network.\" Procedia Computer Science 127 (2018): 123-132.",
+            "Lei, Yaguo, et al.": "Lei, Yaguo, et al. \"A model-based method for remaining useful life prediction of machinery.\" IEEE Transactions on reliability 65.3 (2016): 1314-1326.",
+            "Zhu, Jun, et al.": "Zhu, Jun, Nan Chen, and Weiwen Peng. \"Estimation of bearing remaining useful life based on multiscale convolutional neural network.\" IEEE Transactions on Industrial Electronics 66.4 (2018): 3208-3216.",
+            "Cao, Yudong, et al.": "Cao, Yudong, et al. \"A novel temporal convolutional network with residual self-attention mechanism for remaining useful life prediction of rolling bearings.\" Reliability Engineering & System Safety (2021): 107813.",
+            "Wang, Biao, et al.": "Wang, Biao, et al. \"Recurrent convolutional neural network: A new framework for remaining useful life prediction of machinery.\" Neurocomputing 379 (2020): 117-129.",
+            "Shi, Zuny, et all.": "Shi, Zunya, and Abdallah Chehade. \"A dual-LSTM framework combining change point detection and remaining useful life prediction.\" Reliability Engineering & System Safety 205 (2021): 107257.",
+            "Yu, Wennian, et all.": "Yu, Wennian, II Yong Kim, and Chris Mechefske. \"Remaining useful life estimation using a bidirectional recurrent neural network based autoencoder scheme.\" Mechanical Systems and Signal Processing 129 (2019): 764-780.",
+            "Xiang, Sheng, et al.": "Xiang, Sheng, et al. \"LSTM networks based on attention ordered neurons for gear remaining life prediction.\" ISA transactions 106 (2020): 343-354."
+        }
+    },
+    "results": {
+        "Prognosis": {
+            "Y Chen, et al.": {
+                "experiments": [
+                    {
+                        "technique": "HI + RNN-AE (HI) + LR",
+                        "results": {
+                            "%ErrR": [
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_3",
+                                    "value": "7.62"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_4",
+                                    "value": "\u2212157.71"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_5",
+                                    "value": "\u221272.57"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_6",
+                                    "value": "0.93"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_7",
+                                    "value": "85.99"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_3",
+                                    "value": "81.24"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_4",
+                                    "value": "9.04"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_5",
+                                    "value": "28.19"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_6",
+                                    "value": "24.92"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_7",
+                                    "value": "19.06"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing3_3",
+                                    "value": "2.09"
+                                }
+                            ],
+                            "|%ErrR|": [
+                                {
+                                    "type": "average",
+                                    "value": "44.49"
+                                }
+                            ],
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.4384"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Sutrisno, Edwin, et al.": {
+                "experiments": [
+                    {
+                        "technique": "FFT + Anomaly Detection + Survival Time Ratio",
+                        "results": {
+                            "%ErrR": [
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_3",
+                                    "value": "37"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_4",
+                                    "value": "80"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_5",
+                                    "value": "9"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_6",
+                                    "value": "-5"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_7",
+                                    "value": "-2"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_3",
+                                    "value": "64"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_4",
+                                    "value": "10"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_5",
+                                    "value": "-400"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_6",
+                                    "value": "49"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_7",
+                                    "value": "-317"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing3_3",
+                                    "value": "90"
+                                }
+                            ],
+                            "|%ErrR|": [
+                                {
+                                    "type": "average",
+                                    "metric": "IEEEScore",
+                                    "value": "100.27"
+                                }
+                            ],
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "metric": "IEEEScore",
+                                    "value": "0.3066"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Guo, Liang, et al.": {
+                "experiments": [
+                    {
+                        "technique": "RNN + HI",
+                        "results": {
+                            "%ErrR": [
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_3",
+                                    "value": "43.28"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_4",
+                                    "value": "67.55"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_5",
+                                    "value": "\u221222.98"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_6",
+                                    "value": "21.23"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_7",
+                                    "value": "17.83"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_3",
+                                    "value": "37.84"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_4",
+                                    "value": "\u221219.42"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_5",
+                                    "value": "54.37"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_6",
+                                    "value": "\u221213.95"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_7",
+                                    "value": "\u221255.17"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing3_3",
+                                    "value": "3.66"
+                                }
+                            ],
+                            "|%ErrR|": [
+                                {
+                                    "type": "average",
+                                    "value": "32.48"
+                                }
+                            ],
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.2631"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Hinchi, Ahmed Zakariae, et all.": {
+                "experiments": [
+                    {
+                        "technique": "CNN + LSTM",
+                        "results": {
+                            "%ErrR": [
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_3",
+                                    "value": "54.73"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_4",
+                                    "value": "38.69"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_5",
+                                    "value": "\u221299.4"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_6",
+                                    "value": "\u2212120.07"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_7",
+                                    "value": "70.65"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_3",
+                                    "value": "75.53"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_4",
+                                    "value": "8.2"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_5",
+                                    "value": "17.87"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_6",
+                                    "value": "1.69"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_7",
+                                    "value": "2.93"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing3_3",
+                                    "value": "6.42"
+                                }
+                            ],
+                            "|%ErrR|": [
+                                {
+                                    "type": "average",
+                                    "value": "46.32"
+                                }
+                            ],
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.3829"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Lei, Yaguo, et al.": {
+                "experiments": [
+                    {
+                        "technique": "HI + Particle filtering algorithm",
+                        "results": {
+                            "%ErrR": [
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_3",
+                                    "value": "\u22120.35"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_4",
+                                    "value": "5.6"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_5",
+                                    "value": "100"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_6",
+                                    "value": "28.08"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing1_7",
+                                    "value": "\u221219.55"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_3",
+                                    "value": "\u221220.19"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_4",
+                                    "value": "8.63"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_5",
+                                    "value": "23.3"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_6",
+                                    "value": "58.91"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing2_7",
+                                    "value": "5.17"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "Bearing3_3",
+                                    "value": "20.89"
+                                }
+                            ],
+                            "|%ErrR|": [
+                                {
+                                    "type": "average",
+                                    "metric": "IEEEScore",
+                                    "value": "28.18"
+                                }
+                            ],
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "metric": "IEEEScore",
+                                    "value": "0.4285"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Zhu, Jun, et al.": {
+                "experiments": [
+                    {
+                        "technique": "MSCNN",
+                        "results": {
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.3624"
+                                }
+                            ],
+                            "MAE": [
+                                {
+                                    "type": "average",
+                                    "value": "1091.8"
+                                }
+                            ],
+                            "NRMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.3514"
+                                }
+                            ],
+                            "RMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0825"
+                                }
+                            ],
+                            "SMAPE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0658"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Cao, Yudong, et al.": {
+                "experiments": [
+                    {
+                        "technique": "TCN-RSA",
+                        "results": {
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.5070"
+                                }
+                            ],
+                            "SMAPE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0529"
+                                }
+                            ],
+                            "RMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0765"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "GRU-RSA",
+                        "results": {
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.3853"
+                                }
+                            ],
+                            "SMAPE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0634"
+                                }
+                            ],
+                            "RMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0852"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "LSTM-RSA",
+                        "results": {
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.4004"
+                                }
+                            ],
+                            "SMAPE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0615"
+                                }
+                            ],
+                            "RMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0869"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "RNN-RSA",
+                        "results": {
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.3129"
+                                }
+                            ],
+                            "SMAPE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0701"
+                                }
+                            ],
+                            "RMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0893"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Wang, Biao, et al.": {
+                "experiments": [
+                    {
+                        "note": "results taken from Cao, Yudong, et al.",
+                        "technique": "",
+                        "results": {
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.2496"
+                                }
+                            ],
+                            "SMAPE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0831"
+                                }
+                            ],
+                            "RMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0991"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Shi, Zuny, et all.": {
+                "experiments": [
+                    {
+                        "note": "results taken from Cao, Yudong, et al.",
+                        "technique": "Dual-LSTM",
+                        "results": {
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.2714"
+                                }
+                            ],
+                            "SMAPE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0827"
+                                }
+                            ],
+                            "RMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.1055"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Xiang, Sheng, et al.": {
+                "experiments": [
+                    {
+                        "note": "results taken from Cao, Yudong, et al.",
+                        "technique": "LSTM + Attention guided Ordered Neurons (LSTM-AON)",
+                        "results": {
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.3286"
+                                }
+                            ],
+                            "SMAPE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0695"
+                                }
+                            ],
+                            "RMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0873"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Yu, Wennian, et al.": {
+                "experiments": [
+                    {
+                        "note": "results taken from Cao, Yudong, et al.",
+                        "technique": "LSTM + AE + HI",
+                        "results": {
+                            "IEEEScore": [
+                                {
+                                    "type": "average",
+                                    "value": "0.3065"
+                                }
+                            ],
+                            "SMAPE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0711"
+                                }
+                            ],
+                            "RMSE": [
+                                {
+                                    "type": "average",
+                                    "value": "0.0920"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "files": [
+        {
+            "name": "PRONOSTIA_train.zip",
+            "md5sum": "db8c0e11c04c40caace6662f1ca9ef4c2f50726f6e6f737469612f50524f4e4f535449415f747261696e2e7a6970",
+            "reader": "read_dataset",
+            "unzipped_dir": "PRONOSTIA/train",
+            "type": "train"
+        },
+        {
+            "name": "PRONOSTIA_test.zip",
+            "md5sum": "065ebaff68208e49b239edbb821666c12f50726f6e6f737469612f50524f4e4f535449415f746573742e7a6970",
+            "reader": "read_test",
+            "unzipped_dir": "PRONOSTIA/test",
+            "type": "test"
+        }
+    ]
+}

@@ -1,0 +1,138 @@
+{
+    "description": "The MFPT dataset, provided by the Society for Machinery Failure Prevention Technology in collaboration with Dr. Eric Bechhoefer, is a valuable resource for studying rolling bearing faults. It consists of three sets of experimental bearing vibration data and three sets of actual fault data. The experimental sets include a baseline set, inner race fault set, and outer race fault set.\n\nThe baseline dataset comprises three files, with data sampled at a frequency of 97656 Hz for 6 seconds under a 270-pound load. The inner race fault dataset contains seven files, sampled at 48828 Hz for 3 seconds under various load conditions ranging from 0 to 300 pounds. Similarly, the outer race fault dataset consists of seven files, sampled at 48828 Hz for 3 seconds under load conditions ranging from 25 to 300 pounds. All data points are collected using a single-channel radial accelerometer.\n\nThe experimental bearings in the MFPT dataset are deep groove ball bearings characterized by a 31.62 mm pitch diameter, a 5.97 mm ball diameter, a 0\u00b0 contact angle, and an element number of 8.",
+    "designation": "MFPT - Condition Based Maintenance Fault",
+    "publisher": "MFPT Society",
+    "domain": "Mechanical component",
+    "application": "Bearing",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "features": [
+                "vibration"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "health_state",
+                "inner_race",
+                "outer_race"
+            ],
+            "type": "classification:multiclass",
+            "note": "target encoded in binary with health state, inner race, outer race",
+            "nature": "time-series",
+            "target_distribution": [
+                0.46153846153846156,
+                0.2692307692307692,
+                0.2692307692307692
+            ],
+            "min_ts_len": 146484,
+            "num_units": 11,
+            "min_units_per_class": 3
+        }
+    },
+    "filters": {},
+    "system": {
+        "type": "bearing",
+        "platform": "unknown",
+        "fault component": "NICE bearing",
+        "sampling frequency": "97656 Hz and 48828 Hz",
+        "sensor": "unknown"
+    },
+    "operating_conditions": {
+        "1": "270 lbs",
+        "2": "25 lbs",
+        "3": "50 lbs",
+        "4": "100 lbs",
+        "5": "150 lbs"
+    },
+    "features": {
+        "vibration": {
+            "type": "vibration",
+            "description": ""
+        }
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "29MB",
+            "b) unzipped": "47MB",
+            "c) RAM": {
+                "Data set (full)": "35MB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "2s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "1s"
+            }
+        }
+    },
+    "references": {
+        "citation": "@misc{mfptFaultData,\n\tauthor = {},\n\ttitle = {{F}ault {D}ata {S}ets - {S}ociety {F}or {M}achinery {F}ailure {P}revention {T}echnology --- mfpt.org},\n\thowpublished = {\\url{https://www.mfpt.org/fault-data-sets/}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "bibitex": "@misc{mfptFaultData,\n\tauthor = {},\n\ttitle = {{F}ault {D}ata {S}ets - {S}ociety {F}or {M}achinery {F}ailure {P}revention {T}echnology --- mfpt.org},\n\thowpublished = {\\url{https://www.mfpt.org/fault-data-sets/}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://www.mfpt.org/fault-data-sets/",
+        "papers": {
+            "Zhao, Zhibin, et al.": "Zhao, Zhibin, et al. \"Deep learning algorithms for rotating machinery intelligent diagnosis: An open source benchmark study.\" ISA transactions 107 (2020): 224-255.",
+            "Yuan, Laohu, et al.": "Yuan, Laohu, et al. \"Rolling bearing fault diagnosis based on convolutional neural network and support vector machine.\" IEEE Access 8 (2020): 137395-137406."
+        }
+    },
+    "results": {
+        "Fault_mode": {
+            "Zhao, Zhibin, et al.": {
+                "experiments": [
+                    {
+                        "technique": "Frequency domain input + MaxMin Norm + MLP",
+                        "results": {
+                            "Accuracy": "0.9555"
+                        }
+                    }
+                ]
+            },
+            "Yuan, Laohu, et al.": {
+                "experiments": [
+                    {
+                        "technique": "Wavelet + CNN + SVN",
+                        "results": {
+                            "Accuracy": "0.9875"
+                        }
+                    },
+                    {
+                        "technique": "Wavelet + CNN",
+                        "results": {
+                            "Accuracy": "0.9672"
+                        }
+                    },
+                    {
+                        "technique": "Wavelet + SVN",
+                        "results": {
+                            "Accuracy": "0.8788"
+                        }
+                    },
+                    {
+                        "technique": "Convolutional neural network -based hidden Markov models (CNNsingle bondHMMs)",
+                        "results": {
+                            "Accuracy": "0.98125"
+                        }
+                    },
+                    {
+                        "technique": "Feature Extractor + Feature Generator with MMD + CNN (DGNN)",
+                        "results": {
+                            "Accuracy": "0.9781"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "files": [
+        {
+            "name": "MPFT.zip",
+            "md5sum": "ee320f52f7db45bac1ca932571441d052f323031332532304d4650542532304661756c7425323042656172696e67253230446174612532305365742f4d5046542e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "MPFT/",
+            "type": "data"
+        }
+    ]
+}

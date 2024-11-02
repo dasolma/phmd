@@ -1,0 +1,82 @@
+{
+    "description": "",
+    "designation": "LG 18650HG2 Li-ion Battery Dataset",
+    "publisher": "McMaster University",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "split_by": [
+                "T"
+            ],
+            "target": "soc",
+            "features": [
+                "Voltage",
+                "Current",
+                "Temperature"
+            ],
+            "type": "regression",
+            "num_units": 5,
+            "min_ts_len": 3692,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "Voltage": {
+            "type": "voltage",
+            "description": "Voltage"
+        },
+        "Current": {
+            "type": "current",
+            "description": "Current"
+        },
+        "Temperature": {
+            "type": "temperature",
+            "description": "Temperature"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "Kollmeyer, Philip; Vidal, Carlos; Naguib, Mina; Skells, Michael  (2020), \u201cLG 18650HG2 Li-ion Battery Data and Example Deep Neural Network xEV SOC Estimator Script\u201d, Mendeley Data, V3, doi: 10.17632/cp3473x7xv.3",
+        "bibitex": "@misc{kollmeyer10lg,\n  title={LG 18650HG2 Li-Ion Battery Data and Example Deep Neural Network xEV SOC Estimator Script. 2020},\n  author={Kollmeyer, PV and Carlos, V and Naguib, Mina and Skells, Michael},\n  publisher={DOI}\n}\n",
+        "manual_download": "https://data.mendeley.com/datasets/cp3473x7xv/3",
+        "papers": [
+            {
+                "C. Vidal, et al.": "C. Vidal, P. Kollmeyer, M. Naguib, P. Malysz, O. Gross, and A. Emadi, \u201cRobust xEV Battery State-of-Charge Estimator Design using Deep Neural Networks,\u201d in Proc WCX SAE World Congress Experience, Detroit, MI, Apr 2020",
+                "C. Vidal, et all 2": "C. Vidal, P. Kollmeyer, E. Chemali and A. Emadi, \u201cLi-ion Battery State of Charge Estimation Using Long Short-Term Memory Recurrent Neural Network with Transfer Learning,\u201c, 2019 IEEE Transportation Electrification Conference and Expo (ITEC), Detroit, MI, USA, 2019, pp. 1-6."
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "LGB20.zip",
+            "md5sum": "3e679fb7aecc5b69e42aac63b569d59f2f323032302532304c4725323031383635304847322532304c692d696f6e25323042617474657279253230446174612f4c474232302e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "LGB20/data",
+            "type": "data"
+        }
+    ]
+}

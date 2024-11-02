@@ -1,0 +1,80 @@
+{
+    "description": "This dataset originated from a test bench composed of an induction motor, a flywheel, and three ball bearings. This setup enables the replication of various mechanical issues such as bearing failures, shaft misalignment, and unbalanced loads. The primary focus of the study is on diagnosing different levels of unbalance through automatic classification methods. Unbalance was induced by adding screws, nuts, and washers onto the flywheel, simulating five distinct states of unbalance.\n\nAn accelerometer (Bruel Kjaer 43962) was positioned on the right-hand side bearing, and its signal was captured using a DAQ 9233 at a sampling rate of 1000Hz. Twenty data samples were collected for each state of unbalance, providing a comprehensive dataset for analysis.",
+    "designation": "Driveline Unbalanced Shaft dataset",
+    "publisher": "Universidad de los Andes and Politecnico di Milano",
+    "application": "Shaft",
+    "domain": "Mechanical component",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "unbalance",
+            "target_labels": [
+                "Unbalance",
+                "1 screw with nuts",
+                "3 screws with nuts",
+                "1 screw with nuts and washers",
+                "2 screws with nuts and washers"
+            ],
+            "features": [
+                "acc"
+            ],
+            "target_distribution": [
+                0.2230197,
+                0.21490223,
+                0.2245764,
+                0.15773574,
+                0.17976593
+            ],
+            "type": "classification:multiclass",
+            "num_units": 100,
+            "min_ts_len": 1282,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC BY-NC-ND 4.0",
+    "features": {
+        "acc": {
+            "type": "vibration",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "2M",
+            "b) unzipped": "22M",
+            "c) RAM": {
+                "Data set (full)": "100M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "5s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "5s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Barbieri, G., Sanchez-Londo\u00f1o, D., Cattaneo, L., Fumagalli, L., & Romero, D. (2020). A case study for problem-based learning education in fault diagnosis assessment. IFAC-PapersOnLine, 53(3), 107-112.",
+        "bibitex": "@article{barbieri2020case,\n  title={A case study for problem-based learning education in fault diagnosis assessment},\n  author={Barbieri, Giacomo and Sanchez-Londo{\\~n}o, David and Cattaneo, Laura and Fumagalli, Luca and Romero, David},\n  journal={IFAC-PapersOnLine},\n  volume={53},\n  number={3},\n  pages={107--112},\n  year={2020},\n  publisher={Elsevier}\n}",
+        "manual_download": "https://www.researchgate.net/publication/341220576_Dataset_A_\nCase_Study_for_Problem-\nbased_Learning_Education_in_Fault_Diagnosis_Assessment",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "DUS20.zip",
+            "md5sum": "9e62c1272297a7099f375bd7bdfd67962f323032302532302d25323044726976656c696e65253230556e62616c616e63656425323053686166742f44555332302e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "DUS20/",
+            "type": "data"
+        }
+    ]
+}

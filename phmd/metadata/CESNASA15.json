@@ -1,0 +1,127 @@
+{
+    "description": "In this dataset, capacitors were subjected to electrical stress at three different voltage levels: 10V, 12V, and 14V. The dataset includes two types of data: Electrical Impedance Spectroscopy (EIS) data and Charge/Discharge Signal data. However, for the purposes of this study, only the EIS data is utilized, while the Charge/Discharge Signal data is not considered.\n\nTwo different Remaining Useful Life (RUL) tasks were defined based on specific criteria. In the first task, end-of-life is determined when the voltage of the Electrochemical Working Electrode (EWE) falls to 95% of its nominal value, which is 0.000312. In the second task, end-of-life is defined differently, where it occurs when the slope between resistance and impedance drops to 80%.",
+    "designation": "Condition Based Maintenance of Naval Propulsion Plants V3",
+    "publisher": "NASA",
+    "domain": "Electrical component",
+    "application": "Capacitors",
+    "tasks": {
+        "Prognosis (<Ewe>/V thresold based)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul1",
+            "features": [
+                "freq/Hz",
+                "Re(Z)/Ohm",
+                "-Im(Z)/Ohm",
+                "|Z|/Ohm",
+                "Phase(Z)/deg",
+                "<Ewe>/V",
+                "<I>/mA",
+                "Cs/\u00b5F",
+                "Cp/\u00b5F"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 3366,
+            "num_units": 24
+        },
+        "Prognosis (Re(Z)/Ohm and -Im(Z)/Ohm slope thresold based)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul2",
+            "features": [
+                "freq/Hz",
+                "Re(Z)/Ohm",
+                "-Im(Z)/Ohm",
+                "|Z|/Ohm",
+                "Phase(Z)/deg",
+                "<Ewe>/V",
+                "<I>/mA",
+                "Cs/\u00b5F",
+                "Cp/\u00b5F"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 3366,
+            "num_units": 24
+        }
+    },
+    "license": "CC0",
+    "features": {
+        "freq/Hz": {
+            "type": "frequency",
+            "description": ""
+        },
+        "Re(Z)/Ohm": {
+            "type": "resistance",
+            "description": ""
+        },
+        "-Im(Z)/Ohm": {
+            "type": "impedance",
+            "description": ""
+        },
+        "|Z|/Ohm": {
+            "type": "",
+            "description": ""
+        },
+        "Phase(Z)/deg": {
+            "type": "",
+            "description": ""
+        },
+        "<Ewe>/V": {
+            "type": "",
+            "description": ""
+        },
+        "<I>/mA": {
+            "type": "",
+            "description": ""
+        },
+        "Cs/\u00b5F": {
+            "type": "",
+            "description": ""
+        },
+        "Cp/\u00b5F": {
+            "type": "",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "4.7GB",
+            "b) unzipped": "4.9GB",
+            "c) RAM": {
+                "Data set (full)": "300M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "J. Renwick, C. Kulkarni, and J Celaya \u201cCapacitor Electrical Stress Data Set\u201d, NASA Prognostics Data Repository, NASA Ames Research Center, Moffett Field, CA",
+        "bibitex": "@misc{dataCapacitorElectrical,\n\tauthor = {},\n\ttitle = {{C}apacitor {E}lectrical {S}tress-2 - {C}atalog --- catalog.data.gov},\n\thowpublished = {\\url{https://catalog.data.gov/dataset/capacitor-electrical-stress-2}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://phm-datasets.s3.amazonaws.com/NASA/12.+Capacitor+Electrical+Stress.zip",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "CESNASA15.zip",
+            "md5sum": "f34fb510ffe4a424a7f4505db73dc28d2f323031352532304e415341253230436170616369746f72253230456c656374726963616c253230537472657373253230446174612532305365742f4345534e41534131352e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "CESNASA15/",
+            "type": "data"
+        }
+    ]
+}

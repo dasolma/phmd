@@ -1,0 +1,109 @@
+    {
+    "description": "This dataset, provided by Microsoft, collects information regarding the working conditions, sensor signals (voltage, pressure, vibration, and rotation), and failure history of an unknown machine. Two tasks are established using this dataset: diagnosis, aimed at determining which of the five possible components has failed, and a RUL task.",
+    "designation": "Microsoft Azure Predictive Maintenance",
+    "publisher": "Microsoft",
+    "domain": "Unknown",
+    "application": "Unknown",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "split_by": [
+                "machineID"
+            ],
+            "target": "rul",
+            "features": [
+                "volt",
+                "rotate",
+                "pressure",
+                "vibration"
+            ],
+            "type": "regression",
+            "num_units": 2441,
+            "min_ts_len": 100,
+            "nature": "time-series"
+        },
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "split_by": [
+                "machineID"
+            ],
+            "target": "fault",
+            "features": [
+                "volt",
+                "rotate",
+                "pressure",
+                "vibration"
+            ],
+            "type": "classification:multiclass",
+            "target_labels": [
+                "comp1",
+                "comp2",
+                "comp3",
+                "comp4",
+                "comp5"
+            ],
+            "num_units": 2441,
+            "min_ts_len": 100,
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "volt": {
+            "type": "voltage",
+            "description": ""
+        },
+        "rotate": {
+            "type": "speed",
+            "description": ""
+        },
+        "pressure": {
+            "type": "pressure",
+            "description": ""
+        },
+        "vibration": {
+            "type": "vibration",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "31M",
+            "b) unzipped": "77M",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "10s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "10s"
+            }
+        }
+    },
+    "references": {
+        "citation": "",
+        "manual_download": "",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "MPM20.zip",
+            "md5sum": "4a7971821615abc79a7d67e78341d3f52f323032302532304d6963726f736f66742d507265646963746976652d4d61696e74656e616e63652d446174612f4d504d32302e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "MPM20/data",
+            "type": "data"
+        }
+    ]
+}

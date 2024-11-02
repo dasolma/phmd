@@ -1,0 +1,115 @@
+{
+    "description": "In this renowned dataset, experiments were conducted utilizing a 2 HP Reliance Electric motor, where acceleration data was measured at locations both near to and remote from the motor bearings. Motor bearings were intentionally seeded with faults using electro-discharge machining (EDM). These faults ranged in diameter from 0.007 inches to 0.040 inches and were separately introduced at the inner raceway, rolling element (i.e., ball), and outer raceway of the bearings. After seeding, the faulted bearings were reinstalled into the test motor, and vibration data was recorded for motor loads ranging from 0 to 3 horsepower, corresponding to motor speeds between 1797 and 1720 RPM. The vibration data was sampled at a frequency of 12 kHz, with each vibration signal lasting for a duration of 10 seconds.",
+    "designation": "Bearing Fault Diagnostic",
+    "publisher": "Case Western Reserve University",
+    "domain": "Mechanical component",
+    "application": "Bearing",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "IR",
+                "OR",
+                "BA",
+                "NO"
+            ],
+            "features": [
+                "DE"
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "target_distribution": [
+                0.23925701416312395,
+                0.5060473724317841,
+                0.2335118005708106,
+                0.021183812834281272
+            ],
+            "min_ts_len": 63788,
+            "num_units": 161
+        }
+    },
+    "license": "CC BY-SA 4.0",
+    "features": {
+        "DE": {
+            "type": "vibration",
+            "description": "drive end accelerometer data"
+        },
+        "FE": {
+            "type": "vibration",
+            "description": "fan end accelerometer data (not available in all experiments)"
+        },
+        "BA": {
+            "type": "vibration",
+            "description": "base accelerometer data (not available in all experiments)"
+        }
+    },
+    "filters": {
+        "speed": [
+            1730,
+            1750,
+            1772,
+            1797
+        ],
+        "fault_diameter": [
+            0.007,
+            0.014,
+            0.021
+        ],
+        "fault": [
+            "BA",
+            "IR",
+            "OR",
+            "NO"
+        ],
+        "sample_rate": [
+            12,
+            48
+        ]
+    },
+    "system": {
+        "1. type": "Rotatory machine :  bearing",
+        "2. sensors": "Voltmeter, ammeter and thermocouple sensor suite",
+        "3. bearing": "6205-2RSL JEM SKF deep-groove ball bearing (and NTN equivalent)"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "246MB",
+            "b) unzipped": "689MB",
+            "c) RAM": {
+                "Data set (full)": "5.2GB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "7s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "3s"
+            }
+        }
+    },
+    "references": {
+        "citation": "K.A. Loparo, Bearings vibration data set. The Case Western Reserve University Bearing Data Center. https://engineering.case.edu",
+        "bibitex": "@misc{caseBearingData,\n\tauthor = {},\n\ttitle = {{B}earing {D}ata {C}enter | {C}ase {S}chool of {E}ngineering | {C}ase {W}estern {R}eserve {U}niversity --- engineering.case.edu},\n\thowpublished = {\\url{https://engineering.case.edu/bearingdatacenter}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://engineering.case.edu/bearingdatacenter",
+        "papers": [
+            {
+                "": "",
+                "summary": ""
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "CWRU.zip",
+            "md5sum": "bd5d45b1ad05ec343099ed0a32e0de5e2f435752552e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "CWRU/data",
+            "type": "data"
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "description": "This data set consists of measurement from piezeoelectric (PZT) sensors that are mounted on aluminum specimen that were tested to fatigue conditions. Fatigue cracks developed in the specimen and failure was declared at a particular crack length. The actuator sends out a wave which is measured by the receiver. The distance between the actuator and receiver is 161 mm. If a crack has formed along the wave propagation path, the received signal will change, which can be used for diagnosis and prognosis purposes. During testing, measurements are acquired two times for each measurement point. \n\nEight specimens (named 1X.Y through 8X.Y) were investigated (specimen 1X.Y-6X.Y are to be used for training and 7X.Y-8X.Y are to be used for validation). A hydraulic material testing machine working at 5Hz at room temperature conducted the fatigue testing. Both constant amplitude loading and variable amplitude loading cases were studied. 1X.Y-7X.Y were under constant amplitude fatigue loading and 8X.Y was under variable amplitude loading. During testing, an optical microscope was used intermittently to identify the location of crack appearance and top measure crack length. \n\nThere are two two repetitions for each measurement. Each measurement contains two variables \u201cch1\u201d, and \u201cch2\u201d, which correspond to the actuation signal and received signal, both of which are measured in Volts.\n\nThe objective of this data challenge is to predict the crack lengths of lap joint.",
+    "designation": "PHM Data Challenge 2019 - Fatigue Cracks",
+    "publisher": "PHM Society",
+    "domain": "Materials",
+    "application": "Aluminum",
+    "tasks": {
+        "Detection": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "crack",
+            "features": [
+                "ch1",
+                "ch2"
+            ],
+            "type": "regression",
+            "num_units": 6,
+            "min_ts_len": 1000,
+            "normalize_output": false,
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "ch1": {
+            "type": "voltage",
+            "description": "actuation signal (Volts)"
+        },
+        "ch2": {
+            "type": "voltage",
+            "description": "received signal (Vols)"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "2M",
+            "b) unzipped": "9M",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "5s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "5s"
+            }
+        }
+    },
+    "references": {
+        "citation": "He J, Guan X, Peng T, Liu Y, Saxena A, Celaya J, Goebel K. A multi-feature integration method for fatigue crack detection and crack length estimation in riveted lap joints using Lamb waves. Smart Materials and Structures. 2013 Sep 4;22(10):105007.\nPeng T, He J, Xiang Y, Liu Y, Saxena A, Celaya J, Goebel K. Probabilistic fatigue damage prognosis of lap joint using Bayesian updating. Journal of Intelligent Material Systems and Structures. 2015 May;26(8):965-79.",
+        "bibitex": "@article{he2013multi,\n  title={A multi-feature integration method for fatigue crack detection and crack length estimation in riveted lap joints using Lamb waves},\n  author={He, Jingjing and Guan, Xuefei and Peng, Tishun and Liu, Yongming and Saxena, Abhinav and Celaya, Jose and Goebel, Kai},\n  journal={Smart Materials and Structures},\n  volume={22},\n  number={10},\n  pages={105007},\n  year={2013},\n  publisher={IOP Publishing}\n}",
+        "manual_download": "",
+        "papers": [
+            {
+                "He J, et al.": "He J, Guan X, Peng T, Liu Y, Saxena A, Celaya J, Goebel K. A multi-feature integration method for fatigue crack detection and crack length estimation in riveted lap joints using Lamb waves. Smart Materials and Structures. 2013 Sep 4;22(10):105007.",
+                "Peng T, et al.": "Peng T, He J, Xiang Y, Liu Y, Saxena A, Celaya J, Goebel K. Probabilistic fatigue damage prognosis of lap joint using Bayesian updating. Journal of Intelligent Material Systems and Structures. 2015 May;26(8):965-79.",
+                "Yang J, et al.": "Yang J, He J, Guan X, Wang D, Chen H, Zhang W, Liu Y. A probabilistic crack size quantification method using in-situ Lamb wave test and Bayesian updating. Mechanical Systems and Signal Processing. 2016 Oct 1;78:118-33.",
+                "Youn M, et al.": "Youn M, Kim Y, Lee D, Cho M. A Fatigue Crack Length Estimation and Prediction using Trans-fitting with Support Vector Regression. In Proceedings of the Annual Conference of the PHM Society 2019 Sep 26 (Vol. 11, No. 1).",
+                "Kong HB, et al.": "Kong HB, Jo SH, Jung JH, Ha JM, Shin YC, Yoon H, Sun KH, Seo YH, Jeon BC. A Hybrid Approach of Data-Driven and Physics-based Methods for Estimation and Prediction of Fatigue Crack Growth. In Proceedings of the Annual Conference of the PHM Society 2019 Sep 26 (Vol. 11, No. 1).",
+                "Zuo MJ": "Zuo MJ. Ensemble Linear Regression and Paris\u2019 Law Based Methods for Structure Fatigue Crack Length Estimation and Prediction Using Ultrasonic Wave Data. In Proceedings of the Annual Conference of the PHM Society 2019 Sep 26 (Vol. 11, No. 1)."
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHM2019_train.zip",
+            "md5sum": "468a0fe3dbf98f2378b32f3edbdadfea2f3230313925323050484d253230446174612532304368616c6c656e67652f50484d323031395f747261696e2e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHM2019_train/train",
+            "type": "data"
+        },
+        {
+            "name": "PHM2019_test.zip",
+            "md5sum": "2c1a4394c0d24811e868be56c5e4afe32f3230313925323050484d253230446174612532304368616c6c656e67652f50484d323031395f746573742e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHM2019_test/test",
+            "type": "data"
+        }
+    ]
+}

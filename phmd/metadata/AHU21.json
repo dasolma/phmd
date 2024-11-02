@@ -1,0 +1,232 @@
+{
+    "description": "This dataset aims to identify operating faults in ventilation units with heat recovery. A total of 25 operating faults were deliberately induced across 6 Air Handling Units (AHUs) located in the Czech Technical University (CTU) building in Bu\u0161t\u011bhrad. While some faults were triggered in all 6 units, others occurred only in a subset of units. Overall, there were 105 incidents recorded.\n\nThe tested units featured a plate exchanger for heat recovery, equipped with bypass, heater, and cooler functionalities. Additionally, one unit was equipped with an air humidifier.\n\nTo ensure the dataset's robustness, 16 operating faults were carefully selected. These were chosen based on their occurrence at least 3 times and occurring at least 20 time units after the previous fault occurrence. This selection process aimed to include faults with sufficient representation and impact in the dataset.\n\nTwo primary tasks are defined with this dataset: fault detection and fault classification. Fault detection involves identifying instances when faults occur within the ventilation units, constituting a highly imbalanced task due to the infrequent occurrence of faults compared to normal operation. On the other hand, fault classification aims to categorize the type of fault present, irrespective of the health condition of the units.",
+    "designation": "Air Handling Unit Dataset",
+    "publisher": "University Centre for Energy Efficient Buildings (Prague)",
+    "domain": "Building",
+    "application": "AHU",
+    "tasks": {
+        "Detection": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "signal__required_value__fan_exahust_air",
+                "logic__real_value__fan_fresh_air",
+                "logic__real_value__air_handling_unit",
+                "signal__required_value__heater_valve",
+                "water_temperature__required_value__heater",
+                "air_temperature__required_value__exahust_air_inlet",
+                "logic__required_value__valve_exahust_air_outlet",
+                "air_temperature__max__supply_air_outlet",
+                "logic__required_value__valve_outdoor_air",
+                "water_temperature__real_value__heater_behind",
+                "air_temperature__real_value__exahust_air_inlet",
+                "air_temperature__min__supply_air_outlet",
+                "air_temperature__real_value__supply_air_outlet",
+                "water_temperature__real_value__chiller_behind",
+                "signal__required_value__heat_recovery_bypass",
+                "water_temperature__real_value__heater_before",
+                "logic__real_value__fan_exahust_air",
+                "logic__required_value__heater",
+                "logic__required_value__chiller_pump",
+                "logic__required_value__heater_pump",
+                "logic__required_value__chiller",
+                "signal__required_value__chiller_valve",
+                "signal__required_value__fan_fresh_air"
+            ],
+            "target_labels": [
+                "no fault",
+                "fault"
+            ],
+            "target_distribution": [
+                0.99116466,
+                0.00883534
+            ],
+            "type": "classification:binary",
+            "num_units": 6,
+            "min_ts_len": 20,
+            "min_units_per_class": 5,
+            "nature": "time-series"
+        },
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault_type",
+            "features": [
+                "signal__required_value__fan_exahust_air",
+                "logic__real_value__fan_fresh_air",
+                "logic__real_value__air_handling_unit",
+                "signal__required_value__heater_valve",
+                "water_temperature__required_value__heater",
+                "air_temperature__required_value__exahust_air_inlet",
+                "logic__required_value__valve_exahust_air_outlet",
+                "air_temperature__max__supply_air_outlet",
+                "logic__required_value__valve_outdoor_air",
+                "water_temperature__real_value__heater_behind",
+                "air_temperature__real_value__exahust_air_inlet",
+                "air_temperature__min__supply_air_outlet",
+                "air_temperature__real_value__supply_air_outlet",
+                "water_temperature__real_value__chiller_behind",
+                "signal__required_value__heat_recovery_bypass",
+                "water_temperature__real_value__heater_before",
+                "logic__real_value__fan_exahust_air",
+                "logic__required_value__heater",
+                "logic__required_value__chiller_pump",
+                "logic__required_value__heater_pump",
+                "logic__required_value__chiller",
+                "signal__required_value__chiller_valve",
+                "signal__required_value__fan_fresh_air"
+            ],
+            "target_labels": [
+                "Dampers are closed during heating regime",
+                "Heating valve is closed during heating regime",
+                "Heating valve is open to the maximum level during heating regime",
+                "Heating pump is OFF during heating regime",
+                "Heating valve is stuck in intermediate position during heating regime",
+                "Zone outlet temperature sensor indicates 150 \u00b0C ",
+                "Zone outlet temperature sensor indicates -20 \u00b0 C",
+                "Heat exchanger is closed",
+                "Cooling pump is ON during heating regime",
+                "One of fan differential pressure sensor tubes is disconnected",
+                "Dampres are closed during ventilate regime",
+                "Heating pump is ON during ventilate regime",
+                "Cooling valve is closed during cooling regime",
+                "Heating valve is ON during ventilate regime",
+                "Dampers are closed during cooling regime"
+            ],
+            "target_distribution": [
+                0.07545272,
+                0.06287726,
+                0.07545272,
+                0.05030181,
+                0.09356137,
+                0.04325956,
+                0.06287726,
+                0.06187123,
+                0.07444668,
+                0.0945674,
+                0.03722334,
+                0.09305835,
+                0.06237425,
+                0.06237425,
+                0.05030181
+            ],
+            "type": "classification:multiclass",
+            "num_units": 6,
+            "min_ts_len": 20,
+            "min_units_per_class": 3,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "signal__required_value__fan_exahust_air": {
+            "type": ""
+        },
+        "logic__real_value__fan_fresh_air": {
+            "type": ""
+        },
+        "logic__real_value__air_handling_unit": {
+            "type": ""
+        },
+        "signal__required_value__heater_valve": {
+            "type": ""
+        },
+        "water_temperature__required_value__heater": {
+            "type": "temperature"
+        },
+        "air_temperature__required_value__exahust_air_inlet": {
+            "type": "temperature"
+        },
+        "logic__required_value__valve_exahust_air_outlet": {
+            "type": ""
+        },
+        "air_temperature__max__supply_air_outlet": {
+            "type": "temperature"
+        },
+        "logic__required_value__valve_outdoor_air": {
+            "type": ""
+        },
+        "water_temperature__real_value__heater_behind": {
+            "type": "temperature"
+        },
+        "air_temperature__real_value__exahust_air_inlet": {
+            "type": "temperature"
+        },
+        "air_temperature__min__supply_air_outlet": {
+            "type": "temperature"
+        },
+        "air_temperature__real_value__supply_air_outlet": {
+            "type": "temperature"
+        },
+        "water_temperature__real_value__chiller_behind": {
+            "type": "temperature"
+        },
+        "signal__required_value__heat_recovery_bypass": {
+            "type": ""
+        },
+        "water_temperature__real_value__heater_before": {
+            "type": "temperature"
+        },
+        "logic__real_value__fan_exahust_air": {
+            "type": ""
+        },
+        "logic__required_value__heater": {
+            "type": ""
+        },
+        "logic__required_value__chiller_pump": {
+            "type": ""
+        },
+        "logic__required_value__heater_pump": {
+            "type": ""
+        },
+        "logic__required_value__chiller": {
+            "type": ""
+        },
+        "signal__required_value__chiller_valve": {
+            "type": ""
+        },
+        "signal__required_value__fan_fresh_air": {
+            "type": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "21M",
+            "b) unzipped": "27M",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "1.5min"
+            },
+            "a) unzipped": {
+                "Data set (full)": "1.5min"
+            }
+        }
+    },
+    "references": {
+        "citation": "Nehasil, Ond\u0159ej, Lucie Dobi\u00e1\u0161ov\u00e1, Vojt\u011bch Mazanec, and Jan \u0160irok\u00fd. \"Versatile AHU fault detection\u2013Design, field validation and practical application.\" Energy and Buildings 237 (2021): 110781.",
+        "bibitex": "@article{nehasil2021versatile,\n  title={Versatile AHU fault detection--Design, field validation and practical application},\n  author={Nehasil, Ond{\\v{r}}ej and Dobi{\\'a}{\\v{s}}ov{\\'a}, Lucie and Mazanec, Vojt{\\v{e}}ch and {\\v{S}}irok{\\`y}, Jan},\n  journal={Energy and Buildings},\n  volume={237},\n  pages={110781},\n  year={2021},\n  publisher={Elsevier}\n}",
+        "manual_download": "https://data.mendeley.com/datasets/jkw85sm4v4/1",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "AHU21.zip",
+            "md5sum": "f335de6d369892a87b97a71c0322ebea2f323032312532304148552532304661756c74253230446574656374696f6e2f41485532312e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "AHU21/",
+            "type": "data"
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "description": "This dataset is centered around monitoring plant operations with the objective of detecting potential plant failures in advance. It comprises time series data captured from sensors measuring the behavior of each of several control components within the plant (e.g., 6 components). Additionally, time series data is recorded from a fixed number of plant zones (e.g., 3 zones) over the same timeframe, where each zone may encompass one or more plant components.\n\nPlant fault events are characterized by a start time, an end time, and a failure code. Each plant varies in terms of the number of components and zones, but all plants register faults from the same predetermined set. Of particular interest are faults categorized as types 1-5, while code 6 represents all other faults not of primary focus. The data is sampled approximately every 15 minutes, spanning a timeframe of roughly three to four years.\n\nThe task at hand involves predicting future failure events of types 1-5 and estimating their occurrence times based on historical data.",
+    "designation": "PHM Data Challenge 2016 - Semiconductor CMP",
+    "publisher": "PHM Society - Crystec Technology Trading GmbH",
+    "application": "Semiconductor",
+    "domain": "Manufacturing Process",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "site"
+            ],
+            "target": "fail",
+            "features": [
+                "component",
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "r1",
+                "r2",
+                "r3",
+                "r4",
+                "zone",
+                "e1",
+                "e2"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 114200,
+            "num_units": 66
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "component": {
+            "type": "identifier",
+            "description": "Component number"
+        },
+        "s1": {
+            "type": "sensor signal",
+            "description": "Component sensor"
+        },
+        "s2": {
+            "type": "sensor signal",
+            "description": "Component sensor"
+        },
+        "s3": {
+            "type": "sensor signal",
+            "description": "Component sensor"
+        },
+        "s4": {
+            "type": "sensor signal",
+            "description": "Component sensor"
+        },
+        "r1": {
+            "type": "sensor signal reference",
+            "description": "Component control reference"
+        },
+        "r2": {
+            "type": "sensor signal reference",
+            "description": "Component control reference"
+        },
+        "r3": {
+            "type": "sensor signal reference",
+            "description": "Component control reference"
+        },
+        "r4": {
+            "type": "sensor signal reference",
+            "description": "Component control reference"
+        },
+        "zone": {
+            "type": "identifier",
+            "description": "Zone"
+        },
+        "site": {
+            "type": "identifier",
+            "description": "Site"
+        },
+        "e1": {
+            "type": "sensor signal",
+            "description": "Zone sensor (-9999 is nan)}"
+        },
+        "e2": {
+            "type": "sensor signal",
+            "description": "Zone sensor (-9999 is nan)}"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "324M",
+            "b) unzipped": "2.2G",
+            "c) RAM": {
+                "Data set (full)": "37G"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "5min"
+            },
+            "a) unzipped": {
+                "Data set (full)": "5min"
+            }
+        }
+    },
+    "references": {
+        "citation": "PHM Society, \u201c2015 PHM society conference data challenge | PHM Society,\u201d 2015. [Online]. Available: http://www.phmsociety.org/competition/phm/15.",
+        "bibitex": "@misc{phmsocietyAnnualConference,\n\tauthor = {},\n\ttitle = {{A}nnual {C}onference of the {P}rognostics and {H}ealth {M}anagement {S}ociety 2015 - {P}{H}{M} {S}ociety --- phmsociety.org},\n\thowpublished = {\\url{http://www.phmsociety.org/competition/phm/15}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://phmsociety.org/conference/annual-conference-of-the-phm-society/annual-conference-of-the-prognostics-and-health-management-society-2015/phm-data-challenge-3/",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHM15.zip",
+            "md5sum": "f87b9eb2aeb6445e11aff94ef71e0f9c2f3230313525323050484d253230444154412532304348414c4c454e47452f50484d31352e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHM15/data",
+            "type": "data"
+        }
+    ]
+}

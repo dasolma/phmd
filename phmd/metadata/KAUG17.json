@@ -1,0 +1,77 @@
+{
+    "description": "This dataset was obtained from a gearbox testbed, where encoder signals were collected. The data was acquired at a sampling frequency of 10 kHz. It comprises a total of 31 data files, with 10 representing normal conditions, 10 representing spall conditions, and 11 representing crack conditions.",
+    "designation": "SDOL Korea Aerospace University Gear (KAUG) dataset",
+    "publisher": "School of Aerospace & Mechanical Engineering, Korea Aerospace University",
+    "domain": "Mechanical component",
+    "application": "Gear",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "normal",
+                "spall",
+                "crack"
+            ],
+            "features": [
+                "vibration"
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "target_distribution": [
+                0.3225806451612903,
+                0.3225806451612903,
+                0.3548387096774194
+            ],
+            "min_ts_len": 200000,
+            "num_units": 31,
+            "min_units_per_class": 10
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "vibration": {
+            "type": "vibration",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "43M",
+            "b) unzipped": "43M",
+            "c) RAM": {
+                "Data set (full)": "300M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "<1s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "<1s"
+            }
+        }
+    },
+    "references": {
+        "citation": "",
+        "bibitex": "\"bibitex\": \"@misc{key,\n\tauthor = {},\n\ttitle = {Gear datasets},\n\thowpublished = {\\url{https://www.kau-sdol.com/kaug}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}\",",
+        "manual_download": "https://www.kau-sdol.com/kaug",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "KAUG17.zip",
+            "md5sum": "63e33585f8372411b3cf2c52540f40132f3230313725323053444f4c2532304b4155253230476561722f4b41554731372e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "KAUG17/",
+            "type": "data"
+        }
+    ]
+}

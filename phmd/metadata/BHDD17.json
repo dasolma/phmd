@@ -1,0 +1,120 @@
+{
+    "description": "In this dataset, from Baidu Inc., all samples were collected from the Seagate ST31000524NS, an enterprise-class hard disk model. The dataset comprises samples from 5,317 different disks, each labeled as either \"good\" or \"failed.\" Among these disks, only 433 were labeled as failed, while the remaining 5,317 were labeled as good. This results in a highly unbalanced dataset, with over 10 times more good disks than failed ones. SMART Attribute values were recorded hourly for each disk. For good disks, samples from a week's period are included in the dataset, resulting in 168 samples per good disk. However, for failed disks, samples from a longer period (20 days before the actual failure) are retained. If a disk failed before the 20-day period, the number of samples may be less than 480. All attribute values are scaled to the interval [-1, 1], and their exact values are withheld.",
+    "designation": "Baidu Hard Disk Failure Dataset",
+    "publisher": "Baidu Inc.",
+    "domain": "Drive technology",
+    "application": "HDD",
+    "tasks": {
+        "Detection": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "Raw Read Error Rate",
+                "SpinUpTime",
+                "Reallocated Sector Count",
+                "Seek Error Rate",
+                "Power on Hours",
+                "Reported Uncorrectable Error",
+                "High Fly Writes",
+                "Temperature Celsius",
+                "Hardware ECC Recovered",
+                "Current Pending Sector",
+                "Reallocated Sectors Count",
+                "Current Pending Sectors counts"
+            ],
+            "type": "classification:binary",
+            "nature": "features",
+            "target_labels": [
+                "No fault",
+                "fault"
+            ],
+            "target_distribution": [
+                0.8509288337578785,
+                0.14907116624212144
+            ],
+            "num_units": 5750,
+            "target_descriptions": {
+                "No fault": "The disk survived after 20 days operation since we began to collect data",
+                "fault": "The disk did not survive 20 days of operation since we began to collect data"
+            }
+        }
+    },
+    "license": "CC0 1.0 Universal",
+    "features": {
+        "Raw Read Error Rate": {
+            "type": "flag"
+        },
+        "SpinUpTime": {
+            "type": "time"
+        },
+        "Reallocated Sector Count": {
+            "type": "counter"
+        },
+        "Seek Error Rate": {
+            "type": "rate"
+        },
+        "Power on Hours": {
+            "type": "power"
+        },
+        "Reported Uncorrectable Error": {
+            "type": "flag"
+        },
+        "High Fly Writes": {
+            "type": "counter"
+        },
+        "Temperature Celsius": {
+            "type": "temperature"
+        },
+        "Hardware ECC Recovered": {
+            "type": "flag"
+        },
+        "Current Pending Sector": {
+            "type": "flag"
+        },
+        "Reallocated Sectors Count": {
+            "type": "counter"
+        },
+        "Current Pending Sectors counts": {
+            "type": "counter"
+        }
+    },
+    "filters": {},
+    "system": {
+        "description": {
+            "type": "HDD Disk",
+            "model": "Seagate ST31000524NS"
+        },
+        "images": [
+            "hdd_baidu.jpg"
+        ]
+    },
+    "resources": {
+        "storage": {
+            "zipped": "5,6M",
+            "unzipped": "121M",
+            "RAM": "300M"
+        },
+        "load time (SSD disk)": {
+            "zipped": "1s",
+            "unzipped": "0.5s"
+        }
+    },
+    "references": {
+        "citation": "Zhu, Bingpeng, Gang Wang, Xiaoguang Liu, Dianming Hu, Sheng Lin, and Jingwei Ma. \"Proactive drive failure prediction for large scale storage systems.\" In 2013 IEEE 29th symposium on mass storage systems and technologies (MSST), pp. 1-5. IEEE, 2013.",
+        "bibitex": "@inproceedings{zhu2013proactive,\n  title={Proactive drive failure prediction for large scale storage systems},\n  author={Zhu, Bingpeng and Wang, Gang and Liu, Xiaoguang and Hu, Dianming and Lin, Sheng and Ma, Jingwei},\n  booktitle={2013 IEEE 29th symposium on mass storage systems and technologies (MSST)},\n  pages={1--5},\n  year={2013},\n  organization={IEEE}\n}",
+        "manual_download": "https://www.kaggle.com/datasets/drtycoon/hdds-dataset-baidu-inc",
+        "papers": []
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "BHDD17.zip",
+            "md5sum": "ac83414f8cfa9ddd97c579d5d423b8d92f323031372532304241494455253230484444253230534d41525425323044617461736574732f4248444431372e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "BHDD17/data",
+            "type": "data"
+        }
+    ]
+}

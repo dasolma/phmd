@@ -1,0 +1,318 @@
+{
+    "description": "The dataset from the NASA Prognostics Center of Excellence features experiments conducted on 42 MOSFET devices. Each device undergoes multiple aging tests, varying from 1 to 7 consecutive runs. The dataset encompasses substructures for both steady-state, comprising slow aggregated measurements, and transient, containing high-frequency data, along with experimental control settings. The end-of-life criterion is defined when the RDS(on) normalized by the flange temperature reaches a value of 0.05.",
+    "designation": "NASA - MOSFET Thermal Overstress Aging",
+    "publisher": "NASA",
+    "domain": "Electrical component",
+    "application": "Transistor",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "device"
+            ],
+            "target": "rul",
+            "features": [
+                "sV",
+                "pT",
+                "ssVs",
+                "ssId",
+                "fT",
+                "id",
+                "vds",
+                "gvsignal",
+                "gvsource"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 14,
+            "num_units": 17
+        }
+    },
+    "license": "CC0",
+    "features": {
+        "sV": {
+            "type": "voltage",
+            "description": "supply voltage"
+        },
+        "pT": {
+            "type": "temperature",
+            "description": "package temperature"
+        },
+        "ssVs": {
+            "type": "voltage",
+            "description": "steady state table drain source voltage"
+        },
+        "ssId": {
+            "type": "current",
+            "description": "steady state table drain current"
+        },
+        "fT": {
+            "type": "current",
+            "description": "flange temperature"
+        },
+        "id": {
+            "type": "current",
+            "description": "drain current"
+        },
+        "vds": {
+            "type": "voltage",
+            "description": "drain source voltage"
+        },
+        "gvsignal": {
+            "type": "voltage",
+            "description": "gate voltage signal"
+        },
+        "gvsource": {
+            "type": "voltage",
+            "description": "gate voltage source"
+        }
+    },
+    "filters": {},
+    "system": {
+        "1. type": "transistor:MOSFET",
+        "2. machine": "Accelerated aging system"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "7.3GB",
+            "b) unzipped": "7.4GB",
+            "c) RAM": {
+                "Data set": "2.2GB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set": "5min"
+            },
+            "a) unzipped": {
+                "Data set (train)": "5.33min"
+            }
+        }
+    },
+    "references": {
+        "citation": "@inproceedings{celaya2011prognostics,\n  title={Prognostics of power MOSFETs under thermal stress accelerated aging using data-driven and model-based methodologies},\n  author={Celaya, Jos{\\'e} R and Saxena, Abhinav and Saha, Sankalita and Goebel, Kai F},\n  booktitle={Annual Conference of the PHM Society},\n  volume={3},\n  number={1},\n  year={2011}\n}",
+        "bibitex": "@inproceedings{celaya2011prognostics,\n  title={Prognostics of power MOSFETs under thermal stress accelerated aging using data-driven and model-based methodologies},\n  author={Celaya, Jos{\\'e} R and Saxena, Abhinav and Saha, Sankalita and Goebel, Kai F},\n  booktitle={Annual Conference of the PHM Society},\n  volume={3},\n  number={1},\n  year={2011}\n}",
+        "manual_download": "https://catalog.data.gov/dataset/accelerated-aging-with-electrical-overstress-and-prognostics-for-power-mosfets",
+        "papers": {
+            "Y. Zheng et al.": "Y. Zheng, L. Wu, X. Li and C. Yin, \"A relevance vector machine-based approach for remaining useful life prediction of power MOSFETs\", Proc. Prognostics Syst. Health Manage. Conf. (PHM-Hunan), pp. 642-646, Aug. 2014.",
+            "J. R. Celaya et al.": "J. R. Celaya, A. Saxena, C. S. Kulkarni, S. Saha and K. Goebel, \"Prognostics approach for power MOSFET under thermal-stress aging\", Proc. RAMS, pp. 1-6, Jan. 2012.",
+            "Alonso-Gonz\u00e1lez et al.": "Alonso-Gonz\u00e1lez, Carlos J., et al. \"A big data architecture for fault prognostics of electronic devices: application to power MOSFETs.\" Ieee Access 7 (2019): 102160-102173."
+        }
+    },
+    "results": {
+        "rul": {
+            "J. R. Celaya et al.": {
+                "experiments": [
+                    {
+                        "technique": "Extended Kalman filter",
+                        "results": {
+                            "Err": [
+                                {
+                                    "type": "unit",
+                                    "name": "8",
+                                    "value": "-6.9"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "9",
+                                    "value": "16.9"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "14",
+                                    "value": "-11.6"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "36",
+                                    "value": "8.2"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Y. Zheng et al.": {
+                "experiments": [
+                    {
+                        "technique": "relevance vector machine (RVM)",
+                        "results": {
+                            "Err": [
+                                {
+                                    "type": "unit",
+                                    "name": "8",
+                                    "value": "-8.2"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "9",
+                                    "value": "5.8"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "Alonso-Gonz\u00e1lez et al.": {
+                "experiments": [
+                    {
+                        "technique": "Linearized Least Squares, LN-LS",
+                        "results": {
+                            "Err": [
+                                {
+                                    "type": "unit",
+                                    "name": "8",
+                                    "value": "17.9"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "9",
+                                    "value": "30.9"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "14",
+                                    "value": "18.8"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "36",
+                                    "value": "29.5"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "11",
+                                    "value": "17.3"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "12",
+                                    "value": "20.3"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "Horizontal Average, HA",
+                        "results": {
+                            "Err": [
+                                {
+                                    "type": "unit",
+                                    "name": "8",
+                                    "value": "-34.6"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "9",
+                                    "value": "10.9"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "14",
+                                    "value": "-29.7"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "36",
+                                    "value": "10.2"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "11",
+                                    "value": "0.4"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "12",
+                                    "value": "-5.0"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "Least Squares, LS",
+                        "results": {
+                            "Err": [
+                                {
+                                    "type": "unit",
+                                    "name": "8",
+                                    "value": "-22.8"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "9",
+                                    "value": "10.0"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "14",
+                                    "value": "-37.0"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "36",
+                                    "value": "-17.6"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "11",
+                                    "value": "-125.0"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "12",
+                                    "value": "13.0"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "Linearized Horizontal Average, LN-HA",
+                        "results": {
+                            "Err": [
+                                {
+                                    "type": "unit",
+                                    "name": "8",
+                                    "value": "-20.3"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "9",
+                                    "value": "18.6"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "14",
+                                    "value": "-16.2"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "36",
+                                    "value": "-20.8"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "11",
+                                    "value": "-12.4"
+                                },
+                                {
+                                    "type": "unit",
+                                    "name": "12",
+                                    "value": "6.5"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "files": [
+        {
+            "name": "MOSFET11.zip",
+            "md5sum": "e8832815cabe4f3144e733d2c13edd512f323031312532304e4153412532304d4f53464554253230546865726d616c2532304f7665727374726573732532304167696e67253230446174612532305365742f4d4f5346455431312e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "MOSFET11/",
+            "type": "data"
+        }
+    ]
+}

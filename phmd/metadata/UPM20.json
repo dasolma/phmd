@@ -1,0 +1,84 @@
+{
+    "description": "The dataset was generated from an experimental setup following a \"Factorial 5 x 3\" design, aimed at examining the performance of a bearing under various conditions. Five distinct failure levels (F0, F1, F2, F3, F4) were investigated across three operational regimes, characterized by rotational speeds of 200, 350, and 500 rpm. The \"F0\" level represents the normal state of the bearing, while the other levels (F1 to F4) indicate progressively induced failures, with depths measured at 0.006, 0.014, 0.019, and 0.027 mm, respectively. Each combination was repeated three times. Accelerometers were strategically placed in the load area of the supports and the clamping tower to capture relevant vibration data. Each recording spans 30 seconds, sampled at a frequency of 40 kHz. The dataset includes data from three accelerometers, with one specifically monitoring the bearing undergoing induced failure, providing comprehensive insights into the bearing's behavior under different failure scenarios and operational conditions.",
+    "designation": "UPM Bearing Database",
+    "publisher": "Polytechnic University of Madrid",
+    "domain": "Mechanical component",
+    "application": "Bearing",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "RE_F0",
+                "RE_F1",
+                "RE_F2",
+                "RE_F3",
+                "RE_F4"
+            ],
+            "features": [
+                "Rod_1",
+                "Rod_2",
+                "Rod_3"
+            ],
+            "type": "classification:multiclass",
+            "num_units": 15,
+            "min_ts_len": 2320000,
+            "min_units_per_class": 1,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "Rod_1": {
+            "type": "vibration",
+            "description": "Accelerometer data"
+        },
+        "Rod_2": {
+            "type": "vibration",
+            "description": "Accelerometer data"
+        },
+        "Rod_3": {
+            "type": "vibration",
+            "description": "Accelerometer data"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "Soto-Ocampo, C\u00e9sar Ricardo, Jos\u00e9 Manuel Mera, Juan David Cano-Moreno, and Jos\u00e9 Luis Garcia-Bernardo. 2020. \"Low-Cost, High-Frequency, Data Acquisition System for Condition Monitoring of Rotating Machinery through Vibration Analysis-Case Study\" Sensors 20, no. 12: 3493. https://doi.org/10.3390/s20123493 ",
+        "bibitex": "@article{soto2020low,\n  title={Low-cost, high-frequency, data acquisition system for condition monitoring of rotating machinery through vibration analysis-case study},\n  author={Soto-Ocampo, C{\\'e}sar Ricardo and Mera, Jos{\\'e} Manuel and Cano-Moreno, Juan David and Garcia-Bernardo, Jos{\\'e} Luis},\n  journal={Sensors},\n  volume={20},\n  number={12},\n  pages={3493},\n  year={2020},\n  publisher={MDPI}\n}",
+        "manual_download": "https://zenodo.org/records/3898942",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "UPM20.zip",
+            "md5sum": "ffcc5e5ba99ebda32fb4a2855cac87532f323032305f55504d5f42656172696e675f446174617365742f55504d32302e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "UPM20/",
+            "type": "data"
+        }
+    ]
+}

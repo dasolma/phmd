@@ -1,0 +1,86 @@
+{
+    "description": "The Oxford Battery Degradation Dataset 1 comprises aging measurements obtained from 8 small lithium-ion pouch cells. These cells underwent testing within a thermal chamber maintained at 40 degrees Celsius. Initially, they were subjected to a constant-current-constant-voltage charging regimen, followed by discharge cycles mimicking the urban Artemis profile. Characterization measurements were conducted every 100 cycles.\n\nThe testing protocol involved repeating the drive cycles and characterization cycles until the cell's end-of-life was indicated by reaching the lower voltage limit during discharge. Specifically, the lower voltage limit set for continuous discharge, lasting over a period of more than 10 seconds, was established at 2.7 volts.",
+    "designation": "Oxford Battery Degradation Dataset 1",
+    "publisher": "Oxford University",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "cell"
+            ],
+            "target": "rul",
+            "features": [
+                "v",
+                "q",
+                "T",
+                "state"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 1383527,
+            "num_units": 8
+        }
+    },
+    "license": "ODC Open Database License (ODC-ODbL)",
+    "features": {
+        "v": {
+            "type": "voltage",
+            "description": "voltage"
+        },
+        "q": {
+            "type": "charge",
+            "description": "charge"
+        },
+        "T": {
+            "type": "temperature",
+            "description": "Temperature"
+        },
+        "state": {
+            "type": "",
+            "description": "0: 1-C charge (C1ch), 1: 1-C discharge (C1dc), 2: pseudo-OCV charge (OCVch), 3: pseudo-OCV discharge (OCVdc)"
+        }
+    },
+    "filters": {},
+    "system": {
+        "type": "battery",
+        "Test subjects": "8 x Kokam CO LTD, SLPB533459H4, 740mAh",
+        "Battery tester": "Bio-Logic MPG-205, 8 channel",
+        "Environmental chamber": "Binder thermal chamber, environmental temperature: 40 degree Celsius"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "254M",
+            "b) unzipped": "253M",
+            "c) RAM": {
+                "Data set (full)": "3,5G"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "23s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "22s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Christoph R. Birkl, \"Diagnosis and Prognosis of Degradation in Lithium-Ion Batteries\", PhD thesis, Department of Engineering Science, University of Oxford, 2017",
+        "bibitex": "@phdthesis{birkl2017diagnosis,\n  title={Diagnosis and prognosis of degradation in lithium-ion batteries},\n  author={Birkl, Christoph},\n  year={2017},\n  school={University of Oxford}\n}",
+        "manual_download": "https://ora.ox.ac.uk/objects/uuid:03ba4b01-cfed-46d3-9b1a-7d4a7bdf6fac",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "OBDD17.zip",
+            "md5sum": "f931807759702caa9009a481ac4d62432f323031372532304f78666f7264253230426174746572792532304465677261646174696f6e25323044617461736574253230312f4f42444431372e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "OBDD17/",
+            "type": "data"
+        }
+    ]
+}

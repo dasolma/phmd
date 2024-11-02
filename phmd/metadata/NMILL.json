@@ -1,0 +1,133 @@
+{
+    "description": "The NMILL dataset captures experiments conducted on a milling machine, focusing on investigating tool wear under diverse operating conditions, as outlined by Goebel in 1996. These experiments encompass regular cuts, as well as entry and exit cuts. Data were collected using three types of sensors: acoustic emission sensors, vibration sensors, and current sensors, positioned at various locations.\n\nWith 16 cases in total, the number of runs varied based on the extent of flank wear, which was measured intermittently up to a specified wear limit, and sometimes beyond. Flank wear measurements were not consistently taken, resulting in occasional gaps in the data. Prior to data acquisition, sensor signals underwent amplification and filtering, followed by processing through two root mean square (RMS) stages before being recorded by the computer.",
+    "designation": "NASA - Milling Data set",
+    "publisher": "NASA",
+    "domain": "Manufacturing Process",
+    "application": "Milling",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "CBM",
+            "target_labels": [
+                "Healthy Sate",
+                "Degredation",
+                "Failure"
+            ],
+            "features": [
+                "smcAC",
+                "smcDC",
+                "vib_table",
+                "vib_spindle",
+                "AE_table",
+                "AE_spindle"
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "target_distribution": [
+                0.4176352891291673,
+                0.5347895796894048,
+                0.04757513118142789
+            ],
+            "min_ts_len": 1715,
+            "num_units": 31
+        }
+    },
+    "license": "CC0",
+    "features": {
+        "smcAC": {
+            "type": "current",
+            "description": "AC spindle motor current"
+        },
+        "smcDC": {
+            "type": "current",
+            "description": "DC spindle motor current"
+        },
+        "vib_table": {
+            "type": "vibration",
+            "description": "Table vibration"
+        },
+        "vib_spindle": {
+            "type": "vibration",
+            "description": "Spindle vibration"
+        },
+        "AE_table": {
+            "type": "acoustic",
+            "description": "Acoustic emission at table"
+        },
+        "AE_spindle": {
+            "type": "acoustic",
+            "description": "Acoustic emission at spindle"
+        }
+    },
+    "filters": {
+        "unit": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ],
+        "material": [
+            "cast iron",
+            "steel"
+        ]
+    },
+    "system": {
+        "1. type": "rotatory machine : milling machine",
+        "2. cutting speed": "200 m/min (826 rev/min)",
+        "3. materials": "cast iron and stainless steel J45",
+        "4. size of the workpieces": "483mm x 178mm x 51mm",
+        "5. sensors": "acoustic emission sensor and a vibration sensor"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "14MB",
+            "b) unzipped": "14MB",
+            "c) RAM": {
+                "Data set (full)": "133MB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "10s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "10s"
+            }
+        }
+    },
+    "references": {
+        "citation": "A. Agogino and K. Goebel (2007). BEST lab, UC Berkeley. \"Milling Data Set \", NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/project/prognostic-data-repository), NASA Ames Research Center, Moffett Field, CA",
+        "bibitex": "@misc{nasaPrognosticsCenter,\n\tauthor = {},\n\ttitle = {{P}rognostics {C}enter of {E}xcellence {D}ata {S}et {R}epository - {N}{A}{S}{A} --- nasa.gov},\n\thowpublished = {\\url{https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/#milling",
+        "papers": [
+            {
+                "": "",
+                "summary": ""
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "NMILL.zip",
+            "md5sum": "e511cbe825af6c685f2680c3e9dcbeea2f4e4d494c4c2e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "NMILL/",
+            "type": "data"
+        }
+    ]
+}

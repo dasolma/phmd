@@ -1,0 +1,222 @@
+{
+    "description": "The dataset originates from research conducted by the Semeion Research Center of Sciences of Communication. The primary objective of the research was to accurately classify surface defects found in stainless steel plates, which encompassed six distinct types of defects, alongside a category labeled as \"other.\" The input vector consisted of 27 indicators that were designed to capture various aspects of the geometric shape and outline of the defects. Unfortunately, due to the proprietary nature of the research commissioned by the Centro Sviluppo Materiali (Italy), specific details regarding the nature of these 27 indicators and the types of the six defect classes are not publicly available.",
+    "designation": "Steel Plates Faults",
+    "publisher": "Semeion Research Center of Sciences of Communication",
+    "domain": "Materials",
+    "application": "Steel Plates",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "Pastry",
+                "Z_Scratch",
+                "K_Scatch",
+                "Stains",
+                "Dirtiness",
+                "Bumps",
+                "Other_Faults"
+            ],
+            "features": [
+                "X_Minimum",
+                "X_Maximum",
+                "Y_Minimum",
+                "Y_Maximum",
+                "Pixels_Areas",
+                "X_Perimeter",
+                "Y_Perimeter",
+                "Sum_of_Luminosity",
+                "Minimum_of_Luminosity",
+                "Maximum_of_Luminosity",
+                "Length_of_Conveyer",
+                "TypeOfSteel_A300",
+                "TypeOfSteel_A400",
+                "Steel_Plate_Thickness",
+                "Edges_Index",
+                "Empty_Index",
+                "Square_Index",
+                "Outside_X_Index",
+                "Edges_X_Index",
+                "Edges_Y_Index",
+                "Outside_Global_Index",
+                "LogOfAreas",
+                "Log_X_Index",
+                "Log_Y_Index",
+                "Orientation_Index",
+                "Luminosity_Index",
+                "SigmoidOfAreas"
+            ],
+            "type": "classification:multiclass",
+            "nature": "features",
+            "target_distribution": [
+                0.08140133951571354,
+                0.09788768675940238,
+                0.20144255538382277,
+                0.03709428129829984,
+                0.02833590932509016,
+                0.2071097372488408,
+                0.3467284904688305
+            ],
+            "num_units": 1941
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "X_Minimum": {
+            "type": "",
+            "description": "No description"
+        },
+        "X_Maximum": {
+            "type": "",
+            "description": "No description"
+        },
+        "Y_Minimum": {
+            "type": "",
+            "description": "No description"
+        },
+        "Y_Maximum": {
+            "type": "",
+            "description": "No description"
+        },
+        "Pixels_Areas": {
+            "type": "",
+            "description": "No description"
+        },
+        "X_Perimeter": {
+            "type": "",
+            "description": "No description"
+        },
+        "Y_Perimeter": {
+            "type": "",
+            "description": "No description"
+        },
+        "Sum_of_Luminosity": {
+            "type": "",
+            "description": "No description"
+        },
+        "Minimum_of_Luminosity": {
+            "type": "",
+            "description": "No description"
+        },
+        "Maximum_of_Luminosity": {
+            "type": "",
+            "description": "No description"
+        },
+        "Length_of_Conveyer": {
+            "type": "",
+            "description": "No description"
+        },
+        "TypeOfSteel_A300": {
+            "type": "",
+            "description": "No description"
+        },
+        "TypeOfSteel_A400": {
+            "type": "",
+            "description": "No description"
+        },
+        "Steel_Plate_Thickness": {
+            "type": "",
+            "description": "No description"
+        },
+        "Edges_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "Empty_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "Square_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "Outside_X_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "Edges_X_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "Edges_Y_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "Outside_Global_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "LogOfAreas": {
+            "type": "",
+            "description": "No description"
+        },
+        "Log_X_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "Log_Y_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "Orientation_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "Luminosity_Index": {
+            "type": "",
+            "description": "No description"
+        },
+        "SigmoidOfAreas": {
+            "type": "",
+            "description": "No description"
+        },
+        "fault": {
+            "type": "",
+            "description": "0: Pastry, 1:Z_Scratch, 2:K_Scatch, 3:Stains, 4:Dirtiness, 5:Bumps, 6:Other_Faults"
+        }
+    },
+    "filters": {},
+    "system": {
+        "1. type": "Stainless steel plates"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "100KB",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": "450KB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "2s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "1s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Semeion, Research Center of Sciences of Communication, Via Sersale 117, 00128, Rome, Italy. www.semeion.it",
+        "bibitex": "@misc{uciMachineLearning,\n\tauthor = {},\n\ttitle = {{U}{C}{I} {M}achine {L}earning {R}epository --- archive.ics.uci.edu},\n\thowpublished = {\\url{https://archive.ics.uci.edu/dataset/198/steel+plates+faults}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://archive.ics.uci.edu/ml/datasets/Steel+Plates+Faults",
+        "papers": [
+            {
+                "": "",
+                "summary": ""
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "STEEL_PLATES.zip",
+            "md5sum": "f46deebe5a70ecdfadda88904ad0b6932f323031302532305543492532302d253230537465656c253230506c617465732532304661756c7473253230446174612532305365742f535445454c5f504c415445532e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "STEEL_PLATES/data",
+            "type": "data"
+        }
+    ]
+}

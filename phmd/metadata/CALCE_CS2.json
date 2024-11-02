@@ -1,0 +1,135 @@
+{
+    "description": "To generate this dataset, aging tests were conducted on several CS2 cell batteries with a rated capacity of 1100 mAh. All cells underwent identical charging procedures: they were charged at a constant current of 0.5 C until reaching 4.2 V, after which the voltage was maintained at 4.2 V until the charging current dropped below 0.05 A. The discharge cut-off voltage for these batteries was set at 2.7 V. Each CS2 cell underwent multiple cycles under these conditions and was tested using the Arbin Battery Tester.",
+    "designation": "CALCE CS2 Batteries",
+    "publisher": "Center of Advanced Life Cycle Engineering (CALCE)",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "Current(A)",
+                "Voltage(V)",
+                "Charge_Capacity(Ah)",
+                "Discharge_Capacity(Ah)",
+                "Charge_Energy(Wh)",
+                "Discharge_Energy(Wh)",
+                "dV/dt(V/s)",
+                "Internal_Resistance(Ohm)",
+                "AC_Impedance(Ohm)",
+                "ACI_Phase_Angle(Deg)",
+                "soc"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 253911,
+            "num_units": 6
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "Current(A)": {
+            "type": "current"
+        },
+        "Voltage(V)": {
+            "type": "voltage"
+        },
+        "Charge_Capacity(Ah)": {
+            "type": "capacity"
+        },
+        "Discharge_Capacity(Ah)": {
+            "type": "capacity"
+        },
+        "Charge_Energy(Wh)": {
+            "type": "energy"
+        },
+        "Discharge_Energy(Wh)": {
+            "type": "energy"
+        },
+        "dV/dt(V/s)": {
+            "type": ""
+        },
+        "Internal_Resistance(Ohm)": {
+            "type": "resistance"
+        },
+        "AC_Impedance(Ohm)": {
+            "type": "impedance"
+        },
+        "ACI_Phase_Angle(Deg)": {
+            "type": ""
+        },
+        "soc": {
+            "type": ""
+        }
+    },
+    "filters": {
+        "unit": [
+            "CS2_33",
+            "CS2_34",
+            "CS2_35",
+            "CS2_36",
+            "CS2_37",
+            "CS2_38"
+        ],
+        "mode": [
+            "charging",
+            "discharging"
+        ]
+    },
+    "params": {
+        "rul_soc_threshold": 0.3,
+        "soc_estimation_ahead_cycles": 1
+    },
+    "pending": [
+        "process the rest of units: 3,5,6,7,8,9, 2x"
+    ],
+    "system": {
+        "1. Type": "Batteries",
+        "2. Battery": "CS2 Battery",
+        "3. Capacity Rating": "1100 mAh",
+        "4. Cell Chemistry": "LiCoO2 cathode. EDS results also showed trace elements of Manganese",
+        "5. Dimensions": "5.4 (mm) x 33.6 (mm) x 50.6 (mm)",
+        "6. Special Notes": "Jellyroll configuration wrapped around the \"length\" axis, indicated by the red arrows below"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "105MB",
+            "b) unzipped": "400MB",
+            "c) RAM": {
+                "Data set (full)": "230MB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "13s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "11s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Semeion, Research Center of Sciences of Communication, Via Sersale 117, 00128, Rome, Italy. www.semeion.it",
+        "bibitex": "@misc{umdBatteryData,\n\tauthor = {},\n\ttitle = {{B}attery {D}ata | {C}enter for {A}dvanced {L}ife {C}ycle {E}ngineering --- calce.umd.edu},\n\thowpublished = {\\url{https://calce.umd.edu/battery-data}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://calce.umd.edu/battery-data#CS2",
+        "papers": [
+            {
+                "": "",
+                "summary": ""
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "CALCE_CS2.zip",
+            "md5sum": "7a7b5ca54d879ff08e45ba6ac01221c72f3230313125323043414c434525323042617474657269657325323044617461736574732f43414c43455f4353322e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "CALCE_CS2/data",
+            "type": "data"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "description": "The dataset used in the publication \"Data-driven prediction of battery cycle life before capacity degradation\" comprises 124 commercial lithium-ion batteries subjected to failure under fast-charging conditions. These batteries are lithium-ion phosphate (LFP)/graphite cells, specifically the APR18650M1A model manufactured by A123 Systems. The cycling process occurs within horizontal cylindrical fixtures on a 48-channel Arbin LBT potentiostat housed in a forced convection temperature chamber set to 30\u00b0C. Each cell has a nominal capacity of 1.1 Ah and a nominal voltage of 3.3 V.\n\nAll cells in this dataset undergo charging with either a one-step or two-step fast-charging policy denoted as \"C1(Q1)-C2.\" In this format, C1 and C2 represent the first and second constant-current steps, respectively, and Q1 indicates the state-of-charge (SOC, %) at which the currents switch. The second current step concludes at 80% SOC, after which the cells charge at 1C CC-CV. The upper and lower cutoff potentials are fixed at 3.6 V and 2.0 V, respectively, consistent with the manufacturer's specifications. However, during fast charging, cells may occasionally reach the upper cutoff potential, leading to significant constant-voltage charging. All cells discharge at 4C.\n\nTemperature measurements are conducted by attaching a Type T thermocouple to the exposed cell can using thermal epoxy (OMEGATHERM 201) and Kapton tape, with a small section of plastic insulation stripped away. It is worth noting that temperature measurements may not be entirely reliable due to potential variations in thermal contact between the thermocouple and the cell can, as well as occasional loss of contact during cycling.\n\nInternal resistance measurements are obtained during charging at 80% SOC by averaging 10 pulses of \u00b13.6C with a pulse width of either 30 ms (on May 12, 2017, and June 30, 2017) or 33 ms (on April 12, 2018).\n\nThe objective of this dataset is to estimate the remaining useful life of each battery using data from the first 100 cycles exclusively.",
+    "designation": "Fast charging lithium-ion batteries",
+    "publisher": "Stanford University",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "I",
+                "Qc",
+                "Qd",
+                "Qdlin",
+                "T",
+                "V",
+                "dQdV"
+            ],
+            "type": "regression",
+            "num_units": 200,
+            "min_ts_len": 104088,
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "I": {
+            "type": "current",
+            "description": "Magnitude of intensity"
+        },
+        "Qc": {
+            "type": "current-hour",
+            "description": "Charge capacity"
+        },
+        "Qd": {
+            "type": "current-hour",
+            "description": "Discharge capacity"
+        },
+        "Qdlin": {
+            "type": "current-hour",
+            "description": "Discharge capacity calculated based on a linear approximation"
+        },
+        "T": {
+            "type": "temperature",
+            "description": "Temperature of the battery"
+        },
+        "V": {
+            "type": "voltage",
+            "description": "Electrical potential difference across the battery terminals during charging or discharging"
+        },
+        "dQdV": {
+            "type": "current-hour per volt",
+            "description": "Differential Capacity"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "Severson et al. Data-driven prediction of battery cycle life before capacity degradation. Nature Energy volume 4, pages 383–391 (2019).",
+        "manual_download": "https://data.matr.io/1/projects/5c48dd2bc625d700019f3204",
+        "bibitex": "@article{severson2019data,\n  title={Data-driven prediction of battery cycle life before capacity degradation},\n  author={Severson, Kristen A and Attia, Peter M and Jin, Norman and Perkins, Nicholas and Jiang, Benben and Yang, Zi and Chen, Michael H and Aykol, Muratahan and Herring, Patrick K and Fraggedakis, Dimitrios and others},\n  journal={Nature Energy},\n  volume={4},\n  number={5},\n  pages={383--391},\n  year={2019},\n  publisher={Nature Publishing Group UK London}\n}\n",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "FCLB19.zip",
+            "md5sum": "e33ebf4332c5b0763b1cc4df63e4ec022f32303139253230466173742532306368617267652532306c69746869756d2532306261747465726965732f46434c4231392e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "FCLB19/data",
+            "type": "data"
+        }
+    ]
+}

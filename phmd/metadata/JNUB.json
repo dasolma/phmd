@@ -1,0 +1,149 @@
+{
+    "description": "The dataset, provided by Jiangnan University (JNU), encompasses three sets of bearing vibration data distinguished by different rotating speeds, all sampled at a rate of 50 kHz. Each set comprises one healthy state and three distinct fault modes: inner ring fault, outer ring fault, and rolling element fault. Thus, the dataset encompasses a total of four classes, representing one healthy state and three fault modes. In total, there are 12 experimental units, with half corresponding to the healthy condition and the remaining units evenly distributed among the three fault conditions.",
+    "designation": "Jiangnan University bearing dataset",
+    "publisher": "Jiangnan University",
+    "domain": "Mechanical component",
+    "application": "Bearing",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "split_by": [
+                "speed"
+            ],
+            "features": [
+                "vibration"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "health state",
+                "inner ring",
+                "outer ring",
+                "rolling element"
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "target_distribution": [
+                0.5,
+                0.16666666666666666,
+                0.16666666666666666,
+                0.16666666666666666
+            ],
+            "min_ts_len": 500500,
+            "num_units": 12,
+            "min_units_per_class": 3
+        }
+    },
+    "license": "CC BY 3.0",
+    "filters": {
+        "Speed": [
+            "600",
+            "800",
+            "1000"
+        ],
+        "Fault_mode": [
+            "health state",
+            "inner ring",
+            "outer ring",
+            "rolling element"
+        ]
+    },
+    "system": {
+        "type": "rotatory machine:fan system:motor:bearing",
+        "platform": "A diagnostic test was conducted on a Mitsubishi SB-JR inductor motor used in a centrifugal fan system. The motor, a 3.7 kW three-phase induction motor, had specific nameplate details, including Vmax of 220V, 4 pole pairs (P), and a rated speed (S) of 1,800 rpm. The test involved varying rotation speed from 400 to 800 rpm and adjusting the optional input voltage, while the torque on the rotating shaft was manipulated by randomly rubbing the timing belt. Vibration signals were measured using a PCB MA352A60 accelerometer with a bandwidth of 5 Hz to 60 kHz. \n\nThe accelerometer (PCB MA352A60) signals, representing normal and various fault states, were amplified by a PCB ICP Model 480C02 sensor signal conditioner and recorded using a Scope Coder DL750 with a sampling frequency of 50 kHz. Two types of roller bearings, N205 and NU205, were employed for the fault diagnosis test, with N205 used for normal, outer-race defect, and roller element defect states, and NU205 used specifically for the inner-race defect state.\n",
+        "fault component": "bearing (LDK UER204)",
+        "sampling frequency": "50 kHz",
+        "sampling time": "20 s",
+        "recording": "500500 samples each experiment",
+        "sensor": "PCB MA352A60"
+    },
+    "operating_conditions": {
+        "1": "400 rpm",
+        "2": "800 rpm",
+        "3": "1000 rpm"
+    },
+    "features": {
+        "vibration": {
+            "type": "vibration",
+            "description": ""
+        }
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "22MB",
+            "b) unzipped": "50MB",
+            "c) RAM": {
+                "Data set (full)": "40MB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Train set (full)": "3s"
+            },
+            "a) unzipped": {
+                "Train set (full)": "1s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Li, Ke, Xueliang Ping, Huaqing Wang, Peng Chen, and Yi Cao. \"Sequential fuzzy diagnosis method for motor roller bearing in variable operating conditions based on vibration analysis.\" Sensors 13, no. 6 (2013): 8013-8041.",
+        "bibitex": "@article{li2013sequential,\n  title={Sequential fuzzy diagnosis method for motor roller bearing in variable operating conditions based on vibration analysis},\n  author={Li, Ke and Ping, Xueliang and Wang, Huaqing and Chen, Peng and Cao, Yi},\n  journal={Sensors},\n  volume={13},\n  number={6},\n  pages={8013--8041},\n  year={2013},\n  publisher={Molecular Diversity Preservation International (MDPI)}\n}\n",
+        "manual_download": "https://github.com/ClarkGableWang/JNU-Bearing-Dataset",
+        "papers": {
+            "Tao, Hongfeng, et al.": "Tao, Hongfeng, et al. \"Unsupervised cross-domain rolling bearing fault diagnosis based on time-frequency information fusion.\" Journal of the Franklin Institute 360.2 (2023): 1454-1477.",
+            "Zhao, Zhibin, et al.": "Zhao, Zhibin, et al. \"Deep learning algorithms for rotating machinery intelligent diagnosis: An open source benchmark study.\" ISA transactions 107 (2020): 224-255."
+        }
+    },
+    "results": {
+        "Fault_mode": {
+            "Y Chen, et al.": {
+                "experiments": [
+                    {
+                        "technique": "Wavelet + Eigen vectors + Cross-Domain adaptation + Improved MMD",
+                        "results": {
+                            "Accuracy": "0.9689"
+                        }
+                    },
+                    {
+                        "technique": "Adaptive Batch Normalization for practical domain adaptation",
+                        "results": {
+                            "Accuracy": "0.6602"
+                        }
+                    },
+                    {
+                        "technique": "Multikernel MMD (MK-MMD)",
+                        "results": {
+                            "Accuracy": "0.9442"
+                        }
+                    },
+                    {
+                        "technique": "Domain-adversarial training of neural networks",
+                        "results": {
+                            "Accuracy": "0.9122"
+                        }
+                    }
+                ]
+            },
+            "Zhao, Zhibin, et al.": {
+                "experiments": [
+                    {
+                        "technique": "Frequency domain input + MaxMin Norm + MLP",
+                        "results": {
+                            "Accuracy": "0.9652"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "files": [
+        {
+            "name": "JNUBearing.zip",
+            "md5sum": "e2ba7038060da53bf50f5dc86454a50d2f323031332532304a4e5525323042656172696e67253230646174617365742f4a4e5542656172696e672e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "JNUBearing/",
+            "type": "data"
+        }
+    ]
+}

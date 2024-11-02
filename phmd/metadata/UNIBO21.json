@@ -1,0 +1,91 @@
+{
+    "description": "The UNIBO Powertools Dataset was collected in laboratory tests conducted by an Italian equipment manufacturer. These tests aimed to evaluate various cells intended for use in cleaning equipment such as vacuum cleaners and automated floor cleaners. The dataset, comprising 27 batteries, encompasses batteries from different manufacturers and cells with varying nominal capacities. Cycling was continued until the cell reached the end-of-life stage, providing insights into its performance at different lifespan intervals.",
+    "designation": "UNIBO Powertools Dataset",
+    "publisher": "University of Bologna",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "State of Charge": {
+            "identifier": [
+                "test_name"
+            ],
+            "target": "soc",
+            "features": [
+                "voltage",
+                "current",
+                "temperature"
+            ],
+            "type": "regression",
+            "num_units": 34,
+            "min_ts_len": 31666,
+            "nature": "time-series"
+        },
+        "Prognosis": {
+            "identifier": [
+                "test_name"
+            ],
+            "target": "rul",
+            "features": [
+                "voltage",
+                "current",
+                "temperature"
+            ],
+            "type": "regression",
+            "num_units": 19,
+            "min_ts_len": 108761,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "voltage": {
+            "type": "voltage",
+            "description": "Voltage"
+        },
+        "current": {
+            "type": "current",
+            "description": "Current"
+        },
+        "temperature": {
+            "type": "temperature",
+            "description": "Operating temperature"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "Bosello, Michael, Carlo Falcomer, Claudio Rossi, and Giovanni Pau. \"To Charge or to Sell? EV Pack Useful Life Estimation via LSTMs, CNNs, and Autoencoders.\" Energies 16, no. 6 (2023): 2837.",
+        "bibitex": "@Article{en16062837,\n    AUTHOR = {Bosello, Michael and Falcomer, Carlo and Rossi, Claudio and Pau, Giovanni},\n    TITLE = {To Charge or to Sell? EV Pack Useful Life Estimation via LSTMs, CNNs, and Autoencoders},\n    JOURNAL = {Energies},\n    VOLUME = {16},\n    YEAR = {2023},\n    NUMBER = {6},\n    ARTICLE-NUMBER = {2837},\n    URL = {https://www.mdpi.com/1996-1073/16/6/2837},\n    ISSN = {1996-1073},\n    DOI = {10.3390/en16062837}\n}",
+        "manual_download": "https://cris.unibo.it/handle/11585/849218",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "UNIBO21.zip",
+            "md5sum": "29a7a36fd5b295d655323d5a8dc0f2db2f32303231253230554e49424f253230506f776572746f6f6c73253230446174617365742f554e49424f32312e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "UNIBO21/data",
+            "type": "data"
+        }
+    ]
+}

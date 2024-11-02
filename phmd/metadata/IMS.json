@@ -1,0 +1,101 @@
+{
+    "description": "The dataset was obtained from the Center for Intelligent Maintenance Systems (IMS) at the University of Cincinnati and originated from a run-to-failure experiment featuring four bearings mounted on a loaded shaft weighing 6000 lbs and rotating at a constant speed of 2000 rpm. Three distinct subsets make up the dataset: the first set utilizes two high-precision accelerometers per bearing, while the second and third sets employ only one accelerometer. In this study, the second and third datasets, each containing four signal inputs from accelerometers, were utilized. Overall, there are three distinct experimental units present across the two sets.",
+    "designation": "IMS Bearing dataset",
+    "publisher": "Center for Intelligent Maintenance Systems",
+    "domain": "Mechanical component",
+    "application": "Bearing",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit",
+                "acc"
+            ],
+            "target": "rul",
+            "features": [
+                "acc1",
+                "acc2",
+                "acc3",
+                "acc4"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 20152320,
+            "num_units": 3,
+            "split_by": [
+                "unit"
+            ]
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "acc1": {
+            "type": "vibration",
+            "description": "Vibration signal of the bearing 1"
+        },
+        "acc2": {
+            "type": "vibration",
+            "description": "Vibration signal of the bearing 2"
+        },
+        "acc3": {
+            "type": "vibration",
+            "description": "Vibration signal of the bearing 3"
+        },
+        "acc4": {
+            "type": "vibration",
+            "description": "Vibration signal of the bearing 4"
+        }
+    },
+    "filters": {
+        "unit": [
+            1,
+            2,
+            3
+        ]
+    },
+    "system": {
+        "type": "rotatory machine:bearing",
+        "platform": "The bearing test rig hosts four test bearings on one shaft. The shaft is driven by an AC motor and coupled by rub belts. The rotation speed was kept constant at 2000 rpm. A radial load of 6000 lbs. is added to the shaft and bearing by a spring mechanism. All the bearings are force lubricated. An oil circulation system regulates the flow and the temperature of the lubricant. A magnetic plug installed in the oil feedback pipe collects debris from the oil as evidence of bearing degradation. The test will stop when the accumulated debris adhered to the magnetic plug exceeds a certain level and causes an electrical switch to close.",
+        "fault component": "4 Rexnord ZA-2115 double row bearings",
+        "sampling frequency": "20 KHz",
+        "recording": "20480 points (1 second) each 5-10 second",
+        "sensor": "PCB 353B33 High Sensitivity Quartz ICP + National Instruments DAQCard-6062E data acquisition card"
+    },
+    "resources": {
+        "storage": {
+            "a) zipped": "1.5GB",
+            "b) unzipped": "6.5GB",
+            "c) RAM": {
+                "Data set (full)": "7.7GB"
+            }
+        },
+        "load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "2min"
+            },
+            "a) unzipped": {
+                "Data set (full)": "1.37min"
+            }
+        }
+    },
+    "references": {
+        "citation": "J. Lee, H. Qiu, G. Yu, J. Lin, and Rexnord Technical Services (2007). IMS, University of Cincinnati. \"Bearing Data Set\", NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/project/prognostic-data-repository), NASA Ames Research Center, Moffett Field, CA",
+        "bibitex": "@article{lee2007ims,\n  title={IMS,\u201cUniversity of Cincinnati.\u201cBearing Data Set\u201d, NASA Ames Prognostics Data Repository},\n  author={Lee, Jay and Qiu, H and Yu, G and Lin, J and others},\n  journal={NASA Ames Research Center, Moffett Field, CA},\n  year={2007}\n}",
+        "manual_download": "https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/#bearing",
+        "papers": [
+            {
+                "": "",
+                "summary": ""
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "IMS.zip",
+            "md5sum": "b00bf4a11d62ab6dfa60339f84ea805d2f494d532e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "IMS/",
+            "type": "data"
+        }
+    ]
+}

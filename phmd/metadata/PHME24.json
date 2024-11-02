@@ -1,0 +1,152 @@
+{
+    "description": "",
+    "designation": "PHME 2024 Data Challenge Dataset",
+    "publisher": "PHME Society",
+    "domain": "Drive technology",
+    "application": "Servomotor",
+    "tasks": {
+        "RUL": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "time",
+                "pos_ref",
+                "pos_fbk",
+                "vel_ref",
+                "vel_fbk",
+                "fbk_dighall",
+                "fbk_digenc1",
+                "drv_prot_vubs",
+                "mot_prot_temp",
+                "fbk_cur_a",
+                "fbk_cur_b",
+                "fbk_cur_c",
+                "drv_prot_temp",
+                "fbk_vol_a",
+                "fbk_vol_b",
+                "fbk_vol_c",
+                "closing",
+                "opening"
+            ],
+            "type": "regression",
+            "num_units": 48,
+            "min_ts_len": 1024,
+            "normalize_output": false,
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "time": {
+            "type": "time",
+            "description": ""
+        },
+        "pos_ref": {
+            "type": "position",
+            "description": ""
+        },
+        "pos_fbk": {
+            "type": "position",
+            "description": ""
+        },
+        "vel_ref": {
+            "type": "velocity",
+            "description": ""
+        },
+        "vel_fbk": {
+            "type": "velocity",
+            "description": ""
+        },
+        "fbk_dighall": {
+            "type": "",
+            "description": ""
+        },
+        "fbk_digenc1": {
+            "type": "",
+            "description": ""
+        },
+        "drv_prot_vubs": {
+            "type": "",
+            "description": ""
+        },
+        "mot_prot_temp": {
+            "type": "temperature",
+            "description": ""
+        },
+        "fbk_cur_a": {
+            "type": "current",
+            "description": ""
+        },
+        "fbk_cur_b": {
+            "type": "current",
+            "description": ""
+        },
+        "fbk_cur_c": {
+            "type": "current",
+            "description": ""
+        },
+        "drv_prot_temp": {
+            "type": "temperature",
+            "description": ""
+        },
+        "fbk_vol_a": {
+            "type": "voltage",
+            "description": ""
+        },
+        "fbk_vol_b": {
+            "type": "voltage",
+            "description": ""
+        },
+        "fbk_vol_c": {
+            "type": "voltage",
+            "description": ""
+        },
+        "closing": {
+            "type": "boolean",
+            "description": ""
+        },
+        "opening": {
+            "type": "boolean",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "Danilo Giordano, Moncef Soualhi. (2024). \"PHME Data Challenge\". European conference of the prognostics and health management society.",
+        "manual_download": "https://github.com/PHME-Datachallenge/Data-Challenge-2024",
+        "bibitex": "@misc{phme24,\n\tauthor = {Danilo Giordano, Moncef Soualh},\n\ttitle = {PHME Data Challenge},\n\thowpublished = {\\url{https://github.com/PHME-Datachallenge/Data-Challenge-2024}},\n\tyear = {2024},\n\tnote = {[European conference of the prognostics and health management society.]},\n}",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHME24.zip",
+            "md5sum": "2bb73fb8f66c776e33a8f95789e0e8902f3230323425323050484d45253230446174612532304368616c6c656e67652f50484d4532342e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHME24/data",
+            "type": "data"
+        }
+    ]
+}

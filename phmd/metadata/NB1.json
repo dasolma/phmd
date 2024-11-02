@@ -1,0 +1,211 @@
+{
+    "description": "This dataset was gathered from a battery prognostics testbed located at the NASA Ames Prognostics Center of Excellence (PCoE). Li-ion batteries underwent three distinct operational profiles\u2014charge, discharge, and Electrochemical Impedance Spectroscopy (EIS)\u2014at various temperatures. Discharge processes were conducted at different current load levels until the battery voltage reached preset thresholds, some of which were intentionally set below the OEM recommendation of 2.7V to induce deep discharge aging effects. The batteries were subjected to repeated charge and discharge cycles, leading to accelerated aging until they met the end-of-life (EOL) criteria of a 30% fade in rated capacity (from 2 Ah to 1.4 Ah).",
+    "designation": "NASA - Li-ion Battery Aging Datasets",
+    "publisher": "NASA",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "mode",
+                "step",
+                "amb_temp",
+                "voltage_battery",
+                "current_battery",
+                "temp_battery",
+                "current_charge",
+                "voltage_charge",
+                "sense_current_real",
+                "sense_current_imag",
+                "battery_current_real",
+                "battery_current_imag",
+                "current_ratio_real",
+                "current_ratio_imag",
+                "battery_impedance_real",
+                "battery_impedance_imag",
+                "rectified_impedance_real",
+                "rectified_impedance_imag",
+                "re",
+                "rct"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 82987,
+            "num_units": 34
+        }
+    },
+    "license": "CC0",
+    "features": {
+        "step": {
+            "type": "",
+            "description": "0: charge, 1: discharge, 2: impedance"
+        },
+        "mode": {
+            "type": "",
+            "description": "operations type: 0=discharge, 1=charge, 2=impedance"
+        },
+        "amb_temp": {
+            "type": "temperature",
+            "description": "ambient temperature (degree C)"
+        },
+        "voltage_battery": {
+            "type": "voltage",
+            "description": "Battery terminal voltage (Volts)"
+        },
+        "current_battery": {
+            "type": "current",
+            "description": "Battery output current (Amps)"
+        },
+        "temp_battery": {
+            "type": "temperature",
+            "description": "Battery temperature (degree C)"
+        },
+        "current_charge": {
+            "type": "voltage",
+            "description": "Current measured at charger (Amps)"
+        },
+        "voltage_charge": {
+            "type": "current",
+            "description": "Voltage measured at charger (Volts)"
+        },
+        "sense_current_real": {
+            "type": "current",
+            "description": "Sense current (real and imaginary parts)"
+        },
+        "sense_current_imag": {
+            "type": "current",
+            "description": "Sense current (real and imaginary parts)"
+        },
+        "battery_current_real": {
+            "type": "current",
+            "description": "Battery current (real and imaginary parts)"
+        },
+        "battery_current_imag": {
+            "type": "current",
+            "description": "Battery current (real and imaginary parts)"
+        },
+        "current_ratio_real": {
+            "type": "current",
+            "description": " Ratio of the above currents (real and imaginary parts)"
+        },
+        "current_ratio_imag": {
+            "type": "current",
+            "description": " Ratio of the above currents (real and imaginary parts)"
+        },
+        "battery_impedance_real": {
+            "type": "impedance",
+            "description": "Battery impedance (Ohms) computed from raw data  (real and imaginary parts)"
+        },
+        "battery_impedance_imag": {
+            "type": "impedance",
+            "description": "Battery impedance (Ohms) computed from raw data  (real and imaginary parts)"
+        },
+        "rectified_impedance_real": {
+            "type": "impedance",
+            "description": "Calibrated and smoothed battery impedance (Ohms)"
+        },
+        "rectified_impedance_imag": {
+            "type": "impedance",
+            "description": "Calibrated and smoothed battery impedance (Ohms)"
+        },
+        "re": {
+            "type": "resistance",
+            "description": "Estimated electrolyte resistance (Ohms)"
+        },
+        "rct": {
+            "type": "resistance",
+            "description": "Estimated charge transfer resistance (Ohms) "
+        }
+    },
+    "filters": {
+        "unit": [
+            "B0005",
+            "B0006",
+            "B0007",
+            "B0018",
+            "B0025",
+            "B0026",
+            "B0027",
+            "B0028",
+            "B0029",
+            "B0030",
+            "B0031",
+            "B0032",
+            "B0033",
+            "B0034",
+            "B0036",
+            "B0038",
+            "B0039",
+            "B0040",
+            "B0041",
+            "B0042",
+            "B0043",
+            "B0044",
+            "B0045",
+            "B0046",
+            "B0047",
+            "B0048",
+            "B0049",
+            "B0050",
+            "B0051",
+            "B0052",
+            "B0053",
+            "B0054",
+            "B0055",
+            "B0056"
+        ],
+        "mode": [
+            "discharge",
+            "charge",
+            "impedance"
+        ]
+    },
+    "system": {
+        "1. type": " Li-ion batteries",
+        "2. sensors": "Voltmeter, ammeter and thermocouple sensor suite",
+        "3. batteries": "Commercially available Li-ion 18650 sized rechargeable batteries",
+        "4. others": "Custom Electrochemical Impedance Spectroscopy (EIS)"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "190MB",
+            "b) unzipped": "190MB",
+            "c) RAM": {
+                "Data set (full)": "3GB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "15s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "13s"
+            }
+        }
+    },
+    "references": {
+        "citation": "B. Saha and K. Goebel (2007). \"Battery Data Set\", NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/project/prognostic-data-repository), NASA Ames Research Center, Moffett Field, CA",
+        "bibitex": "@article{saha2007battery,\n  title={Battery data set},\n  author={Saha, Bhaskar and Goebel, Kai},\n  journal={NASA AMES prognostics data repository},\n  year={2007},\n  publisher={NASA Ames Research Center Moffett Field, CA, USA}\n}",
+        "manual_download": "https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/#battery",
+        "papers": [
+            {
+                "": "",
+                "summary": ""
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "NB1.zip",
+            "md5sum": "dfa40e2ab9dadbcd48b45136fcae02be2f4e42312e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "NB1",
+            "type": "data"
+        }
+    ]
+}

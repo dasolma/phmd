@@ -1,0 +1,114 @@
+{
+    "description": "The dataset presents induced failure test data conducted on the outer race, inner race, and rolling elements of a spherical roller bearing (FAG 22205E1KC3). Employing a \"5 x 3 Factorial\" experimental design, the study aimed to analyze five distinct failure levels (F0, F1, F2, F3, F4) across three key components (outer ring, inner ring, and rolling element). These experiments were conducted at a consistent operational speed of 500 rpm.\n\nIn the context of the study, the failure level \"F0\" signifies the normal condition of the bearing, for which three replicates were obtained. The extent of induced failure in each component (F1, F2, F3, F4) is quantified as the absolute difference between the original geometry and the induced failure, providing valuable insights into the bearing's performance under varying degrees of deterioration.\n\nThe dataset encompasses data collected from three accelerometers, with one specifically dedicated to monitoring the bearing undergoing induced failure.",
+    "designation": "UPM Bearing Database - Evaluation of isolated cases",
+    "publisher": "Polytechnic University of Madrid",
+    "domain": "Mechanical component",
+    "application": "Bearing",
+    "tasks": {
+        "Diagnosis fault component": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault_component",
+            "target_labels": [
+                "EE",
+                "IR",
+                "OR",
+                "RE"
+            ],
+            "features": [
+                "Rod_1",
+                "Rod_2",
+                "Rod_3"
+            ],
+            "type": "classification:multiclass",
+            "num_units": 15,
+            "min_ts_len": 2320000,
+            "min_units_per_class": 3,
+            "nature": "time-series"
+        },
+        "Diagnosis fault": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "EE_F0",
+                "OR_F1",
+                "IR_F1",
+                "RE_F1",
+                "OR_F2",
+                "IR_F2",
+                "RE_F2",
+                "IR_F3",
+                "RE_F3",
+                "RE_F3",
+                "OR_F4",
+                "IR_F4",
+                "RE_F4"
+            ],
+            "features": [
+                "Rod_1",
+                "Rod_2",
+                "Rod_3"
+            ],
+            "type": "classification:multiclass",
+            "num_units": 15,
+            "min_ts_len": 2320000,
+            "min_units_per_class": 1,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "Rod_1": {
+            "type": "vibration",
+            "description": "Accelerometer data"
+        },
+        "Rod_2": {
+            "type": "vibration",
+            "description": "Accelerometer data"
+        },
+        "Rod_3": {
+            "type": "vibration",
+            "description": "Accelerometer data"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "C\u00e9sar Ricardo Soto-Ocampo, Joaqu\u00edn Maroto, Juan David Cano-Moreno, & Jos\u00e9 Manuel Mera. (2023). Bearing database - Evaluation of isolated cases (Versi\u00f3n V1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.8241764",
+        "bibitex": "@misc{zenodoBearingDatabase,\n\tauthor = {C\u00e9sar Ricardo Soto-Ocampo, Joaqu\u00edn Maroto, Juan David Cano-Moreno, & Jos\u00e9 Manuel Mera.},\n\ttitle = {{B}earing database - {E}valuation of isolated cases --- zenodo.org},\n\thowpublished = {\\url{https://zenodo.org/records/8241764}},\n\tyear = {2023},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://zenodo.org/records/8241764",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "UPM23.zip",
+            "md5sum": "9f2a4b26264c20489a586628f1b1acf42f323032335f55504d5f42656172696e675f446174617365742f55504d32332e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "UPM23/",
+            "type": "data"
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "description": "The entire experimentation was performed with 3-AxisCNC EMCO Concept Mill 105. HSS twist drill bit of diameter 9 mm was used for drilling holes in the work piece made of Mild steel. For extensive experimentation, given a drill bit state, for each pair of varying feed rates and cutting speed combinations, a single vibration recording of 8 seconds was taken. Feed rate was varied as 4 mm/min, 8 mm/min and 12 mm/min, and Cutting speed was varied as 160rpm, 170rpm, 180rpm, 190rpm and 200rpm; giving a total of 15 combination pairs.\n",
+    "designation": "AIDAR Lab - Drill",
+    "publisher": "AIDAR Lab",
+    "application": "Drill",
+    "domain": "Manufacturing Process",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "vibration"
+            ],
+            "type": "classification:multiclass",
+            "target_labels": [
+                "flank wear",
+                "chisel wear",
+                "outer corner wear",
+                "perfect"
+            ],
+            "nature": "time-series",
+            "target_distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "min_ts_len": 262144,
+            "num_units": 45
+        },
+        "Stage Classification": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "stage",
+            "features": [
+                "vibration"
+            ],
+            "type": "classification:multiclass",
+            "target_labels": [
+                "feed",
+                "penetration"
+            ],
+            "nature": "time-series",
+            "target_distribution": [
+                0.875,
+                0.125
+            ],
+            "min_ts_len": 262144,
+            "num_units": 45
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "vibration": {
+            "type": "vibration",
+            "description": "Vibration signal"
+        },
+        "stage": {
+            "type": "status",
+            "description": "0: feed stage, 1: penetration stage"
+        }
+    },
+    "filters": {},
+    "system": {
+        "1. type": "Rotatory machine :  Drill",
+        "2. machine": "3-Axis CNC EMCO Concept Mill 105",
+        "3. sensors": "PCB 63001",
+        "4. adquisition board": "NI DAQ system consists of NI 9234 Signal Processing unit in conjunction with NI 9172 chassis connected to a Desktop PC"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "70M",
+            "b) unzipped": "296M",
+            "c) RAM": {
+                "Data set (full)": "800M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "30s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "30s"
+            }
+        }
+    },
+    "references": {
+        "citaton": "Verma, Nishchal K., Rahul K. Sevakula, Sonal Dixit, and Al Salour. \"Data driven approach for drill bit monitoring.\" IEEE Reliab. Mag (2015): 19-26.",
+        "bibitex": "@article{verma2015data,\n  title={Data driven approach for drill bit monitoring},\n  author={Verma, Nishchal K and Sevakula, Rahul K and Dixit, Sonal and Salour, Al},\n  journal={IEEE Reliab. Mag},\n  pages={19--26},\n  year={2015}\n}",
+        "manual_download": "https://www.iitk.ac.in/idea/datasets/",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "DFD15.zip",
+            "md5sum": "75790b4edb6e014b3ce9cf7508664df22f3230313525323041494441522532302d2532304472696c6c2532304661756c74253230446174617365742f4446442e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "DFD15/data",
+            "type": "data"
+        }
+    ]
+}

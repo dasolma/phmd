@@ -1,0 +1,181 @@
+{
+    "description": "This dataset is based on experiments conducted using a numerical simulator of a naval vessel (Frigate) equipped with a Gas Turbine (GT) propulsion plant. The simulator comprises various components, including the Propeller, Hull, GT, Gear Box, and Controller, which were developed and fine-tuned over a year using several similar real propulsion plants. The behavior of the propulsion system is characterized by ship speed, which is a linear function of the lever position (lp), as well as compressor degradation coefficient (kMc) and turbine degradation coefficient (kMt) parameters. Each possible degradation state can be described by a combination of these three parameters. The range of degradation for the compressor and turbine has been sampled using a uniform grid with a precision of 0.001. A series of measurements, consisting of 16 features, indirectly represent the state of the system subject to performance decay and have been acquired and stored in the dataset across the parameter space.",
+    "designation": "Condition Based Maintenance of Naval Propulsion Plants",
+    "publisher": " DIBRIS - University of Genoa",
+    "domain": "Drive technology",
+    "application": "Naval",
+    "tasks": {
+        "GS Compressor decay state coefficient": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "gcdsc",
+            "features": [
+                "lp",
+                "ss",
+                "gtst",
+                "gtror",
+                "ggror",
+                "spt",
+                "ppt",
+                "htet",
+                "gciat",
+                "gcoat",
+                "htep",
+                "gciap",
+                "gcoap",
+                "gtegp",
+                "tic",
+                "ff"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 11934,
+            "num_units": 1
+        },
+        "GT Turbine decay state coefficient": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "gtdsc",
+            "features": [
+                "lp",
+                "ss",
+                "gtst",
+                "gtror",
+                "ggror",
+                "spt",
+                "ppt",
+                "htet",
+                "gciat",
+                "gcoat",
+                "htep",
+                "gciap",
+                "gcoap",
+                "gtegp",
+                "tic",
+                "ff"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 11934,
+            "num_units": 1
+        }
+    },
+    "license": "CC BY 4.0",
+
+    "features": {
+        "lp": {
+            "type": "position",
+            "description": "Lever position (lp)"
+        },
+        "ss": {
+            "type": "speed",
+            "description": "Ship speed (v) [knots]"
+        },
+        "gtst": {
+            "type": "torque",
+            "description": " Gas Turbine shaft torque (GTT) [kN m]"
+        },
+        "gtror": {
+            "type": "speed",
+            "description": "Gas Turbine rate of revolutions (GTn) [rpm]"
+        },
+        "ggror": {
+            "type": "speed",
+            "description": "Gas Generator rate of revolutions (GGn) [rpm]"
+        },
+        "spt": {
+            "type": "torque",
+            "description": "Starboard Propeller Torque (Ts) [kN]"
+        },
+        "ppt": {
+            "type": "temperature",
+            "description": "Port Propeller Torque (Tp) [kN]"
+        },
+        "htet": {
+            "type": "temperature",
+            "description": "HP Turbine exit temperature (T48) [C]"
+        },
+        "gciat": {
+            "type": "temperature",
+            "description": "GT Compressor inlet air temperature (T1) [C]"
+        },
+        "gcoat": {
+            "type": "temperature",
+            "description": "GT Compressor outlet air temperature (T2) [C]"
+        },
+        "htep": {
+            "type": "pressure",
+            "description": "HP Turbine exit pressure (P48) [bar]"
+        },
+        "gciap": {
+            "type": "pressure",
+            "description": "GT Compressor inlet air pressure (P1) [bar]"
+        },
+        "gcoap": {
+            "type": "pressure",
+            "description": "GT Compressor outlet air pressure (P2) [bar]"
+        },
+        "gtegp": {
+            "type": "pressure",
+            "description": "Gas Turbine exhaust gas pressure (Pexh) [bar]"
+        },
+        "tic": {
+            "type": "",
+            "description": "Turbine Injecton Control (TIC) [%]"
+        },
+        "ff": {
+            "type": "flow",
+            "description": "Fuel flow (mf) [kg/s]"
+        },
+        "gcdsc": {
+            "type": "decay",
+            "description": "GT Compressor decay state coefficient"
+        },
+        "gtdsc": {
+            "type": "decay",
+            "description": " GT Turbine decay state coefficient"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "550K",
+            "b) unzipped": "3,4M",
+            "c) RAM": {
+                "Data set (full)": "100M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "5s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "5s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Coraddu, Andrea, Luca Oneto, Aessandro Ghio, Stefano Savio, Davide Anguita, and Massimo Figari. \"Machine learning approaches for improving condition-based maintenance of naval propulsion plants.\" Proceedings of the Institution of Mechanical Engineers, Part M: Journal of Engineering for the Maritime Environment 230, no. 1 (2016): 136-153.",
+        "bibitex": "@article{Coraddu2013Machine,\n    author={Coraddu, Andrea and Oneto, Luca and Ghio, Alessandro and \n                 Savio, Stefano and Anguita, Davide and Figari, Massimo},\n    title={Machine Learning Approaches for Improving Condition?Based Maintenance of Naval Propulsion Plants},\n    journal={Journal of Engineering for the Maritime Environment},\n    volume={--},\n    number={--},\n    pages={--},\n    year={2014}\n}",
+        "manual_download": "https://archive.ics.uci.edu/dataset/316/condition+based+maintenance+of+naval+propulsion+plants",
+        "papers": [
+            {
+                "A. Coraddu et al.": "A. Coraddu, L. Oneto, A. Ghio, S. Savio, D. Anguita, M. Figari, Machine Learning Approaches for Improving Condition?Based Maintenance of Naval Propulsion Plants, Journal of Engineering for the Maritime Environment, 2014, DOI: 10.1177/1475090214540874, (In Press)",
+                "M. Altosole et al.": "M. Altosole, G. Benvenuto, M. Figari, U. Campora, Real-time simulation of a cogag naval ship propulsion system, Proceedings of the Institution of Mechanical Engineers, Part M: Journal of Engineering for the Maritime Environment 223 (1) (2009) 47-62."
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "CBM14.zip",
+            "md5sum": "6fd609439e2a37fad985364353cf4ca42f323031342532305543492532302d253230436f6e646974696f6e25323042617365642532304d61696e74656e616e63652532306f662532304e6176616c25323050726f70756c73696f6e253230506c616e7473253230446174612532305365742f43424d31342e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "CBM14/",
+            "type": "data"
+        }
+    ]
+}

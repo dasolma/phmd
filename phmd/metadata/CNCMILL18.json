@@ -1,0 +1,305 @@
+{
+    "description": "A series of machining experiments were conducted on 2\" x 2\" x 1.5\" wax blocks using a CNC milling machine within the System-level Manufacturing and Automation Research Testbed (SMART) at the University of Michigan. These experiments aimed to analyze variations in tool condition, feed rate, and clamping pressure. Each experiment resulted in the creation of a finished wax part with an \"S\" shape carved into the top face, symbolizing smart manufacturing. General data collected from a total of 18 different experiments is utilized for tool wear detection purposes.",
+    "designation": "CNC Milling Tool Wear",
+    "publisher": "University of Michigan",
+    "domain": "Manufacturing Process",
+    "application": "Milling",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "wear",
+            "features": [
+                "X1_ActualPosition",
+                "X1_ActualVelocity",
+                "X1_ActualAcceleration",
+                "X1_CommandPosition",
+                "X1_CommandVelocity",
+                "X1_CommandAcceleration",
+                "X1_CurrentFeedback",
+                "X1_DCBusVoltage",
+                "X1_OutputCurrent",
+                "X1_OutputVoltage",
+                "X1_OutputPower",
+                "Y1_ActualPosition",
+                "Y1_ActualVelocity",
+                "Y1_ActualAcceleration",
+                "Y1_CommandPosition",
+                "Y1_CommandVelocity",
+                "Y1_CommandAcceleration",
+                "Y1_CurrentFeedback",
+                "Y1_DCBusVoltage",
+                "Y1_OutputCurrent",
+                "Y1_OutputVoltage",
+                "Y1_OutputPower",
+                "Z1_ActualPosition",
+                "Z1_ActualVelocity",
+                "Z1_ActualAcceleration",
+                "Z1_CommandPosition",
+                "Z1_CommandVelocity",
+                "Z1_CommandAcceleration",
+                "Z1_CurrentFeedback",
+                "Z1_DCBusVoltage",
+                "Z1_OutputCurrent",
+                "Z1_OutputVoltage",
+                "S1_ActualPosition",
+                "S1_ActualVelocity",
+                "S1_ActualAcceleration",
+                "S1_CommandPosition",
+                "S1_CommandVelocity",
+                "S1_CommandAcceleration",
+                "S1_CurrentFeedback",
+                "S1_DCBusVoltage",
+                "S1_OutputCurrent",
+                "S1_OutputVoltage",
+                "S1_OutputPower",
+                "S1_SystemInertia",
+                "M1_CURRENT_PROGRAM_NUMBER",
+                "M1_sequence_number",
+                "M1_CURRENT_FEEDRATE",
+                "Machining_Process"
+            ],
+            "type": "classification:binary",
+            "target_labels": [
+                "Unwear",
+                "wear"
+            ],
+            "num_units": 18,
+            "min_ts_len": 400,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC0: Public Domain",
+    "features": {
+        "X1_ActualPosition": {
+            "type": "position",
+            "description": "actual x position of part (mm)"
+        },
+        "X1_ActualVelocity": {
+            "type": "speed",
+            "description": "actual x velocity of part (mm/s)"
+        },
+        "X1_ActualAcceleration": {
+            "type": "acceleration",
+            "description": "actual x acceleration of part (mm/s/s)"
+        },
+        "X1_CommandPosition": {
+            "type": "position",
+            "description": "reference x position of part (mm)"
+        },
+        "X1_CommandVelocity": {
+            "type": "speed",
+            "description": "reference x velocity of part (mm/s)"
+        },
+        "X1_CommandAcceleration": {
+            "type": "acceleration",
+            "description": "reference x acceleration of part (mm/s/s)"
+        },
+        "X1_CurrentFeedback": {
+            "type": "",
+            "description": ""
+        },
+        "X1_DCBusVoltage": {
+            "type": "voltage",
+            "description": ""
+        },
+        "X1_OutputCurrent": {
+            "type": "current",
+            "description": ""
+        },
+        "X1_OutputVoltage": {
+            "type": "voltage",
+            "description": ""
+        },
+        "X1_OutputPower": {
+            "type": "power",
+            "description": ""
+        },
+        "Y1_ActualPosition": {
+            "type": "position",
+            "description": "actual y position of part (mm)"
+        },
+        "Y1_ActualVelocity": {
+            "type": "speed",
+            "description": "actual y velocity of part (mm/s)"
+        },
+        "Y1_ActualAcceleration": {
+            "type": "acceleration",
+            "description": "actual y acceleration of part (mm/s/s)"
+        },
+        "Y1_CommandPosition": {
+            "type": "position",
+            "description": "reference y position of part (mm)"
+        },
+        "Y1_CommandVelocity": {
+            "type": "speed",
+            "description": "reference y velocity of part (mm/s)"
+        },
+        "Y1_CommandAcceleration": {
+            "type": "acceleration",
+            "description": "reference y acceleration of part (mm/s/s)"
+        },
+        "Y1_CurrentFeedback": {
+            "type": "",
+            "description": ""
+        },
+        "Y1_DCBusVoltage": {
+            "type": "voltage",
+            "description": ""
+        },
+        "Y1_OutputCurrent": {
+            "type": "current",
+            "description": ""
+        },
+        "Y1_OutputVoltage": {
+            "type": "voltage",
+            "description": ""
+        },
+        "Y1_OutputPower": {
+            "type": "power",
+            "description": ""
+        },
+        "Z1_ActualPosition": {
+            "type": "position",
+            "description": "actual z position of part (mm)"
+        },
+        "Z1_ActualVelocity": {
+            "type": "speed",
+            "description": "actual z velocity of part (mm/s)"
+        },
+        "Z1_ActualAcceleration": {
+            "type": "acceleration",
+            "description": "actual z acceleration of part (mm/s/s)"
+        },
+        "Z1_CommandPosition": {
+            "type": "position",
+            "description": "reference z position of part (mm)"
+        },
+        "Z1_CommandVelocity": {
+            "type": "speed",
+            "description": "reference z velocity of part (mm/s)"
+        },
+        "Z1_CommandAcceleration": {
+            "type": "acceleration",
+            "description": "reference z acceleration of part (mm/s/s)"
+        },
+        "Z1_CurrentFeedback": {
+            "type": "",
+            "description": ""
+        },
+        "Z1_DCBusVoltage": {
+            "type": "voltage",
+            "description": ""
+        },
+        "Z1_OutputCurrent": {
+            "type": "current",
+            "description": ""
+        },
+        "Z1_OutputVoltage": {
+            "type": "voltage",
+            "description": ""
+        },
+        "S1_ActualPosition": {
+            "type": "position",
+            "description": "actual position of spindle (mm)"
+        },
+        "S1_ActualVelocity": {
+            "type": "speed",
+            "description": "actual velocity of spindle (mm/s)"
+        },
+        "S1_ActualAcceleration": {
+            "type": "acceleration",
+            "description": "actual acceleration of spindle (mm/s/s)"
+        },
+        "S1_CommandPosition": {
+            "type": "position",
+            "description": "reference position of spindle (mm)"
+        },
+        "S1_CommandVelocity": {
+            "type": "speed",
+            "description": "reference velocity of spindle (mm/s)"
+        },
+        "S1_CommandAcceleration": {
+            "type": "acceleration",
+            "description": "reference acceleration of spindle (mm/s/s)"
+        },
+        "S1_CurrentFeedback": {
+            "type": "",
+            "description": ""
+        },
+        "S1_DCBusVoltage": {
+            "type": "voltage",
+            "description": ""
+        },
+        "S1_OutputCurrent": {
+            "type": "current",
+            "description": ""
+        },
+        "S1_OutputVoltage": {
+            "type": "voltage",
+            "description": ""
+        },
+        "S1_OutputPower": {
+            "type": "power",
+            "description": ""
+        },
+        "S1_SystemInertia": {
+            "type": "torque",
+            "description": "torque inertia (kg*m^2)"
+        },
+        "M1_CURRENT_PROGRAM_NUMBER": {
+            "type": "",
+            "description": "number the program is listed under on the CNC"
+        },
+        "M1_sequence_number": {
+            "type": "",
+            "description": "line of G-code being executed"
+        },
+        "M1_CURRENT_FEEDRATE": {
+            "type": "",
+            "description": "instantaneous feed rate of spindle"
+        },
+        "Machining_Process": {
+            "type": "",
+            "description": "the current machining stage being performed. Includes preparation, tracing up  and down the \"S\" curve involving different layers, and repositioning of the spindle as it moves through the air to a certain starting point"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "1.6M",
+            "b) unzipped": "11M",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "5s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "5ss"
+            }
+        }
+    },
+    "references": {
+        "citation": "Kovalenko, Ilya, et al. \"SMART: A system-level manufacturing and automation research testbed.\" Smart and Sustainable Manufacturing Systems 1.1 (2017).",
+        "bibitex": "@article{kovalenko2017smart,\n  title={SMART: A system-level manufacturing and automation research testbed},\n  author={Kovalenko, Ilya and Saez, Miguel and Barton, Kira and Tilbury, Dawn},\n  journal={Smart and Sustainable Manufacturing Systems},\n  volume={1},\n  number={1},\n  year={2017}\n}\n",
+        "manual_download": "https://www.kaggle.com/datasets/shasun/tool-wear-detection-in-cnc-mill",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "CNCMILL18.zip",
+            "md5sum": "1d472da00cdea242fad0d54f9c2ae1482f323031382532304d6963686967616e253230434e432532304d696c6c253230546f6f6c253230576561722f434e434d494c4c31382e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "CNCMILL18/",
+            "type": "data"
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "description": "The dataset consists of readings gathered from a two-stage gearbox configuration. In the initial stage, there is a setup involving a 32-tooth gear and an 80-tooth gear attached to the input shaft. Following this, the second stage incorporates a 48-tooth gear and a 64-tooth gear. Control over the speed and torque of the gears is managed by a motor and a magnetic brake, respectively.\n\nNine distinct working conditions are introduced into the system by replacing the pinion on the first stage input shaft. These conditions include a healthy state as well as various types of faults such as missing tooth, root crack, spalling, and chipping tip, each at five different severity levels.\n\nAn accelerometer is utilized to capture the original vibration signals emitted by the gears, with a sampling frequency of 20 kHz. For each working condition, 104 samples are recorded, with each sample containing 3600 data points.",
+    "designation": "UoC Gear Fault Dataset",
+    "publisher": "University of Connecticut",
+    "domain": "Mechanical component",
+    "application": "Gear",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "acc"
+            ],
+            "target_labels": [
+                "healthy",
+                "missing",
+                "crack",
+                "spall",
+                "chip5a",
+                "chip4a",
+                "chip3a",
+                "chip2a",
+                "chip1a"
+            ],
+            "type": "classification:multiclass",
+            "target_distribution": [
+                0.11111111,
+                0.11111111,
+                0.11111111,
+                0.11111111,
+                0.11111111,
+                0.11111111,
+                0.11111111,
+                0.11111111,
+                0.11111111
+            ],
+            "num_units": 936,
+            "min_ts_len": 3600,
+            "min_units_per_class": 104,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "acc": {
+            "type": "vibration",
+            "description": "Accelerometer data"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "25M",
+            "b) unzipped": "25M",
+            "c) RAM": {
+                "Data set (full)": "500M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "10s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "10s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Cao, Pei, Shengli Zhang, and Jiong Tang. \"Preprocessing-free gear fault diagnosis using small datasets with deep convolutional neural network-based transfer learning.\" Ieee Access 6 (2018): 26241-26253.",
+        "bibitex": "@article{cao2018preprocessing,\n  title={Preprocessing-free gear fault diagnosis using small datasets with deep convolutional neural network-based transfer learning},\n  author={Cao, Pei and Zhang, Shengli and Tang, Jiong},\n  journal={Ieee Access},\n  volume={6},\n  pages={26241--26253},\n  year={2018},\n  publisher={IEEE}\n}",
+        "manual_download": "https://figshare.com/articles/dataset/Gear_Fault_Data/6127874/1",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "UoC18.zip",
+            "md5sum": "ec2db06f038787ebae8249b81ba826902f32303138253230556f43253230476561722532304661756c74253230446174617365742f556f4331382e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "UoC18/",
+            "type": "data"
+        }
+    ]
+}

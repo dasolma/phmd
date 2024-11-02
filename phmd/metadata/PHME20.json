@@ -1,0 +1,86 @@
+{
+    "description": "In this data challenge, participants were tasked with developing models to estimate the Remaining Useful Life (RUL) of a filtration system. The provided data consists of 'Run-to-Failure' records along with key condition monitoring parameters such as flow rate, upstream pressure (before the filter), and downstream pressure (after the filter). The data was generated under controlled conditions, with two main experimental variables: contamination particle size and concentration, which determine the solid-to-liquid ratio.\n\nThe experimental setup used to simulate filter clogging failure comprises several major components, including a pump, liquid tanks, tank stirrer, pulsation dampener, filter, pressure and flow rate sensors, and a data acquisition system connected to a computer.\n\nThis experimental rig forms a circuit where liquid flows from one tank to another through a filter. The circuit is equipped with sensors to monitor the flow rate and liquid pressure before and after the filter. The fluid injected into the system is a suspension containing Polyetheretherketone (PEEK) particles mixed with water at varying concentrations. To minimize flow pulsations, a dampener is incorporated into the circuit.\n\nMultiple experiments were conducted using suspensions with different particle sizes and concentrations. Specifically, for each particle size, four experiments were performed at varying concentrations.",
+    "designation": "PHM Data Challenge 2010 - Fluid filter RUL",
+    "publisher": "PHM Society",
+    "domain": "Manufacturing Process",
+    "application": "Fluid filter",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "Flow_Rate(ml/m)",
+                "Upstream_Pressure(psi)",
+                "Downstream_Pressure(psi)",
+                "Particle Size (micron)",
+                "Solid Ratio(%)"
+            ],
+            "type": "regression",
+            "num_units": 30,
+            "min_ts_len": 2000,
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "Flow_Rate(ml/m)": {
+            "type": "flow",
+            "description": "Flow_Rate(ml/m)"
+        },
+        "Upstream_Pressure(psi)": {
+            "type": "pressure",
+            "description": "Upstream_Pressure(psi)"
+        },
+        "Downstream_Pressure(psi)": {
+            "type": "pressure",
+            "description": "Downstream_Pressure(psi)"
+        },
+        "Particle Size (micron)": {
+            "type": "size",
+            "description": "Particle Size (micron)"
+        },
+        "Solid Ratio(%)": {
+            "type": "ratio",
+            "description": "Solid Ratio(%)"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+         "citation": "Ince, Kürşat, Engin Sirkeci, and Yakup Genç. \"Remaining useful life prediction for experimental filtration system: A data challenge.\" Phm society european conference. Vol. 5. No. 1. 2020.",
+         "manual_download": "https://github.com/zakkum42/phme20-public",
+         "bibitex": "@InProceedings{PHME20-GTU,\n    author = {Kürşat İnce and Engin Sirkeci and Yakup Genç},\n    title = {Remaining Useful Life Prediction for Experimental Filtration System: A Data Challenge},\n    booktitle = {Proceedings of the European Conference of the PHM Society 2020},\n    month = July,\n    year = 2020,\n    publisher = {PHM Society},\n    editor = {Anibal Bregon & Kamal Medjaher},\n    note = {Available at https://phmpapers.org/index.php/phme/article/view/1317}\n}",
+         "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHME20.zip",
+            "md5sum": "20efd9a0a415b6309f999cd827e5be142f3230323025323050484d4525323044617461253230436f6d7065746974696f6e2f50484d4532302e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHME20/",
+            "type": "data"
+        }
+    ]
+}

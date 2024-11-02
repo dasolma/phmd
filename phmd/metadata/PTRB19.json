@@ -1,0 +1,97 @@
+{
+    "description": "The dataset was gathered from experiments conducted at the DIRG Lab within the Department of Mechanical and Aerospace Engineering at Politecnico di Torino. It includes bearings exhibiting various degrees of damage, ranging from undamaged bearings to those with localized faults, such as indentations on either the inner ring or a single roller. These faults were intentionally induced using a Rockwell tool, resulting in conical indentations. The size of the affected area is characterized by its approximate measured diameter, which varies across the dataset (e.g., 150, 250, 450 micrometers). The bearings were subjected to different operating conditions, including varied speeds and loads, to assess their performance under realistic conditions.",
+    "designation": "Mechanical Analysis",
+    "publisher": "Politecnico di Torino",
+    "domain": "Mechanical component",
+    "application": "Bearing",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "NO",
+                "IR",
+                "RO"
+            ],
+            "features": [
+                "acc1_x",
+                "acc1_y",
+                "acc1_z",
+                "acc2_x",
+                "acc2_y",
+                "acc2_z"
+            ],
+            "type": "classification:multiclass",
+            "mum_units": 119,
+            "min_ts_len": 512000,
+            "min_units_per_class": 17,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "acc1_x": {
+            "type": "vibration",
+            "description": ""
+        },
+        "acc1_y": {
+            "type": "vibration",
+            "description": ""
+        },
+        "acc1_z": {
+            "type": "vibration",
+            "description": ""
+        },
+        "acc2_x": {
+            "type": "vibration",
+            "description": ""
+        },
+        "acc2_y": {
+            "type": "vibration",
+            "description": ""
+        },
+        "acc2_z": {
+            "type": "vibration",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "1.6GB",
+            "b) unzipped": "1.6GB",
+            "c) RAM": {
+                "Data set (full)": "3GB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": "40s"
+            }
+        }
+    },
+    "references": {
+        "citation": "A.P. Daga, A. Fasana, S. Marchesiello, L. Garibaldi, The Politecnico di Torino rolling bearing test rig: Description and analysis of open access data, Mechanical Systems and Signal Processing 120 (2019) 252\u2013273. doi:10.1016/j.ymssp.2018.10.010.",
+        "bibitex": "@article{daga2019politecnico,\n  title={The Politecnico di Torino rolling bearing test rig: Description and analysis of open access data},\n  author={Daga, Alessandro Paolo and Fasana, Alessandro and Marchesiello, Stefano and Garibaldi, Luigi},\n  journal={Mechanical Systems and Signal Processing},\n  volume={120},\n  pages={252--273},\n  year={2019},\n  publisher={Elsevier}\n}",
+        "manual_download": "https://zenodo.org/records/3559553",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PTRB19.zip",
+            "md5sum": "771eb2ee9677c3a6322ecf85b3aec3722f32303139253230506f6c697465636e69636f2532306469253230546f72696e6f253230726f6c6c696e6725323062656172696e672f5054524231392e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PTRB19/data",
+            "type": "data"
+        }
+    ]
+}

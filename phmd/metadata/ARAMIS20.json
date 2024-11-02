@@ -1,0 +1,106 @@
+{
+    "description": "This dataset was introduced for the ESREL2020-PSAM15 conference. It was generated through simulation of an industrial system consisting of four identical components connected together, where the mission times vary. Multiple instances of this system are deployed across different plants. The degradation of each of the four components within each system is modeled as a continuous-time stochastic process defined on a probability space. When the degradation surpasses a predetermined threshold, a component enters an abnormal condition, indicating more challenging operating conditions for the system without necessarily implying component failure.\n\nMonitoring the degradation levels involves the installation of ten sensors on each component, which measure a combination of degradation levels and operational status. These sensor signals are influenced by both the degradation levels and the operating conditions. Readings are taken at regular intervals.\n\nThe primary objective of this dataset is to develop a model capable of identifying the onset of abnormal conditions for each component or estimating the remaining duration of normal operation.",
+    "designation": "Aramis - Data Challenge 2020",
+    "publisher": "Aramis",
+    "domain": "Simulation",
+    "application": "Unknown",
+    "tasks": {
+        "Detection": {
+            "identifier": [
+                "component"
+            ],
+            "split_by": [
+                "unit"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "Normal",
+                "Abnormal"
+            ],
+            "features": [
+                "s0",
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9"
+            ],
+            "type": "classification:binary",
+            "target_distribution": [
+                0.9597933929897072,
+                0.04020660701029273
+            ],
+            "num_units": 800,
+            "min_ts_len": 896,
+            "nature": "time-series"
+        },
+        "Prognosis": {
+            "identifier": [
+                "component"
+            ],
+            "split_by": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "s0",
+                "s1",
+                "s2",
+                "s3",
+                "s4",
+                "s5",
+                "s6",
+                "s7",
+                "s8",
+                "s9"
+            ],
+            "type": "regression",
+            "num_units": 411,
+            "min_ts_len": 896,
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {},
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "73M",
+            "b) unzipped": "73M",
+            "c) RAM": {
+                "Data set (full)": "500M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "15s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "15s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Cannarile, F., Compare, M., Baraldi, P., Yang, Z., & Zio, E. (2020). The aramis challenge: prognostics and health management in evolving environments. Retrieved from ESREL2020-PSAM15: https://www. esrel2020-psam15. org/Aramis_Challenge. pdf.",
+        "bibitex": "@article{cannarile2020aramis,\n  title={The aramis challenge: prognostics and health management in evolving environments},\n  author={Cannarile, Francesco and Compare, Michele and Baraldi, Piero and Yang, Zhe and Zio, Enrico},\n  journal={Retrieved from ESREL2020-PSAM15: https://www. esrel2020-psam15. org/Aramis\\_Challenge. pdf},\n  year={2020}\n}",
+        "manual_download": "https://aramis3d.com/innovation-challenges/",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "ARAMIS20.zip",
+            "md5sum": "433be22c1a9d70afdeaf501610eba16d2f323032302532304152414d4953253230446174612532304368616c6c656e67652f4152414d495332302e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "ARAMIS20/",
+            "type": "data"
+        }
+    ]
+}

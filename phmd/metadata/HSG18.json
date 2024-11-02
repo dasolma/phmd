@@ -1,0 +1,74 @@
+{
+    "description": "This dataset originates from a 3-blade upwind V90 wind generator with a 3MW output. The sampling frequency for this dataset is set at 97,656Hz, with a shaft frequency of 30Hz and the gear mesh frequency is recorded at 960Hz. The dataset comprises 6 normal and 11 fault units. Dr. Eric Bechhoefer developed this dataset and has granted permission for its distribution.",
+    "designation": "SDOL Wind generator gear",
+    "publisher": "School of Aerospace & Mechanical Engineering, Korea Aerospace University",
+    "domain": "Mechanical component",
+    "application": "Gear",
+    "tasks": {
+        "Detection": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "vibration"
+            ],
+            "type": "classification:binary",
+            "target_labels": [
+                "normal",
+                "fault"
+            ],
+            "nature": "time-series",
+            "target_distribution": [
+                0.35294117647058826,
+                0.6470588235294118
+            ],
+            "min_ts_len": 585936,
+            "num_units": 17
+        }
+    },
+    "license": "CC BY-NC-SA 4.0",
+    "features": {
+        "vibration": {
+            "type": "vibration",
+            "descrition": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "75M",
+            "b) unzipped": "43M",
+            "c) RAM": {
+                "Data set (full)": "300M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "<1s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "<1s"
+            }
+        }
+    },
+    "references": {
+        "citation": "",
+        "bibitex": "@misc{key,\n\tauthor = {},\n\ttitle = {Gear datasets},\n\thowpublished = {\\url{https://www.kau-sdol.com/kaug}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://www.kau-sdol.com/kaug",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "HSG18.zip",
+            "md5sum": "f8d656c20b729799f6f8abed5fa60f732f3230313825323053444f4c2532304853253230476561722f48534731382e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "HSG18/",
+            "type": "data"
+        }
+    ]
+}

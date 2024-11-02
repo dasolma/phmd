@@ -1,0 +1,124 @@
+{
+    "description": "This battery dataset was compiled from experiments conducted on the Edge 540 Aircraft within a High-Intensity Radiated Field (HIRF) chamber, simulating flight conditions. The dataset captures changing working conditions over time. Experimental durations range from 1500 to 3000 seconds, resulting in a substantial amount of data due to the dataset's sampling frequency of 200 Hz.\n\nIncluded parameters for each unit comprise velocity, current, voltage, temperature, and state of charge (SOC). A Remaining Useful Life (RUL) task is established, triggered when the SOC falls below 40. It's noteworthy that the dataset contains null values, which have been replaced with the value -100 for consistency.",
+    "designation": "HIRF Battery",
+    "publisher": "NASA",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "rpm",
+                "20v",
+                "20c",
+                "20t",
+                "40v",
+                "40c",
+                "40t"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 438098,
+            "num_units": 179
+        },
+        "State of charge": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "soc",
+            "features": [
+                "rpm",
+                "20v",
+                "20c",
+                "20t",
+                "40v",
+                "40c",
+                "40t"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 438098,
+            "num_units": 179
+        }
+    },
+    "notes": "Null values are replace by -100",
+    "state": "Sent mail to christopher.a.teubert@nasa.gov requesting reference dataset document",
+    "license": "CC0",
+    "features": {
+        "rpm": {
+            "type": "speed",
+            "description": ""
+        },
+        "20v": {
+            "type": "voltage",
+            "description": ""
+        },
+        "40v": {
+            "type": "voltage",
+            "description": ""
+        },
+        "20c": {
+            "type": "current",
+            "description": ""
+        },
+        "40c": {
+            "type": "current",
+            "description": ""
+        },
+        "20t": {
+            "type": "temperature",
+            "description": ""
+        },
+        "40t": {
+            "type": "temperature",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {
+        "1. type": "Battery",
+        "2. platform": "Edge 540 T Rapid Evaluation e-UAV",
+        "3. fault component": "Battery"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "1.1GB",
+            "b) unzipped": "1.1GB",
+            "c) RAM": {
+                "Data set (full)": "40GB",
+                "Note": "Need to be optimized."
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": "90s"
+            }
+        }
+    },
+    "references": {
+        "citation": "C. Kulkarni, E. Hogge, C. Quach and K. Goebel \"HIRF Battery Data Set\", NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/project/prognostic-data-repository), NASA Ames Research Center, Moffett Field, CA",
+        "bibitex": "@misc{hrifkulkarni,\n\tauthor = {C. Kulkarni, E. Hogge, C. Quach and K. Goebel},\n\ttitle = {HIRF Battery Data Set},\n\thowpublished = {NASA Ames Prognostics Data Repository \\url{https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/}},\n\tyear = {http://ti.arc.nasa.gov/project/prognostic-data-repository},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "",
+        "papers": [
+            {
+                "Edward F. et al.": "Edward F. Hogge, Brian M. Bole, Sixto L. Vazquez, Jose Celaya,\"Verification of a Remaining Flying Time Prediction System for Small Electric Aircraft\", Annual Conference of the Prognostics and Health Management, PHM 2015"
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "HIRFNASA15.zip",
+            "md5sum": "8c7ccb38fba2f125f23ee977502c4d372f323031352532304e4153412532304849524625323042617474657279253230446174612532305365742f484952464e41534131352e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "HIRFNASA15/data",
+            "type": "data"
+        }
+    ]
+}

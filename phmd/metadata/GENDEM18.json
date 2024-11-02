@@ -1,0 +1,181 @@
+{
+    "description": "The Genesis Demonstrator, initially developed during the OPAK Project and later refined in the European IMPROVE project, serves as a portable pick-and-place system utilizing an air tank to power its gripping and storage units. It records 23 signals, including both continuous and discrete data.\n\nThe demonstrator's primary function is to sort different materials, specifically wood and metal, into their respective target locations. It comprises four modules\u2014storage magazine, sensor, metal storage, and wood storage\u2014which can be positioned interchangeably at any of the four stations. A linear drive equipped with a pneumatic gripper facilitates material transportation between stations, following a predefined procedure: idle, homing, move gripper to storage module, eject material, move gripper to storage position, close gripper to pick up material, move to sensor to detect material type, move to corresponding storage box, and open gripper to release material.\n\nIn this dataset, the drive is already homed, and the stations are arranged in the order: storage module, wood storage, metal storage, and sensor module. Three target values are provided: \"worked as intended\" (normal), \"slight impairment in lineardrive over time,\" and \"reduced air pressure over time.",
+    "designation": "Genesis Demonstrator",
+    "publisher": "Research Institut f\u00fcr industrielle Informationstechnik",
+    "application": "Pick-and-Place",
+    "domain": "Mechatronic system",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "MotorData.ActCurrent",
+                "MotorData.ActSpeed",
+                "MotorData.IsAcceleration",
+                "MotorData.IsForce",
+                "MotorData.Motor_Pos1reached",
+                "MotorData.Motor_Pos2reached",
+                "MotorData.Motor_Pos3reached",
+                "MotorData.Motor_Pos4reached",
+                "MotorData.SetAcceleration",
+                "MotorData.SetCurrent",
+                "MotorData.SetForce",
+                "MotorData.SetSpeed",
+                "NVL_Recv_Ind.GL_Metall",
+                "NVL_Recv_Ind.GL_NonMetall",
+                "NVL_Recv_Storage.GL_I_ProcessStarted",
+                "NVL_Recv_Storage.GL_I_Slider_IN",
+                "NVL_Recv_Storage.GL_I_Slider_OUT",
+                "NVL_Recv_Storage.GL_LightBarrier",
+                "NVL_Send_Storage.ActivateStorage",
+                "PLC_PRG.Gripper",
+                "PLC_PRG.MaterialIsMetal",
+                "NVL_Recv_Storage.GL_X_TimeSlideIn",
+                "NVL_Recv_Storage.GL_X_TimeSlideOut"
+            ],
+            "target_labels": [
+                "Normal",
+                "Lineardrive Impaired",
+                "Pressure reduced"
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "min_ts_len": 7425,
+            "min_units_per_class": 1
+        }
+    },
+    "license": "CC BY-NC-SA 4.0",
+    "features": {
+        "MotorData.ActCurrent": {
+            "type": "current",
+            "description": ""
+        },
+        "MotorData.ActSpeed": {
+            "type": "speed",
+            "description": ""
+        },
+        "MotorData.IsAcceleration": {
+            "type": "acceleration",
+            "description": ""
+        },
+        "MotorData.IsForce": {
+            "type": "force",
+            "description": ""
+        },
+        "MotorData.Motor_Pos1reached": {
+            "type": "position",
+            "description": ""
+        },
+        "MotorData.Motor_Pos2reached": {
+            "type": "position",
+            "description": ""
+        },
+        "MotorData.Motor_Pos3reached": {
+            "type": "position",
+            "description": ""
+        },
+        "MotorData.Motor_Pos4reached": {
+            "type": "position",
+            "description": ""
+        },
+        "MotorData.SetAcceleration": {
+            "type": "acceleration",
+            "description": ""
+        },
+        "MotorData.SetCurrent": {
+            "type": "current",
+            "description": ""
+        },
+        "MotorData.SetForce": {
+            "type": "force",
+            "description": ""
+        },
+        "MotorData.SetSpeed": {
+            "type": "speed",
+            "description": ""
+        },
+        "NVL_Recv_Ind.GL_Metall": {
+            "type": "",
+            "description": ""
+        },
+        "NVL_Recv_Ind.GL_NonMetall": {
+            "type": "",
+            "description": ""
+        },
+        "NVL_Recv_Storage.GL_I_ProcessStarted": {
+            "type": "",
+            "description": ""
+        },
+        "NVL_Recv_Storage.GL_I_Slider_IN": {
+            "type": "",
+            "description": ""
+        },
+        "NVL_Recv_Storage.GL_I_Slider_OUT": {
+            "type": "",
+            "description": ""
+        },
+        "NVL_Recv_Storage.GL_LightBarrier": {
+            "type": "",
+            "description": ""
+        },
+        "NVL_Send_Storage.ActivateStorage": {
+            "type": "",
+            "description": ""
+        },
+        "PLC_PRG.Gripper": {
+            "type": "",
+            "description": ""
+        },
+        "PLC_PRG.MaterialIsMetal": {
+            "type": "",
+            "description": ""
+        },
+        "NVL_Recv_Storage.GL_X_TimeSlideIn": {
+            "type": "",
+            "description": ""
+        },
+        "NVL_Recv_Storage.GL_X_TimeSlideOut": {
+            "type": "",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "246K",
+            "b) unzipped": "2M",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "5s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "5s"
+            }
+        }
+    },
+    "references": {
+        "citation": "von Birgelen, Alexander; Niggemann, Oliver: Anomaly Detection and Localization for Cyber-Physical Production Systems with Self-Organizing Maps. S.: 55-71, Springer Vieweg, Aug 2018.",
+        "bibitex": "@article{darban2022deep,\n  title={Deep learning for time series anomaly detection: A survey},\n  author={Darban, Zahra Zamanzadeh and Webb, Geoffrey I and Pan, Shirui and Aggarwal, Charu C and Salehi, Mahsa},\n  journal={arXiv preprint arXiv:2211.05244},\n  year={2022}\n}",
+        "manual_download": "https://www.kaggle.com/datasets/inIT-OWL/genesis-demonstrator-data-for-machine-learning?resource=download",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "GENDEM18",
+            "md5sum": "3fa1880cfa8f4fdc19ee2af0d10362482f3230313825323047656e6573697325323064656d6f6e73747261746f7225323064617461253230666f722532306d616368696e652532306c6561726e696e672f47454e44454d325f31382e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "GENDEM2_18/",
+            "type": "data"
+        }
+    ]
+}

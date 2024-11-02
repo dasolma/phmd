@@ -1,0 +1,259 @@
+{
+    "description": "This dataset focuses on assessing the condition of a hydraulic test rig using multisensor data. Four fault types (cooler, valve, pump, and accumulator) are introduced, each with various severity grades, making selective quantification challenging. A separate task is created for each fault type to classify the severity of the fault.\n\nThe test system is equipped with multiple sensors measuring process values, including pressure (PS1 - PS6), flow (FS1, FS2), temperature (TS1 - TS5), electrical power (EPS1), and vibration (VS1), all interfaced with standard industrial 20 mA current loops connected to a data acquisition system. Additionally, sensors for particle contamination (CS and MCS) and oil parameter monitoring (COPS) are integrated, utilizing digital EIA-232 and EIA-485 bus interfaces.",
+    "designation": "Condition monitoring of hydraulic systems Data Set",
+    "publisher": "ZeMA - Center for Mechatronics and Automation Technology Saarbr\u00fccken, Germany",
+    "domain": "Mechatronic system",
+    "application": "HS",
+    "tasks": {
+        "Cooler diagnosis": {
+            "identifier": [
+                "cycle"
+            ],
+            "target": "cooler",
+            "features": [
+                "ce",
+                "cp",
+                "eps1",
+                "fs1",
+                "fs2",
+                "ps1",
+                "ps2",
+                "ps3",
+                "ps4",
+                "ps5",
+                "ps6",
+                "se",
+                "ts1",
+                "ts2",
+                "ts3",
+                "ts4",
+                "vs1"
+            ],
+            "target_labels": [
+                3,
+                20,
+                100
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "min_ts_len": 6000,
+            "num_units": 2204
+        },
+        "Valve diagnosis": {
+            "identifier": [
+                "cycle"
+            ],
+            "target": "valve",
+            "features": [
+                "ce",
+                "cp",
+                "eps1",
+                "fs1",
+                "fs2",
+                "ps1",
+                "ps2",
+                "ps3",
+                "ps4",
+                "ps5",
+                "ps6",
+                "se",
+                "ts1",
+                "ts2",
+                "ts3",
+                "ts4",
+                "vs1"
+            ],
+            "target_labels": [
+                73,
+                80,
+                90,
+                100
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "min_ts_len": 6000,
+            "num_units": 2204
+        },
+        "Pump diagnosis": {
+            "identifier": [
+                "cycle"
+            ],
+            "target": "pump",
+            "features": [
+                "ce",
+                "cp",
+                "eps1",
+                "fs1",
+                "fs2",
+                "ps1",
+                "ps2",
+                "ps3",
+                "ps4",
+                "ps5",
+                "ps6",
+                "se",
+                "ts1",
+                "ts2",
+                "ts3",
+                "ts4",
+                "vs1"
+            ],
+            "target_labels": [
+                0,
+                1,
+                2
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "min_ts_len": 6000,
+            "num_units": 2204
+        },
+        "Accumulator diagnosis": {
+            "identifier": [
+                "cycle"
+            ],
+            "target": "accumulator",
+            "features": [
+                "ce",
+                "cp",
+                "eps1",
+                "fs1",
+                "fs2",
+                "ps1",
+                "ps2",
+                "ps3",
+                "ps4",
+                "ps5",
+                "ps6",
+                "se",
+                "ts1",
+                "ts2",
+                "ts3",
+                "ts4",
+                "vs1"
+            ],
+            "target_labels": [
+                90,
+                100,
+                115,
+                130
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "min_ts_len": 6000,
+            "num_units": 2204
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "ps1": {
+            "type": "pressure",
+            "description": "Pressure bar 100 Hz"
+        },
+        "ps2": {
+            "type": "pressure",
+            "description": "Pressure bar 100 Hz"
+        },
+        "ps3": {
+            "type": "pressure",
+            "description": "Pressure bar 100 Hz"
+        },
+        "ps4": {
+            "type": "pressure",
+            "description": "Pressure bar 100 Hz"
+        },
+        "ps5": {
+            "type": "pressure",
+            "description": "Pressure bar 100 Hz"
+        },
+        "ps6": {
+            "type": "pressure",
+            "description": "Pressure bar 100 Hz"
+        },
+        "eps1": {
+            "type": "power",
+            "description": "Motor power W 100 Hz"
+        },
+        "fs1": {
+            "type": "flow",
+            "description": "Volume flow l/min 10 Hz"
+        },
+        "fs2": {
+            "type": "flow",
+            "description": "Volume flow l/min 10 Hz"
+        },
+        "ts1": {
+            "type": "temperature",
+            "description": "Temperature \u00aaC 1 Hz"
+        },
+        "ts2": {
+            "type": "temperature",
+            "description": "Temperature \u00aaC 1 Hz"
+        },
+        "ts3": {
+            "type": "temperature",
+            "description": "Temperature \u00aaC 1 Hz"
+        },
+        "ts4": {
+            "type": "temperature",
+            "description": "Temperature \u00aaC 1 Hz"
+        },
+        "vs1": {
+            "type": "vibration",
+            "description": "Vibration mm/s 1 Hz"
+        },
+        "ce": {
+            "type": "",
+            "description": "Cooling efficiency (virtual) % 1 Hz"
+        },
+        "cp": {
+            "type": "power",
+            "description": "Cooling power (virtual) kW 1 Hz"
+        },
+        "se": {
+            "type": "",
+            "description": "Efficiency factor % 1 Hz"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "86M",
+            "b) unzipped": "531M",
+            "c) RAM": {
+                "Data set (full)": "9G"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "74s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "74s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Nikolai Helwig, Eliseo Pignanelli, Andreas Sch\ufffdtze, \ufffdCondition Monitoring of a Complex Hydraulic System Using Multivariate Statistics\ufffd, in Proc. I2MTC-2015 - 2015 IEEE International Instrumentation and Measurement Technology Conference, paper PPS1-39, Pisa, Italy, May 11-14, 2015, doi: 10.1109/I2MTC.2015.7151267. ",
+        "bibitex": "@inproceedings{helwig2015condition,\n  title={Condition monitoring of a complex hydraulic system using multivariate statistics},\n  author={Helwig, Nikolai and Pignanelli, Eliseo and Sch{\\\"u}tze, Andreas},\n  booktitle={2015 IEEE International Instrumentation and Measurement Technology Conference (I2MTC) Proceedings},\n  pages={210--215},\n  year={2015},\n  organization={IEEE}\n}",
+        "manual_download": "https://archive.ics.uci.edu/dataset/447/condition+monitoring+of+hydraulic+systems",
+        "papers": [
+            {
+                "Nikolai Helwig et al.": "Nikolai Helwig, Eliseo Pignanelli, Andreas Sch\ufffdtze, \ufffdCondition Monitoring of a Complex Hydraulic System Using Multivariate Statistics\ufffd, in Proc. I2MTC-2015 - 2015 IEEE International Instrumentation and Measurement Technology Conference, paper PPS1-39, Pisa, Italy, May 11-14, 2015, doi: 10.1109/I2MTC.2015.7151267.",
+                "N. Helwig et al.": "N. Helwig, A. Sch\ufffdtze, \ufffdDetecting and compensating sensor faults in a hydraulic condition monitoring system\ufffd, in Proc. SENSOR 2015 - 17th International Conference on Sensors and Measurement Technology, oral presentation D8.1, Nuremberg, Germany, May 19-21, 2015, doi: 10.5162/sensor2015/D8.1.",
+                "Tizian Schneider et al.": "Tizian Schneider, Nikolai Helwig, Andreas Sch\ufffdtze, \ufffdAutomatic feature extraction and selection for classification of cyclical time series data\ufffd, tm - Technisches Messen (2017), 84(3), 198\ufffd206, doi: 10.1515/teme-2016-0072."
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "HSF15.zip",
+            "md5sum": "8ee67383f01223721a0055a27365cfe82f323031352532305543492532302d253230507265646963746976652532304d61696e74656e616e63652532304f662532304879647261756c69637325323053797374656d2f48534631352e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "HSF15/",
+            "type": "data"
+        }
+    ]
+}

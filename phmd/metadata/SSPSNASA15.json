@@ -1,0 +1,92 @@
+{
+    "description": "The dataset comprises data collected from simulated experiments conducted on small satellite BP930 batteries utilizing the MACCOR system. Two BP930 batteries, labeled as PK31 and PK35, underwent continuous operation to simulate a satellite's operational profile for a single cycle. Prior to the experiment, the battery packs were charged to an initial voltage of approximately 8.35 V, corresponding to 100% State of Charge (SOC). Both battery packs were subjected to similar operating conditions and loading profiles throughout the experiments.",
+    "designation": "NASA Small Satellite Power Simulation",
+    "publisher": "NASA",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "voltage",
+                "current",
+                "temperature",
+                "capacity",
+                "energy"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 7540,
+            "num_units": 2
+        }
+    },
+    "license": "CC0",
+    "features": {
+        "voltage": {
+            "type": "voltage",
+            "description": "Voltage"
+        },
+        "current": {
+            "type": "current",
+            "description": "Current"
+        },
+        "temperature": {
+            "type": "temperature",
+            "description": "temperature"
+        },
+        "capacity": {
+            "type": "capacity",
+            "description": "Capacity"
+        },
+        "energy": {
+            "type": "energy",
+            "description": "Energy"
+        }
+    },
+    "filters": {},
+    "system": {
+        "1. type": "Battery",
+        "2. platform": "MACCOR 4000, BP930 batteries",
+        "3. fault component": "Battery"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "5M",
+            "b) unzipped": "5M",
+            "c) RAM": {
+                "Data set (full)": "200M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "5s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "5s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Z. Cameron, C. Kulkarni , A. Guarneros, K. Goebel, S. Poll , \u201cA Battery Certification Testbed for\nSmall Satellite Missions\" , IEEE AUTOTESTCON 2015, Nov 2-5, 2015, National Harbor, MA",
+        "bibitex": "@techreport{kulkarni2018description,\n  title={Description of simulated small satellite operation data sets},\n  author={Kulkarni, Chetan S and Guarneros Luna, Ali},\n  year={2018}\n}",
+        "manual_download": "https://data.nasa.gov/download/cpqc-ztjh/application%2Fzip",
+        "papers": [
+            {
+                "Sun, Fangzhou, et al": "Sun, Fangzhou, et al. \"A data driven health monitoring approach to extending small sats mission.\" Proceedings of the annual conference of the PHM society. Vol. 10. 2018."
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "SSPSNASA2015.zip",
+            "md5sum": "70c99a6da367e9b8bb769d565448bfed2f323031352532304e415341253230536d616c6c253230536174656c6c697465253230506f77657225323053696d756c6174696f6e253230446174612532305365742f535350534e415341323031352e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "SSPSNASA2015/data",
+            "type": "data"
+        }
+    ]
+}

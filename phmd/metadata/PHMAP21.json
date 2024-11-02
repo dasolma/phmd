@@ -1,0 +1,89 @@
+{
+    "description": "In this data challenge, participants were tasked with developing models to diagnose five different machine states. The monitored machine is an oil-injection screw compressor with a motor of 15 kW operating at 3,600 rpm and a screw rotating speed of 7,200 rpm. Two channels are captured during experiments: vibration from the motor and vibration from the screw. The data is gathered with a sampling rate of 10,544 samples per second.",
+    "designation": "PHM Asia Pacific Data Challenge 2021 - ",
+    "publisher": "PHM Society",
+    "domain": "Mechanical component",
+    "application": "Bearing",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "c1",
+                "c2"
+            ],
+            "target_labels": [
+                "normal",
+                "bearing",
+                "looseness",
+                "unbalance"
+            ],
+            "target_distribution": [
+                0.294487,
+                0.257696,
+                0.16659,
+                0.281227
+            ],
+            "type": "classification:multiclass",
+            "num_units": 9,
+            "min_ts_len": 10000,
+            "min_units_per_class": 2,
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "c1": {
+            "type": "vibration",
+            "description": "vibration from Motor"
+        },
+        "c2": {
+            "type": "vibration",
+            "description": "vibration from Screw"
+        }
+    },
+    "filters": {},
+    "system": {
+        "1. type": " Oil-injection screw compressor",
+        "2. machine": "Motor 15kW, Axis rotating speed of Motor: 3,600 rpm, Axis rotating speed of Screw: 7,200 rpm",
+        "3. sensors": "Channel 1: Measuring vibration from Motor. Channel 2: Measuring vibration from Screw",
+        "4. adquisition": "Sampling rate of Data Acquisition: 1. 10,544 samples per second"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "Seijun Chung, SeongyeopJeong. (2021). Data Challenge at PHM Asia Pacific 2021. Kaggle. https://kaggle.com/competitions/phmap21-classification-task",
+        "manual_download": "https://www.kaggle.com/c/phmap21-regression-task",
+        "bibitex": "@misc{phmap21,\n\tauthor = {Seijun Chung, SeongyeopJeong},\n\ttitle = {Data Challenge at PHM Asia Pacific 2021. Kaggle.},\n\thowpublished = {\\url{https://kaggle.com/competitions/phmap21-classification-task}},\n\tyear = {2021},\n\tnote = {},\n}",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHMAP21.zip",
+            "md5sum": "9b346fc0ed99851f4cc1f40dadd29ff52f3230323125323050484d4150253230446174612532304368616c6c656e67652f50484d415032312e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHMAP21/",
+            "type": "data"
+        }
+    ]
+}

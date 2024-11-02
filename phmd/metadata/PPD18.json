@@ -1,0 +1,186 @@
+{
+    "description": "This dataset is specifically geared towards predicting the condition of a crucial component within production lines. This component plays a pivotal role in ensuring the proper functioning of the plant and ultimately impacts the quality of the resulting products. The dataset comprises data from 10 run-to-failure experiments, with a focus on 8 features directly associated with the condition of the component. Notably, this dataset has been utilized in prior research endeavors, including projects such as IMPROVE.",
+    "designation": "One Year Industrial Component Degradation",
+    "publisher": "Research Institut f\u00fcr industrielle Informationstechnik",
+    "domain": "Production system",
+    "application": "Shrink-Wrapper",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "L_1",
+                "L_2",
+                "A_1",
+                "A_2",
+                "B_1",
+                "B_2",
+                "C_1",
+                "C_2",
+                "A_3",
+                "A_4",
+                "B_3",
+                "B_4",
+                "C_3",
+                "C_4",
+                "L_3",
+                "L_4",
+                "L_5",
+                "L_6",
+                "L_7",
+                "L_8",
+                "L_9",
+                "L_10",
+                "A_5",
+                "B_5",
+                "C_5"
+            ],
+            "type": "regression",
+            "num_units": 10,
+            "min_ts_len": 3921,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC BY-SA 3.0",
+    "features": {
+        "L_1": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "L_2": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "A_1": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "A_2": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "B_1": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "B_2": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "C_1": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "C_2": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "A_3": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "A_4": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "B_3": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "B_4": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "C_3": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "C_4": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "L_3": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "L_4": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "L_5": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "L_6": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "L_7": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "L_8": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "L_9": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "L_10": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "A_5": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "B_5": {
+            "type": "unkown",
+            "description": "Unkown"
+        },
+        "C_5": {
+            "type": "unkown",
+            "description": "Unkown"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "27M",
+            "b) unzipped": "100M",
+            "c) RAM": {
+                "Data set (full)": "400M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "5s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "5s"
+            }
+        }
+    },
+    "references": {
+        "citation": "von Birgelen, Alexander; Buratti, Davide; Mager, Jens; Niggemann, Oliver: Self-Organizing Maps for Anomaly Localization and Predictive Maintenance in Cyber-Physical Production Systems. In: 51st CIRP Conference on Manufacturing Systems (CIRP CMS 2018) CIRP-CMS, May 2018.",
+        "bibitex": "@article{von2018self,\n  title={Self-organizing maps for anomaly localization and predictive maintenance in cyber-physical production systems},\n  author={Von Birgelen, Alexander and Buratti, Davide and Mager, Jens and Niggemann, Oliver},\n  journal={Procedia cirp},\n  volume={72},\n  pages={480--485},\n  year={2018},\n  publisher={Elsevier}\n}",
+        "manual_download": "",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PPD18.zip",
+            "md5sum": "8e785cf48f7b9413c80918f1d10698b82f3230313825323050726f64756374696f6e253230506c616e7425323044617461253230666f72253230436f6e646974696f6e2532304d6f6e69746f72696e672f50504431382e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PPD18/data",
+            "type": "data"
+        }
+    ]
+}

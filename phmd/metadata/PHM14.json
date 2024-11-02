@@ -1,0 +1,1991 @@
+{
+    "description": "The challenge focused on assessing asset health, a critical aspect of industrial remote monitoring and diagnostics. The training data provided insights into various maintenance activities, each categorized by one of 14 unique codes. Two main tasks were identified: firstly, classifying whether a failure would happen within the next 1, 2, or 3 time units; and secondly, predicting the number of time units until failure.",
+    "designation": "PHM Data Challenge 2014",
+    "publisher": "PHM Society",
+    "domain": "Unknown",
+    "application": "Unknown",
+    "tasks": {
+        "Detection": {
+            "identifier": [
+                "asset"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "Not fail before 4 time units",
+                "Will fail within 3, 2 or 1 time units"
+            ],
+            "features": [
+                "use",
+                "r044",
+                "r064",
+                "r119",
+                "r193",
+                "r364",
+                "r396",
+                "r417",
+                "r446",
+                "r565",
+                "r575",
+                "r606",
+                "r707",
+                "r782",
+                "r783",
+                "p002198",
+                "p008845",
+                "p012500",
+                "p013883",
+                "p014307",
+                "p014833",
+                "p015803",
+                "p018573",
+                "p019689",
+                "p020879",
+                "p024715",
+                "p026652",
+                "p029089",
+                "p031042",
+                "p033555",
+                "p033967",
+                "p034735",
+                "p037714",
+                "p038306",
+                "p040338",
+                "p042094",
+                "p047997",
+                "p051019",
+                "p054714",
+                "p055675",
+                "p056180",
+                "p057202",
+                "p059346",
+                "p063882",
+                "p070081",
+                "p076279",
+                "p076398",
+                "p079223",
+                "p080596",
+                "p092029",
+                "p097048",
+                "p101351",
+                "p102391",
+                "p104786",
+                "p116338",
+                "p122093",
+                "p126129",
+                "p128575",
+                "p132423",
+                "p133495",
+                "p136018",
+                "p138126",
+                "p141972",
+                "p142899",
+                "p143092",
+                "p145387",
+                "p148011",
+                "p151920",
+                "p153152",
+                "p155650",
+                "p168211",
+                "p169237",
+                "p169319",
+                "p171997",
+                "p175561",
+                "p184111",
+                "p184448",
+                "p185505",
+                "p185807",
+                "p188984",
+                "p191136",
+                "p196543",
+                "p198769",
+                "p199956",
+                "p201954",
+                "p205280",
+                "p207776",
+                "p212006",
+                "p213263",
+                "p215292",
+                "p216538",
+                "p216996",
+                "p217347",
+                "p218221",
+                "p222344",
+                "p223858",
+                "p224501",
+                "p234345",
+                "p239078",
+                "p242285",
+                "p243705",
+                "p244950",
+                "p247468",
+                "p254506",
+                "p257228",
+                "p260989",
+                "p261176",
+                "p266703",
+                "p266768",
+                "p270789",
+                "p273404",
+                "p274715",
+                "p275022",
+                "p275049",
+                "p277780",
+                "p279943",
+                "p281663",
+                "p287532",
+                "p292945",
+                "p294400",
+                "p296367",
+                "p298683",
+                "p303353",
+                "p304460",
+                "p310158",
+                "p312587",
+                "p317242",
+                "p318604",
+                "p322912",
+                "p344158",
+                "p349163",
+                "p350796",
+                "p354352",
+                "p357852",
+                "p361646",
+                "p365405",
+                "p374736",
+                "p374906",
+                "p387583",
+                "p388177",
+                "p389654",
+                "p393562",
+                "p396485",
+                "p404610",
+                "p408457",
+                "p412437",
+                "p413461",
+                "p413860",
+                "p415207",
+                "p416250",
+                "p417714",
+                "p419706",
+                "p429641",
+                "p443697",
+                "p446624",
+                "p448484",
+                "p450631",
+                "p453114",
+                "p454021",
+                "p459171",
+                "p459334",
+                "p467150",
+                "p468678",
+                "p468683",
+                "p476637",
+                "p480830",
+                "p481975",
+                "p494788",
+                "p495671",
+                "p496373",
+                "p496832",
+                "p496974",
+                "p500741",
+                "p501319",
+                "p503442",
+                "p505805",
+                "p505829",
+                "p511278",
+                "p512898",
+                "p515160",
+                "p522810",
+                "p524837",
+                "p526851",
+                "p528448",
+                "p534842",
+                "p537311",
+                "p538314",
+                "p541163",
+                "p550041",
+                "p562437",
+                "p566684",
+                "p572629",
+                "p573388",
+                "p574507",
+                "p576971",
+                "p577372",
+                "p580844",
+                "p596803",
+                "p601500",
+                "p604227",
+                "p608962",
+                "p609595",
+                "p610186",
+                "p615206",
+                "p615464",
+                "p620810",
+                "p623291",
+                "p624838",
+                "p625295",
+                "p632374",
+                "p635329",
+                "p638328",
+                "p638976",
+                "p645215",
+                "p647182",
+                "p647686",
+                "p647981",
+                "p661977",
+                "p663583",
+                "p669023",
+                "p669315",
+                "p669353",
+                "p670208",
+                "p673601",
+                "p678273",
+                "p680358",
+                "p681264",
+                "p683319",
+                "p688927",
+                "p692017",
+                "p694396",
+                "p699165",
+                "p702744",
+                "p710741",
+                "p711803",
+                "p714569",
+                "p724378",
+                "p725025",
+                "p733162",
+                "p738107",
+                "p742780",
+                "p743462",
+                "p749841",
+                "p755581",
+                "p762395",
+                "p762562",
+                "p762803",
+                "p764767",
+                "p767519",
+                "p767887",
+                "p774666",
+                "p787793",
+                "p796304",
+                "p798235",
+                "p802412",
+                "p802628",
+                "p804669",
+                "p808631",
+                "p824622",
+                "p826017",
+                "p830267",
+                "p833911",
+                "p836003",
+                "p839776",
+                "p843990",
+                "p844732",
+                "p848168",
+                "p858290",
+                "p859862",
+                "p863084",
+                "p863792",
+                "p866901",
+                "p868115",
+                "p869079",
+                "p869084",
+                "p871502",
+                "p876224",
+                "p876824",
+                "p877415",
+                "p881494",
+                "p890038",
+                "p891938",
+                "p893071",
+                "p897539",
+                "p897979",
+                "p901860",
+                "p909619",
+                "p912690",
+                "p918273",
+                "p920258",
+                "p924984",
+                "p936429",
+                "p937261",
+                "p938728",
+                "p943515",
+                "p944012",
+                "p946191",
+                "p947398",
+                "p948794",
+                "p950723",
+                "p953340",
+                "p953658",
+                "p956438",
+                "p961494",
+                "p965352",
+                "p969767",
+                "p972393",
+                "p973700",
+                "p974388",
+                "p977544",
+                "p979959",
+                "p986861",
+                "p991287",
+                "p991825",
+                "p998342",
+                "p999688",
+                "other"
+            ],
+            "type": "classification:binary",
+            "nature": "time-series",
+            "target_distribution": [
+                0.9704240042691505,
+                0.029575995730849465
+            ],
+            "min_ts_len": 35,
+            "num_units": 1702,
+            "split_by": [
+                "asset"
+            ]
+        },
+        "Prognosis": {
+            "identifier": [
+                "asset"
+            ],
+            "target": "rul",
+            "features": [
+                "use",
+                "r044",
+                "r064",
+                "r119",
+                "r193",
+                "r364",
+                "r396",
+                "r417",
+                "r446",
+                "r565",
+                "r575",
+                "r606",
+                "r707",
+                "r782",
+                "r783",
+                "p002198",
+                "p008845",
+                "p012500",
+                "p013883",
+                "p014307",
+                "p014833",
+                "p015803",
+                "p018573",
+                "p019689",
+                "p020879",
+                "p024715",
+                "p026652",
+                "p029089",
+                "p031042",
+                "p033555",
+                "p033967",
+                "p034735",
+                "p037714",
+                "p038306",
+                "p040338",
+                "p042094",
+                "p047997",
+                "p051019",
+                "p054714",
+                "p055675",
+                "p056180",
+                "p057202",
+                "p059346",
+                "p063882",
+                "p070081",
+                "p076279",
+                "p076398",
+                "p079223",
+                "p080596",
+                "p092029",
+                "p097048",
+                "p101351",
+                "p102391",
+                "p104786",
+                "p116338",
+                "p122093",
+                "p126129",
+                "p128575",
+                "p132423",
+                "p133495",
+                "p136018",
+                "p138126",
+                "p141972",
+                "p142899",
+                "p143092",
+                "p145387",
+                "p148011",
+                "p151920",
+                "p153152",
+                "p155650",
+                "p168211",
+                "p169237",
+                "p169319",
+                "p171997",
+                "p175561",
+                "p184111",
+                "p184448",
+                "p185505",
+                "p185807",
+                "p188984",
+                "p191136",
+                "p196543",
+                "p198769",
+                "p199956",
+                "p201954",
+                "p205280",
+                "p207776",
+                "p212006",
+                "p213263",
+                "p215292",
+                "p216538",
+                "p216996",
+                "p217347",
+                "p218221",
+                "p222344",
+                "p223858",
+                "p224501",
+                "p234345",
+                "p239078",
+                "p242285",
+                "p243705",
+                "p244950",
+                "p247468",
+                "p254506",
+                "p257228",
+                "p260989",
+                "p261176",
+                "p266703",
+                "p266768",
+                "p270789",
+                "p273404",
+                "p274715",
+                "p275022",
+                "p275049",
+                "p277780",
+                "p279943",
+                "p281663",
+                "p287532",
+                "p292945",
+                "p294400",
+                "p296367",
+                "p298683",
+                "p303353",
+                "p304460",
+                "p310158",
+                "p312587",
+                "p317242",
+                "p318604",
+                "p322912",
+                "p344158",
+                "p349163",
+                "p350796",
+                "p354352",
+                "p357852",
+                "p361646",
+                "p365405",
+                "p374736",
+                "p374906",
+                "p387583",
+                "p388177",
+                "p389654",
+                "p393562",
+                "p396485",
+                "p404610",
+                "p408457",
+                "p412437",
+                "p413461",
+                "p413860",
+                "p415207",
+                "p416250",
+                "p417714",
+                "p419706",
+                "p429641",
+                "p443697",
+                "p446624",
+                "p448484",
+                "p450631",
+                "p453114",
+                "p454021",
+                "p459171",
+                "p459334",
+                "p467150",
+                "p468678",
+                "p468683",
+                "p476637",
+                "p480830",
+                "p481975",
+                "p494788",
+                "p495671",
+                "p496373",
+                "p496832",
+                "p496974",
+                "p500741",
+                "p501319",
+                "p503442",
+                "p505805",
+                "p505829",
+                "p511278",
+                "p512898",
+                "p515160",
+                "p522810",
+                "p524837",
+                "p526851",
+                "p528448",
+                "p534842",
+                "p537311",
+                "p538314",
+                "p541163",
+                "p550041",
+                "p562437",
+                "p566684",
+                "p572629",
+                "p573388",
+                "p574507",
+                "p576971",
+                "p577372",
+                "p580844",
+                "p596803",
+                "p601500",
+                "p604227",
+                "p608962",
+                "p609595",
+                "p610186",
+                "p615206",
+                "p615464",
+                "p620810",
+                "p623291",
+                "p624838",
+                "p625295",
+                "p632374",
+                "p635329",
+                "p638328",
+                "p638976",
+                "p645215",
+                "p647182",
+                "p647686",
+                "p647981",
+                "p661977",
+                "p663583",
+                "p669023",
+                "p669315",
+                "p669353",
+                "p670208",
+                "p673601",
+                "p678273",
+                "p680358",
+                "p681264",
+                "p683319",
+                "p688927",
+                "p692017",
+                "p694396",
+                "p699165",
+                "p702744",
+                "p710741",
+                "p711803",
+                "p714569",
+                "p724378",
+                "p725025",
+                "p733162",
+                "p738107",
+                "p742780",
+                "p743462",
+                "p749841",
+                "p755581",
+                "p762395",
+                "p762562",
+                "p762803",
+                "p764767",
+                "p767519",
+                "p767887",
+                "p774666",
+                "p787793",
+                "p796304",
+                "p798235",
+                "p802412",
+                "p802628",
+                "p804669",
+                "p808631",
+                "p824622",
+                "p826017",
+                "p830267",
+                "p833911",
+                "p836003",
+                "p839776",
+                "p843990",
+                "p844732",
+                "p848168",
+                "p858290",
+                "p859862",
+                "p863084",
+                "p863792",
+                "p866901",
+                "p868115",
+                "p869079",
+                "p869084",
+                "p871502",
+                "p876224",
+                "p876824",
+                "p877415",
+                "p881494",
+                "p890038",
+                "p891938",
+                "p893071",
+                "p897539",
+                "p897979",
+                "p901860",
+                "p909619",
+                "p912690",
+                "p918273",
+                "p920258",
+                "p924984",
+                "p936429",
+                "p937261",
+                "p938728",
+                "p943515",
+                "p944012",
+                "p946191",
+                "p947398",
+                "p948794",
+                "p950723",
+                "p953340",
+                "p953658",
+                "p956438",
+                "p961494",
+                "p965352",
+                "p969767",
+                "p972393",
+                "p973700",
+                "p974388",
+                "p977544",
+                "p979959",
+                "p986861",
+                "p991287",
+                "p991825",
+                "p998342",
+                "p999688",
+                "other"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 35,
+            "num_units": 1702
+        }
+    },
+    "license": "Public Available",
+    "features": {
+        "use": {
+            "type": "status",
+            "description": "Level of known use along the time"
+        },
+        "r044": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r064": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r119": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r193": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r364": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r396": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r417": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r446": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r565": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r575": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r606": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r707": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r782": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "r783": {
+            "type": "status",
+            "description": "Reason of replacements of parts"
+        },
+        "p002198": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p008845": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p012500": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p013883": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p014307": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p014833": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p015803": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p018573": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p019689": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p020879": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p024715": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p026652": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p029089": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p031042": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p033555": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p033967": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p034735": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p037714": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p038306": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p040338": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p042094": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p047997": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p051019": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p054714": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p055675": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p056180": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p057202": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p059346": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p063882": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p070081": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p076279": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p076398": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p079223": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p080596": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p092029": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p097048": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p101351": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p102391": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p104786": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p116338": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p122093": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p126129": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p128575": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p132423": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p133495": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p136018": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p138126": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p141972": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p142899": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p143092": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p145387": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p148011": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p151920": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p153152": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p155650": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p168211": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p169237": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p169319": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p171997": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p175561": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p184111": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p184448": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p185505": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p185807": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p188984": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p191136": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p196543": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p198769": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p199956": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p201954": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p205280": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p207776": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p212006": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p213263": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p215292": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p216538": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p216996": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p217347": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p218221": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p222344": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p223858": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p224501": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p234345": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p239078": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p242285": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p243705": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p244950": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p247468": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p254506": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p257228": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p260989": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p261176": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p266703": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p266768": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p270789": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p273404": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p274715": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p275022": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p275049": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p277780": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p279943": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p281663": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p287532": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p292945": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p294400": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p296367": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p298683": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p303353": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p304460": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p310158": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p312587": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p317242": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p318604": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p322912": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p344158": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p349163": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p350796": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p354352": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p357852": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p361646": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p365405": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p374736": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p374906": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p387583": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p388177": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p389654": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p393562": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p396485": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p404610": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p408457": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p412437": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p413461": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p413860": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p415207": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p416250": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p417714": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p419706": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p429641": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p443697": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p446624": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p448484": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p450631": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p453114": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p454021": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p459171": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p459334": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p467150": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p468678": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p468683": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p476637": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p480830": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p481975": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p494788": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p495671": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p496373": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p496832": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p496974": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p500741": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p501319": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p503442": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p505805": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p505829": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p511278": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p512898": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p515160": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p522810": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p524837": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p526851": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p528448": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p534842": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p537311": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p538314": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p541163": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p550041": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p562437": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p566684": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p572629": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p573388": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p574507": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p576971": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p577372": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p580844": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p596803": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p601500": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p604227": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p608962": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p609595": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p610186": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p615206": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p615464": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p620810": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p623291": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p624838": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p625295": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p632374": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p635329": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p638328": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p638976": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p645215": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p647182": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p647686": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p647981": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p661977": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p663583": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p669023": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p669315": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p669353": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p670208": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p673601": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p678273": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p680358": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p681264": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p683319": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p688927": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p692017": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p694396": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p699165": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p702744": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p710741": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p711803": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p714569": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p724378": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p725025": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p733162": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p738107": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p742780": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p743462": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p749841": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p755581": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p762395": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p762562": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p762803": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p764767": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p767519": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p767887": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p774666": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p787793": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p796304": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p798235": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p802412": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p802628": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p804669": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p808631": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p824622": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p826017": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p830267": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p833911": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p836003": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p839776": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p843990": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p844732": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p848168": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p858290": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p859862": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p863084": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p863792": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p866901": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p868115": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p869079": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p869084": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p871502": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p876224": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p876824": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p877415": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p881494": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p890038": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p891938": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p893071": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p897539": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p897979": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p901860": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p909619": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p912690": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p918273": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p920258": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p924984": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p936429": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p937261": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p938728": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p943515": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p944012": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p946191": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p947398": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p948794": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p950723": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p953340": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p953658": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p956438": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p961494": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p965352": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p969767": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p972393": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p973700": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p974388": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p977544": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p979959": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p986861": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p991287": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p991825": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p998342": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "p999688": {
+            "type": "counter",
+            "description": "Number of replacements of the part X"
+        },
+        "other": {
+            "type": "unkown",
+            "description": "Unkown"
+        }
+    },
+    "filters": {},
+    "system": {
+        "type": "Unkwon due to proprietary concerns"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "1,5MB",
+            "b) unzipped": "777MB",
+            "c) RAM": {
+                "Data set (full)": "5.7GB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "20sec"
+            },
+            "a) unzipped": {
+                "Data set (full)": "2:37min"
+            }
+        }
+    },
+    "references": {
+        "citation": "PHM Society, \u201c2014 PHM society conference data challenge | PHM Society,\u201d 2014. [Online]. Available: http://www.phmsociety.org/competition/phm/14.",
+        "bibitex": "@misc{phmsocietyAnnualConference,\n\tauthor = {},\n\ttitle = {{A}nnual {C}onference of the {P}rognostics and {H}ealth {M}anagement {S}ociety 2014 - {P}{H}{M} {S}ociety --- phmsociety.org},\n\thowpublished = {\\url{http://www.phmsociety.org/competition/phm/14}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://phmsociety.org/conference/annual-conference-of-the-phm-society/annual-conference-of-the-prognostics-and-health-management-society-2014/phm-data-challenge-2/",
+        "papers": [
+            {
+                "Rezvanizaniani et al.": "Rezvanizaniani, Seyed Mohammad, Jacob Dempsey, and Jay Lee. \"An effective predictive maintenance approach based on historical maintenance data using a probabilistic risk assessment: PHM14 data challenge.\" International Journal of Prognostics and Health Management 5.2 (2014).",
+                "Kim et al.": "Kim, Hyunjae, et al. \"Risk prediction of engineering assets: An ensemble of part lifespan calculation and usage classification methods.\" International Journal of Prognostics and Health Management 5.2 (2014)."
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHM14.zip",
+            "md5sum": "580b04359f205f33a9b203299dd5b45b2f3230313425323050484d253230446174612532304368616c6c656e67652f50484d31342e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHM14",
+            "type": "data"
+        }
+    ]
+}

@@ -1,0 +1,467 @@
+{
+    "description": "This dataset, initially employed in the IEEE data challenge of 2014, was sourced from a custom-built battery prognostics test bench at the FCLAB. The fuel batteries, rated at 1 kW, were subjected to dynamic current testing conditions. A ripple current of 70 A with 7 A oscillations at a frequency of 5 kHz was applied to the FC to simulate the impact of connecting a power converter to the FC stack output. Characterizations were conducted weekly (approximately every 160 hours) following a specific protocol: polarization curve test, global historic curves assessment, and Electrochemical Impedance Spectroscopy (EIS) measurement.\n\nDifferent RUL tasks are defined based on varying dropping thresholds (3.5%, 4.0%, 4.5%, 5.0%, and 5.5%) of Vin. Null values in the dataset are replaced by -1 for consistency.",
+    "designation": "PHM IEEE Data Challenge 2014 - Fuel Cell",
+    "publisher": "FCLAB Research Federation",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis (when drop of 3.5% Vin)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul35",
+            "features": [
+                "u1",
+                "u2",
+                "u3",
+                "u4",
+                "u5",
+                "utot",
+                "j",
+                "i",
+                "tinh2",
+                "touth2",
+                "tinair",
+                "toutair",
+                "tinwat",
+                "toutwat",
+                "pinair",
+                "poutair",
+                "pouth2",
+                "pinh2",
+                "dinh2",
+                "douth2",
+                "dinair",
+                "doutair",
+                "dwat",
+                "hrairfc"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 143862,
+            "num_units": 1
+        },
+        "Prognosis (when drop of 4.0% Vin)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul40",
+            "features": [
+                "u1",
+                "u2",
+                "u3",
+                "u4",
+                "u5",
+                "utot",
+                "j",
+                "i",
+                "tinh2",
+                "touth2",
+                "tinair",
+                "toutair",
+                "tinwat",
+                "toutwat",
+                "pinair",
+                "poutair",
+                "pouth2",
+                "pinh2",
+                "dinh2",
+                "douth2",
+                "dinair",
+                "doutair",
+                "dwat",
+                "hrairfc"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 143862,
+            "num_units": 1
+        },
+        "Prognosis (when drop of 4.5% Vin)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul45",
+            "features": [
+                "u1",
+                "u2",
+                "u3",
+                "u4",
+                "u5",
+                "utot",
+                "j",
+                "i",
+                "tinh2",
+                "touth2",
+                "tinair",
+                "toutair",
+                "tinwat",
+                "toutwat",
+                "pinair",
+                "poutair",
+                "pouth2",
+                "pinh2",
+                "dinh2",
+                "douth2",
+                "dinair",
+                "doutair",
+                "dwat",
+                "hrairfc"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 143862,
+            "num_units": 1
+        },
+        "Prognosis (when drop of 5.0% Vin)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul50",
+            "features": [
+                "u1",
+                "u2",
+                "u3",
+                "u4",
+                "u5",
+                "utot",
+                "j",
+                "i",
+                "tinh2",
+                "touth2",
+                "tinair",
+                "toutair",
+                "tinwat",
+                "toutwat",
+                "pinair",
+                "poutair",
+                "pouth2",
+                "pinh2",
+                "dinh2",
+                "douth2",
+                "dinair",
+                "doutair",
+                "dwat",
+                "hrairfc"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 143862,
+            "num_units": 1
+        },
+        "Prognosis (when drop of 5.5% Vin)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul55",
+            "features": [
+                "u1",
+                "u2",
+                "u3",
+                "u4",
+                "u5",
+                "utot",
+                "j",
+                "i",
+                "tinh2",
+                "touth2",
+                "tinair",
+                "toutair",
+                "tinwat",
+                "toutwat",
+                "pinair",
+                "poutair",
+                "pouth2",
+                "pinh2",
+                "dinh2",
+                "douth2",
+                "dinair",
+                "doutair",
+                "dwat",
+                "hrairfc"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 143862,
+            "num_units": 1
+        }
+    },
+
+    "license": "CC BY-NC-SA 3.0",
+
+    "features": {
+        "u1": {
+            "type": "voltage",
+            "description": "Single cells and stack voltage (V)"
+        },
+        "u2": {
+            "type": "voltage",
+            "description": "Single cells and stack voltage (V)"
+        },
+        "u3": {
+            "type": "voltage",
+            "description": "Single cells and stack voltage (V)"
+        },
+        "u4": {
+            "type": "voltage",
+            "description": "Single cells and stack voltage (V)"
+        },
+        "u5": {
+            "type": "voltage",
+            "description": "Single cells and stack voltage (V)"
+        },
+        "utot": {
+            "type": "voltage",
+            "description": "Single cells and stack voltage (V)"
+        },
+        "i": {
+            "type": "current",
+            "description": "Current (A) and current density (A/cm 2 )"
+        },
+        "j": {
+            "type": "current",
+            "description": "Current (A) and current density (A/cm 2 )"
+        },
+        "tinH2": {
+            "type": "temperature",
+            "description": "Inlet and Outlet temperatures of H2 (\u25e6C)"
+        },
+        "toutH2": {
+            "type": "temperature",
+            "description": "Inlet and Outlet temperatures of H2 (\u25e6C)"
+        },
+        "tinAIR": {
+            "type": "temperature",
+            "description": "Inlet and Outlet temperatures of Air (\u25e6C)"
+        },
+        "toutAIR": {
+            "type": "temperature",
+            "description": "Inlet and Outlet temperatures of Air (\u25e6C)"
+        },
+        "tinWAT": {
+            "type": "temperature",
+            "description": "Inlet and Outlet temp. of cooling Water (\u25e6C)"
+        },
+        "toutWAT": {
+            "type": "temperature",
+            "description": "Inlet and Outlet temp. of cooling Water (\u25e6C)"
+        },
+        "pinH2": {
+            "type": "pressure",
+            "description": "Inlet and Outlet Pressure of H2 (mbara)"
+        },
+        "poutH2": {
+            "type": "pressure",
+            "description": "Inlet and Outlet Pressure of H2 (mbara)"
+        },
+        "poutAIR": {
+            "type": "pressure",
+            "description": "Inlet and Outlet Pressure of Air (mbara)"
+        },
+        "pinAIR": {
+            "type": "pressure",
+            "description": "Inlet and Outlet Pressure of Air (mbara)"
+        },
+        "dinH2": {
+            "type": "flow",
+            "description": "Inlet and Outlet flow rate of H2 (l/mn)"
+        },
+        "doutH2": {
+            "type": "flow",
+            "description": "Inlet and Outlet flow rate of H2 (l/mn)"
+        },
+        "dinAIR": {
+            "type": "flow",
+            "description": "Inlet and Outlet flow rate of Air (l/mn)"
+        },
+        "doutAIR": {
+            "type": "flow",
+            "description": "Inlet and Outlet flow rate of Air (l/mn)"
+        },
+        "dWAT": {
+            "type": "flow",
+            "description": "Flow rate of cooling water (l/mn)"
+        },
+        "hrAIRFC": {
+            "type": "",
+            "description": "Inlet Hygrometry (Air) - estimated (%)"
+        }
+    },
+    "filters": {},
+    "system": {
+        "type": "Proton Exchange Membrane Fuel Cell (PEMFC)",
+        "sensors": "Voltmeter, ammeter and thermocouple sensor suite",
+        "others": "Custom Electrochemical Impedance Spectroscopy (EIS)",
+        "adittional info": "Fuel Cell 1 (without ripple) testing protocol:\n1. Electrochemical Impedance Spectra (EIS) performed before polarization at nominal current density (0.7A/cm²)\n2. Polarization curve from 0 to 1A/cm² of 1,000s\n3. EIS performed after polarization (0.7; 0.45; 0.20A/cm²)\nCharacterizations @ t = 0; 48; 185; 348; 515; 658; 823; 991h\nFuel Cell 2 (with ripples) testing protocol:\n1. Polarization curve from 0 to 1A/cm² of 1,000s\n2. EIS performed after polarization (0.7; 0.45; 0.20A/cm²)\nCharacterizations @ t = 0; 35; 182; 343; 515; 666; 830; 1016h"
+    },
+    "resources": {},
+    "references": {
+        "citation": "Mao, Lei; Jackson, Lisa (2016). IEEE 2014 Data Challenge Data. Loughborough University. Dataset. https://doi.org/10.17028/rd.lboro.3518141.v1",
+        "bibitex": "@misc{maoIEEE2014,\n\tauthor = {Mao, Lei; Jackson, Lisa},\n\ttitle = {{I}{E}{E}{E} 2014 {D}ata {C}hallenge {D}ata},\n\thowpublished = {\\url{https://doi.org/10.17028/rd.lboro.3518141.v1}},\n\tyear = {},\n\tnote = {[Accessed 01-10-2024]},\n}",
+        "manual_download": "https://doi.org/10.17028/rd.lboro.3518141.v1",
+        "papers": [
+            {
+                "Kimotho et al.": "Kimotho, James Kuria, Tobias Meyer, and Walter Sextro. \"PEM fuel cell prognostics using particle filter with model parameter adaptation.\" 2014 International conference on prognostics and health management. IEEE, 2014.",
+                "Zhang et al.": "Zhang, Rufeng, et al. \"Bi-directional gated recurrent unit recurrent neural networks for failure prognosis of proton exchange membrane fuel cells.\" International Journal of Hydrogen Energy 47.77 (2022): 33027-33038.",
+                "Liu et al.": "Liu, Jiawei, et al. \"Remaining useful life prediction of PEMFC based on long short-term memory recurrent neural networks.\" International Journal of Hydrogen Energy 44.11 (2019): 5470-5480.",
+                "H. Liu et al.": "Liu, Hao, et al. \"Remaining useful life estimation for proton exchange membrane fuel cells using a hybrid method.\" Applied Energy 237 (2019): 910-919.",
+                "He, Kai, et al.": "He, Kai, et al. \"Effectiveness of PEMFC historical state and operating mode in PEMFC prognosis.\" International Journal of Hydrogen Energy 45.56 (2020): 32355-32366.",
+                "Silva, R. E. et al.": "Silva, R. E., et al. \"Proton exchange membrane fuel cell degradation prediction based on adaptive neuro-fuzzy inference systems.\" International Journal of Hydrogen Energy 39.21 (2014): 11128-11144."
+            }
+        ]
+    },
+    "results": {
+        "rul": [
+            {
+                "Kimotho et al.": {
+                    "experiments": [
+                        {
+                            "technique": "Particle filtering with self-healing and parameter adaptation ensemble of five models (exponential, pure logarithmic, log-linear, linear, polynomial)",
+                            "results": {
+                                "%Err": [
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL when drop of 3.5% Vin",
+                                        "value": "-189.19"
+                                    },
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL when drop of 4.0% Vin",
+                                        "value": "0.075"
+                                    },
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL when drop of 4.5% Vin",
+                                        "value": "0.316"
+                                    },
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL when drop of 5.0% Vin",
+                                        "value": "0.713"
+                                    },
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL when drop of 5.5% Vin",
+                                        "value": "-0.618"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "Zhang et al.": {
+                    "experiments": [
+                        {
+                            "technique": "Bi-directional gated recursive unit (Bi-GRU)",
+                            "results": {
+                                "%Err": [
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL whe drop of 5.0% Vin; prediction time:  621",
+                                        "value": "0.120"
+                                    },
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL whe drop of 5.0% Vin; prediction time:  721",
+                                        "value": "0.029"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "Liu et al.": {
+                    "experiments": [
+                        {
+                            "technique": "Back Propagation Neural Network (BPNN)",
+                            "results": {
+                                "%Err": [
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL whe drop of 3.5% Vin; prediction time:  550",
+                                        "value": "29.23"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "H. Liu et al.": {
+                    "experiments": [
+                        {
+                            "technique": "Evolutionary algorithm and the adaptive neuro-fuzzy inference system (ANFIS) + semi-empirical degradation model and the proposed adaptive Unscented Kalman filter (AUKF)",
+                            "results": {
+                                "%Err": [
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL whe drop of 4% Vin; prediction time: 500",
+                                        "value": "0.0197"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "He, Kai, et al.": {
+                    "experiments": [
+                        {
+                            "technique": "Back Propagation Neural Network (BPNN) + adaptive neuro-fuzzy inference system (ANFIS)",
+                            "results": {
+                                "%Err": [
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL whe drop of 4% Vin; prediction time: 500",
+                                        "value": "0.0123"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "Silva, R. E. et al.": {
+                    "experiments": [
+                        {
+                            "technique": "Adaptive neuro-fuzzy inference system (ANFIS)",
+                            "results": {
+                                "%Err": [
+                                    {
+                                        "type": "unit",
+                                        "name": "FC2",
+                                        "params": "RUL whe drop of 4% Vin; prediction time: 500",
+                                        "value": "0.0263"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "files": [
+        {
+            "name": "IEEE14_train.zip",
+            "md5sum": "94b15b59f39de1fae922cf10d15fd7462f323031342532304945454525323050484d253230446174612532304368616c6c656e67652532302d2532304675656c25323043656c6c2f4945454531345f747261696e2e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "IEEE14/train",
+            "type": "train"
+        },
+        {
+            "name": "IEEE14_test.zip",
+            "md5sum": "4c48fb8790b7a2dde2a704b00c5613f82f323031342532304945454525323050484d253230446174612532304368616c6c656e67652532302d2532304675656c25323043656c6c2f4945454531345f746573742e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "IEEE14/test",
+            "type": "test"
+        }
+    ]
+}

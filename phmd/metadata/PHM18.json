@@ -1,0 +1,217 @@
+{
+    "description": "This dataset was created by initiating ion generation using an ion source. These ions are then guided through an electric field via grids set at precise voltages, resulting in the formation of an ion beam. This beam travels until it reaches the surface of a wafer, where it causes material removal upon impact. The wafer is positioned on a rotating fixture capable of tilting at different angles to align with the ion beam. Before the milling process commences, a shutter mechanism is employed to shield the wafer from the ion beam.\n\nIn order to maintain optimal operating conditions, a helium/water system known as flowcool is utilized to cool the wafer. Helium gas circulates behind the wafer at a carefully controlled flow rate, with cooling achieved indirectly through a water system. An o-ring situated between the wafer and fixture ensures that flowcool gas remains isolated from the ion mill vacuum chamber.\n\nDespite these measures, the system is susceptible to various issues, such as leaks between the flowcool and ion mill chambers, as well as fluctuations in flowcool pressure, which can either be too low or too high.",
+    "designation": "PHM Data Challenge 2018 - Ion Mill in Waver Manufacturing",
+    "publisher": "PHM Society - NASA",
+    "domain": "Materials",
+    "application": "Ion Mill",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "stage",
+                "Lot",
+                "runnum",
+                "recipe",
+                "recipe_step",
+                "IONGAUGEPRESSURE",
+                "ETCHBEAMVOLTAGE",
+                "ETCHBEAMCURRENT",
+                "ETCHSUPPRESSORVOLTAGE",
+                "ETCHSUPPRESSORCURRENT",
+                "FLOWCOOLFLOWRATE",
+                "FLOWCOOLPRESSURE",
+                "ETCHGASCHANNEL1READBACK",
+                "ETCHPBNGASREADBACK",
+                "FIXTURETILTANGLE",
+                "ROTATIONSPEED",
+                "ACTUALROTATIONANGLE",
+                "FIXTURESHUTTERPOSITION",
+                "ETCHSOURCEUSAGE",
+                "ETCHAUXSOURCETIMER",
+                "ETCHAUX2SOURCETIMER",
+                "ACTUALSTEPDURATION"
+            ],
+            "target_labels": [
+                "FlowCool Pressure Dropped Below Limit",
+                "Flowcool Pressure Too High Check Flowcool Pump",
+                "Flowcool leak"
+            ],
+            "target_distribution": [
+                0.61391881,
+                0.27257664,
+                0.11350456
+            ],
+            "type": "classification:multiclass",
+            "num_units": 1207,
+            "min_ts_len": 1000,
+            "nature": "time-series"
+        },
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "stage",
+                "Lot",
+                "runnum",
+                "recipe",
+                "recipe_step",
+                "IONGAUGEPRESSURE",
+                "ETCHBEAMVOLTAGE",
+                "ETCHBEAMCURRENT",
+                "ETCHSUPPRESSORVOLTAGE",
+                "ETCHSUPPRESSORCURRENT",
+                "FLOWCOOLFLOWRATE",
+                "FLOWCOOLPRESSURE",
+                "ETCHGASCHANNEL1READBACK",
+                "ETCHPBNGASREADBACK",
+                "FIXTURETILTANGLE",
+                "ROTATIONSPEED",
+                "ACTUALROTATIONANGLE",
+                "FIXTURESHUTTERPOSITION",
+                "ETCHSOURCEUSAGE",
+                "ETCHAUXSOURCETIMER",
+                "ETCHAUX2SOURCETIMER",
+                "ACTUALSTEPDURATION"
+            ],
+            "type": "regression",
+            "num_units": 1207,
+            "min_ts_len": 1000,
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "stage": {
+            "type": "status",
+            "description": ""
+        },
+        "Lot": {
+            "type": "position",
+            "description": ""
+        },
+        "runnum": {
+            "type": "",
+            "description": ""
+        },
+        "recipe": {
+            "type": "",
+            "description": ""
+        },
+        "recipe_step": {
+            "type": "status",
+            "description": ""
+        },
+        "IONGAUGEPRESSURE": {
+            "type": "pressure",
+            "description": ""
+        },
+        "ETCHBEAMVOLTAGE": {
+            "type": "voltage",
+            "description": ""
+        },
+        "ETCHBEAMCURRENT": {
+            "type": "current",
+            "description": ""
+        },
+        "ETCHSUPPRESSORVOLTAGE": {
+            "type": "voltage",
+            "description": ""
+        },
+        "ETCHSUPPRESSORCURRENT": {
+            "type": "current",
+            "description": ""
+        },
+        "FLOWCOOLFLOWRATE": {
+            "type": "flow",
+            "description": ""
+        },
+        "FLOWCOOLPRESSURE": {
+            "type": "pressure",
+            "description": ""
+        },
+        "ETCHGASCHANNEL1READBACK": {
+            "type": "",
+            "description": ""
+        },
+        "ETCHPBNGASREADBACK": {
+            "type": "",
+            "description": ""
+        },
+        "FIXTURETILTANGLE": {
+            "type": "angle",
+            "description": ""
+        },
+        "ROTATIONSPEED": {
+            "type": "speed",
+            "description": ""
+        },
+        "ACTUALROTATIONANGLE": {
+            "type": "rotation",
+            "description": ""
+        },
+        "FIXTURESHUTTERPOSITION": {
+            "type": "position",
+            "description": ""
+        },
+        "ETCHSOURCEUSAGE": {
+            "type": "status",
+            "description": ""
+        },
+        "ETCHAUXSOURCETIMER": {
+            "type": "",
+            "description": ""
+        },
+        "ETCHAUX2SOURCETIMER": {
+            "type": "",
+            "description": ""
+        },
+        "ACTUALSTEPDURATION": {
+            "type": "duration",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "4.1G",
+            "b) unzipped": "28G",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "10min"
+            },
+            "a) unzipped": {
+                "Data set (full)": "7min"
+            }
+        }
+    },
+    "references": {
+        "citation": "PHM Society, \u201c2018 PHM society conference data challenge | PHM Society,\u201d 2018. [Online]. Available: http://www.phmsociety.org/competition/phm/18.",
+        "bibitex": "@misc{phmsocietyAnnualConference,\n\tauthor = {},\n\ttitle = {{A}nnual {C}onference of the {P}rognostics and {H}ealth {M}anagement {S}ociety 2018 - {P}{H}{M} {S}ociety --- phmsociety.org},\n\thowpublished = {\\url{http://www.phmsociety.org/competition/phm/18}},\n\tyear = {},\n\tnote = {[Accessed 08-04-2024]},\n}",
+        "manual_download": "https://drive.google.com/file/d/15Jx9Scq9FqpIGn8jbAQB_lcHSXvIoPzb",
+        "papers": [
+            {
+                "Huang, Wei, et al.": "Huang, Wei, Hamed Khorasgani, Chetan Gupta, Ahmed Farahat, and Shuai Zheng. \"Remaining useful life estimation for systems with abrupt failures.\" In Annual conference of the PHM society. September, pp. 24-27. 2018."
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PHM18.zip",
+            "md5sum": "6cd09f2f8a43577b8bcb2d1c6c4f5b222f3230313825323050484d253230446174612532304368616c6c656e67652f50484d31382e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PHM18/train",
+            "type": "data"
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "description": "The NASA Randomized dataset includes data from 28 lithium cobalt oxide 18,650 cells with a nominal capacity of 2.2 Ah. These cells underwent continuous charging and discharging cycles with specific profiles. Every 50 cycles, reference charging and discharging cycles were performed to evaluate battery health. The batteries are grouped into 7 categories, each comprising 4 cells, based on the charge/discharge profile and temperature conditions.\n\nDistinct charge/discharge profiles, such as random walk (RW) and skewed RW, where current selection follows a custom probability distribution, are utilized. Batteries operate at either room temperature or 40\u00b0C, depending on the group. Each group exhibits variations in charging duration, discharge voltage, and current sequences, reflecting diverse operational scenarios. This dataset offers valuable insights for analyzing battery performance under various conditions.",
+    "additional info": "1. **RW1, RW2, RW7, RW8:**\n   - Random duration charging (0.5 to 3 h) followed by discharge to 3.2 V.\n   - Randomized sequence of currents between 0.5 A and 4 A.\n   - Discharge random profile is the RW.\n   - Setpoint loaded every 5 minutes.\n   - Operated at room temperature.\n\n2. **RW3, RW4, RW5, RW6:**\n   - Charged to 4.2 V, then discharged to 3.2 V.\n   - Randomized sequence of currents between 0.5 A and 4 A.\n   - Discharge random profile is the RW.\n   - Setpoint loaded every 5 minutes.\n   - Operated at room temperature.\n\n3. **RW9, RW10, RW11, RW12:**\n   - Repeated charging and discharging with currents between -4.5 A and 4.5 A.\n   - Charge and discharge random profile is the RW.\n   - Setpoint loaded every 5 minutes.\n   - Operated at room temperature.\n\n4. **RW13, RW14, RW15, RW16:**\n   - Charged to 4.2 V, then discharged to 3.2 V.\n   - Randomized sequence of currents between 0.5 A and 5 A.\n   - Random profile is the skewed high RW.\n   - Setpoint loaded every 1 minute.\n   - Operated at room temperature.\n\n5. **RW17, RW18, RW19, RW20:**\n   - Charged to 4.2 V, then discharged to 3.2 V.\n   - Randomized sequence of currents between 0.5 A and 5 A.\n   - Random profile is the skewed low RW.\n   - Setpoint loaded every 1 minute.\n   - Operated at room temperature.\n\n6. **RW21, RW22, RW23, RW24:**\n   - Charged to 4.2 V, then discharged to 3.2 V.\n   - Randomized sequence of currents between 0.5 A and 5 A.\n   - Random profile is the skewed low RW.\n   - Setpoint loaded every 1 minute.\n   - Operated at 40\u00b0C temperature.\n\n7. **RW25, RW26, RW27, RW28:**\n   - Charged to 4.2 V, then discharged to 3.2 V.\n   - Randomized sequence of currents between 0.5 A and 5 A.\n   - Random profile is the skewed high RW.\n   - Setpoint loaded every 1 minute.\n   - Operated at 40\u00b0C temperature.",
+    "designation": "NASA - Randomized Battery Usage Data Set",
+    "publisher": "NASA",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "voltage",
+                "current",
+                "temperature"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 612037,
+            "num_units": 22
+        },
+        "Prognosis (ah)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "ahRul",
+            "features": [
+                "voltage",
+                "current",
+                "temperature"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 612037,
+            "num_units": 22
+        }
+    },
+    "license": "CC0",
+    "features": {
+        "voltage": {
+            "type": "voltage",
+            "description": "Voltage"
+        },
+        "current": {
+            "type": "current",
+            "description": "Current"
+        },
+        "temperature": {
+            "type": "temperature",
+            "description": "Operating temperature"
+        }
+    },
+    "filters": {
+        "unit": [
+            "RW4",
+            "RW5",
+            "RW6",
+            "RW1",
+            "RW2",
+            "RW7",
+            "RW8",
+            "RW25",
+            "RW26",
+            "RW27",
+            "RW28",
+            "RW17",
+            "RW18",
+            "RW19",
+            "RW21",
+            "RW22",
+            "RW23",
+            "RW24",
+            "RW13",
+            "RW14",
+            "RW15",
+            "RW16"
+        ]
+    },
+    "system": {
+        "1. type": " Li-ion batteries",
+        "2. sensors": "Voltmeter, ammeter and thermocouple sensor suite",
+        "3. batteries": "Commercially available Li-ion 18650 sized rechargeable batteries",
+        "4. others": "Custom Electrochemical Impedance Spectroscopy (EIS)"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "744MB",
+            "b) unzipped": "777MB",
+            "c) RAM": {
+                "Data set (full)": "5.7GB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "2:37min"
+            },
+            "a) unzipped": {
+                "Data set (full)": "2:37min"
+            }
+        }
+    },
+    "references": {
+        "citation": "@article{bole2014randomized,\n  title={Randomized battery usage data set},\n  author={Bole, B and Kulkarni, C and Daigle, M},\n  journal={NASA AMES prognostics data repository},\n  volume={70},\n  year={2014}\n}",
+        "bibitex": "@article{bole2014randomized,\n  title={Randomized battery usage data set},\n  author={Bole, B and Kulkarni, C and Daigle, M},\n  journal={NASA AMES prognostics data repository},\n  volume={70},\n  year={2014}\n}",
+        "manual_download": "https://data.nasa.gov/Raw-Data/Randomized-Battery-Usage-1-Random-Walk/ugxu-9kjx/data",
+        "papers": [
+            {
+                "": "",
+                "summary": ""
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "NB14.zip",
+            "md5sum": "3c7b74465f8961bdd12a1e99df76c1012f323031342532304e41534125323052616e646f6d697a6564253230426174746572792532305573616765253230446174612532305365742f4e4231342e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "NB14",
+            "type": "data"
+        }
+    ]
+}

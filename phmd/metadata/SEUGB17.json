@@ -1,0 +1,116 @@
+{
+    "description": "The gearbox and bearing datasets, obtained from the drivetrain dynamic simulator (DDS) at Southeast University (SEU), were compiled by the research group under the leadership of Professor Ruqiang Yan. These datasets capture two distinct working conditions characterized by speeds of 20 Hz-0V and 30 Hz-2V.\n\nThe gearbox dataset comprises instances representing one healthy state and four different failure types, presenting a classification task with five distinct classes. Similarly, the bearings dataset encompasses instances of one healthy state and four failure types. Consequently, the vibration signals encompass a total of one healthy state and eight fault types, resulting in a 9-class classification challenge. These datasets serve as valuable resources for the development and evaluation of fault diagnosis and condition monitoring techniques for gearbox and bearing systems under various operating conditions.",
+    "designation": "SEU gearbox and bearing fault diagnosis",
+    "publisher": "Southeast University, China",
+    "domain": "Mechanical component",
+    "application": "Gear and Bearing",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "fault",
+            "features": [
+                "motor_vib",
+                "planetary_gear_x",
+                "planetary_gear_y",
+                "planetary_gear_z",
+                "motor_torque",
+                "parallel_gear_x",
+                "parallel_gear_y",
+                "parallel_gear_z"
+            ],
+            "type": "classification:multiclass",
+            "target_labels": [
+                "gear_norm",
+                "gear_chipped",
+                "gear_root",
+                "gear_miss",
+                "gear_surface",
+                "bearing_normal",
+                "bearing_ball",
+                "bearing_inner",
+                "bearing_outer",
+                "bearing_combination"
+            ],
+            "num_units": 20,
+            "min_ts_len": 1048560,
+            "min_units_per_class": 2,
+            "nature": "time-series"
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "motor_vib": {
+            "type": "vibration",
+            "description": ""
+        },
+        "planetary_gear_x": {
+            "type": "vibration",
+            "description": ""
+        },
+        "planetary_gear_y": {
+            "type": "vibration",
+            "description": ""
+        },
+        "planetary_gear_z": {
+            "type": "vibration",
+            "description": ""
+        },
+        "motor_torque": {
+            "type": "force",
+            "description": ""
+        },
+        "parallel_gear_x": {
+            "type": "vibration",
+            "description": ""
+        },
+        "parallel_gear_y": {
+            "type": "vibration",
+            "description": ""
+        },
+        "parallel_gear_z": {
+            "type": "vibration",
+            "description": ""
+        }
+    },
+    "filters": {},
+    "system": {
+        "simulator": "Drivetrain Dynamics Simulator (DDS)"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "470M",
+            "b) unzipped": "1.5G",
+            "c) RAM": {
+                "Data set (full)": "2.2G"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "24s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "24s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Yang, Xueliang, Ruqiang Yan, and Robert X. Gao. \"Induction motor fault diagnosis using multiple class feature selection.\" In 2015 IEEE International Instrumentation and Measurement Technology Conference (I2MTC) Proceedings, pp. 256-260. IEEE, 2015.",
+        "bibitex": "@inproceedings{yang2015induction,\n  title={Induction motor fault diagnosis using multiple class feature selection},\n  author={Yang, Xueliang and Yan, Ruqiang and Gao, Robert X},\n  booktitle={2015 IEEE International Instrumentation and Measurement Technology Conference (I2MTC) Proceedings},\n  pages={256--260},\n  year={2015},\n  organization={IEEE}\n}",
+        "manual_download": "https://github.com/cathysiyu/Mechanical-datasets",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "SEUGB17.zip",
+            "md5sum": "bbe858efc098b1c02d055e5251afcd322f3230313725323053455525323047656172253230616e64253230426561722f534555474231372e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "SEUGB17",
+            "type": "data"
+        }
+    ]
+}

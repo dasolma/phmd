@@ -1,0 +1,3 @@
+include LICENSE README.md requirements*.txt
+recursive-include phmd *.py *.json
+prune phmd/test ./idea ./git

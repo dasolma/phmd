@@ -1,0 +1,91 @@
+{
+    "description": "The dataset contains accelerated Li-ion battery life cycle data, focusing on a broad range of load levels and the characterization of a battery pack comprising two 18650 battery cells. The life cycle analysis involves 15 battery packs, categorized based on constant and random loading conditions, varying loading levels, and the number of load level changes. These data were obtained using a custom-made testbed for cycling battery packs, developed by Kajetan Fricke, Renato Nascimento, and Prof. Felipe Viana from the Probabilistic Mechanics Laboratory at the University of Central Florida (UCF).",
+    "designation": "Randomized and Recommissioned Battery Dataset",
+    "publisher": "NASA",
+    "domain": "Electrical component",
+    "application": "Battery",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "voltage_charger",
+                "temperature_battery",
+                "voltage_load",
+                "current_load",
+                "temperature_mosfet",
+                "temperature_resistor"
+            ],
+            "type": "regression",
+            "num_units": 15,
+            "min_ts_len": 1181,
+            "nature": "time-series"
+        }
+    },
+    "license": "CC0",
+    "features": {
+        "voltage_charger": {
+            "type": "voltage",
+            "description": "Voltage of the charger"
+        },
+        "temperature_battery": {
+            "type": "temperature",
+            "description": "Battery temperature"
+        },
+        "voltage_load": {
+            "type": "voltage",
+            "description": "Load voltage"
+        },
+        "current_load": {
+            "type": "current",
+            "description": "Load current"
+        },
+        "temperature_mosfet": {
+            "type": "temperature",
+            "description": "Mosfet temperature"
+        },
+        "temperature_resistor": {
+            "type": "temperature",
+            "description": "Resistor temperature"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": ""
+            },
+            "a) unzipped": {
+                "Data set (full)": ""
+            }
+        }
+    },
+    "references": {
+        "citation": "Fricke, Kajetan, Renato Nascimento, Matteo Corbetta, Chetan Kulkarni, and Felipe Viana. \"Prognosis of Li-ion Batteries Under Large Load Variations Using Hybrid Physics-Informed Neural Networks.\" In Annual Conference of the PHM Society, vol. 15, no. 1. 2023.",
+        "bibitex": "@inproceedings{fricke2023prognosis,\n  title={Prognosis of Li-ion Batteries Under Large Load Variations Using Hybrid Physics-Informed Neural Networks},\n  author={Fricke, Kajetan and Nascimento, Renato and Corbetta, Matteo and Kulkarni, Chetan and Viana, Felipe},\n  booktitle={Annual Conference of the PHM Society},\n  volume={15},\n  number={1},\n  year={2023}\n}\n",
+        "manual_download": "",
+        "papers": [
+            {}
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "RRB23.zip",
+            "md5sum": "ee49be2bdfc866565e3a7c2d59254f142f323032332532304e41534125323052616e646f6d697a6564253230616e642532305265636f6d6d697373696f6e656425323042617474657279253230446174617365742f52524232332e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "RRB23/data",
+            "type": "data"
+        }
+    ]
+}

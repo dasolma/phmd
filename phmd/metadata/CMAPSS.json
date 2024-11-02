@@ -1,0 +1,2951 @@
+{
+    "description": "This dataset originates from simulations conducted using the NASA turbofan engine simulator known as Commercial Modular Aero-Propulsion System Simulation (C-MAPSS). Within the simulation, the engine model operates under diverse operating conditions, including varying altitude levels, Mach numbers, and throttle resolver angles (TRA). Additionally, two fault modes are considered: high-pressure compressor (HPC) degradation and fan degradation. The primary objective of this simulation is to estimate the Remaining Useful Life (RUL) of the engine based on 26 features obtained from four different flight units.",
+    "designation": "Commercial Modular Aero-Propulsion System Simulation dataset",
+    "publisher": "NASA",
+    "domain": "Drive technology",
+    "application": "Aircraft",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "FD",
+                "id"
+            ],
+            "target": "rul",
+            "features": [
+                "Altitude",
+                "TRA",
+                "Mach_number",
+                "T2",
+                "T24",
+                "T30",
+                "T50",
+                "P2",
+                "P15",
+                "P30",
+                "Nf",
+                "Nc",
+                "epr",
+                "Ps30",
+                "phi",
+                "NRf",
+                "NRc",
+                "BPR",
+                "farB",
+                "htBleed",
+                "Nf_dmd",
+                "PCNfR_dmd",
+                "W31",
+                "W32"
+            ],
+            "type": "regression",
+            "min_ts_len": 128,
+            "num_units": 472,
+            "nature": "time-series"
+        },
+        "Diagnosis": {
+            "identifier": [
+                "FD"
+            ],
+            "target": "Fault_type",
+            "features": [
+                "Altitude",
+                "TRA",
+                "Mach_number",
+                "T2",
+                "T24",
+                "T30",
+                "T50",
+                "P2",
+                "P15",
+                "P30",
+                "Nf",
+                "Nc",
+                "epr",
+                "Ps30",
+                "phi",
+                "NRf",
+                "NRc",
+                "BPR",
+                "farB",
+                "htBleed",
+                "Nf_dmd",
+                "PCNfR_dmd",
+                "W31",
+                "W32",
+                "Condition"
+            ],
+            "type": "classification:binary",
+            "target_labels": [
+                "HPC Degradation",
+                "HPC and Fan Degradation"
+            ],
+            "target_distribution": [
+                0.46389663193210234,
+                0.5361033680678976
+            ],
+            "min_ts_len": 20631,
+            "num_units": 4,
+            "nature": "time-series",
+            "min_units_per_class": 2
+        }
+    },
+    "license": "CC0",
+    "features": {
+        "Altitude": {
+            "type": "altitude",
+            "description": "Flight altitude"
+        },
+        "TRA": {
+            "type": "angle",
+            "description": "Throttle resolver angle"
+        },
+        "Mach_number": {
+            "type": "speed",
+            "description": "Mach number (Ratio of the speed of an object to the speed of sound)"
+        },
+        "T2": {
+            "type": "temperature",
+            "description": "Total temperature at fan inlet (R)"
+        },
+        "T24": {
+            "type": "temperature",
+            "description": "Total temperature at LPC outlet (R)"
+        },
+        "T30": {
+            "type": "temperature",
+            "description": "Total temperature at HPC outlet (R)"
+        },
+        "T50": {
+            "type": "temperature",
+            "description": "Total temperature at LPT outlet (R)"
+        },
+        "P2": {
+            "type": "pressure",
+            "description": "Pressure at fan inlet (psia)"
+        },
+        "P15": {
+            "type": "pressure",
+            "description": "Total pressure in bypass-duct (psia)"
+        },
+        "P30": {
+            "type": "pressure",
+            "description": "Pressure at fan inlet (psia)"
+        },
+        "Nf": {
+            "type": "speed",
+            "description": "Physical fan speed (rpm)"
+        },
+        "Nc": {
+            "type": "speed",
+            "description": "Physical core speed (rpm)"
+        },
+        "epr": {
+            "type": "pressure",
+            "description": "Engine pressure ratio (P50/P2) (--)"
+        },
+        "Ps30": {
+            "type": "pressure",
+            "description": "tatic pressure at HPC outlet (psia)"
+        },
+        "phi": {
+            "type": "flow",
+            "description": "Ratio of fuel flow to Ps30 (pps/psi)"
+        },
+        "NRf": {
+            "type": "speed",
+            "description": "Corrected fan speed (rpm)"
+        },
+        "NRc": {
+            "type": "speed",
+            "description": "Corrected core speed (rpm)"
+        },
+        "BPR": {
+            "type": "",
+            "description": "Bypass Ratio (--)"
+        },
+        "farB": {
+            "type": "flow",
+            "description": "Burner fuel-air ratio (--)"
+        },
+        "htBleed": {
+            "type": "",
+            "description": "Bleed Enthalpy (--)"
+        },
+        "Nf_dmd": {
+            "type": "speed",
+            "description": "Demanded fan speed (rpm)"
+        },
+        "PCNfR_dmd": {
+            "type": "speed",
+            "description": "Demanded corrected fan speed (rpm)"
+        },
+        "W31": {
+            "type": "flow",
+            "description": "HPT coolant bleed (lbm/s)"
+        },
+        "W32": {
+            "type": "flow",
+            "description": "LPT coolant bleed (lbm/s)"
+        },
+        "Condition": {
+            "type": "categorical",
+            "description": "Working conditions identifier"
+        },
+        "cycle": {
+            "type": "cycle",
+            "description": "Working cycle"
+        }
+    },
+    "filters": {
+        "Fault_type": [
+            "1",
+            "2"
+        ],
+        "Condition": [
+            "1",
+            "6"
+        ]
+    },
+    "system": {
+        "1. type": "rotatory machine:turbofan engine",
+        "2. platform": "The bearing testbed is composed of an alternating current (AC) induction motor, a motor speed controller, a support shaft, two support bearings (heavy duty roller bearings), a hydraulic loading system and so on. This testbed is designed to conduct the accelerated degradation tests of rolling element bearings under different operating conditions (i.e., different radial force and rotating speed). The radial force is generated by the hydraulic loading system and applied to the housing of tested bearings, and the rotating speed is set and kept by the speed controller of the AC induction motor.",
+        "3. fault component": "HPC module"
+    },
+    "operating_conditions": {
+        "1": "Unkown",
+        "6": "Unkown"
+    },
+    "fault element types": {
+        "1": "Unkown",
+        "2": "Unkown"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "12.5MB",
+            "b) unzipped": "45.3MB",
+            "c) RAM": {
+                "Train set (full)": "38MB",
+                "Test set (full)": "24MB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Train set (full)": "5s"
+            },
+            "a) unzipped": {
+                "Train set (full)": "5s"
+            }
+        }
+    },
+    "references": {
+        "ver": "https://www.sciencedirect.com/science/article/pii/S0166361519303987?casa_token=vvP2nAWVqQMAAAAA:HmVteV23i6IznGHKTV7_qyn3_KHH2O_MyA5DXTJUQGOr-rD3-QmCBDacLC11deE4fURzWJog  ",
+        "citation": "Saxena, Abhinav, et al. \"Damage propagation modeling for aircraft engine run-to-failure simulation.\" 2008 international conference on prognostics and health management. IEEE, 2008.",
+        "bibitex": "@inproceedings{saxena2008damage,\n  title={Damage propagation modeling for aircraft engine run-to-failure simulation},\n  author={Saxena, Abhinav and Goebel, Kai and Simon, Don and Eklund, Neil},\n  booktitle={2008 international conference on prognostics and health management},\n  pages={1--9},\n  year={2008},\n  organization={IEEE}\n}",
+        "manual_download": "https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/#turbofan",
+        "papers": [
+            {
+                "M Hou, et al.": "Hou, Mengru, Dechang Pi, and Bingrong Li. \"Similarity-based deep learning approach for remaining useful life prediction.\" Measurement 159 (2020): 107788.",
+                "summary": "Investigates the effect of using similarity to improve the prediction accuracy of deep supervised learning. In addition, since health indicator (HI) and target labels are the essential factors of supervised learning, this paper proposes a method for constructing HI based on unsupervised learning. Then according to the constructed HI, a difference-based method proposed to generate target labels"
+            },
+            {
+                "X Li, et al.": "Li, Xiang, Qian Ding, and Jian-Qiao Sun. \"Remaining useful life estimation in prognostics using deep convolution neural networks.\" Reliability Engineering & System Safety 172 (2018): 1-11.",
+                "summary": "Approach for prognostics using deep convolution neural networks (DCNN). Time window approach is employed for sample preparation in order for better feature extraction by DCNN"
+            },
+            {
+                "H Li, et al.": "Li, Han, et al. \"Remaining useful life prediction using multi-scale deep convolutional neural network.\" Applied Soft Computing 89 (2020): 106113.",
+                "summary": "A multi-scale deep convolutional neural network (MS-DCNN) which have powerful feature extraction capability due to its multi-scale structure is proposed. The MS-DCNN has three multi-scale blocks (MS-BLOCKs), where three different sizes of convolution operations are put on each block in parallel."
+            },
+            {
+                "K San, et al.": "San Kim, Tae, and So Young Sohn. \"Multitask learning for health condition identification and remaining useful life prediction: deep convolutional neural network approach.\" Journal of Intelligent Manufacturing (2020): 1-11.",
+                "summary": "Convolution neural network based multi-task learning method (MT-CNN)."
+            },
+            {
+                "I Remadna, et al.": "Remadna, Ikram, et al. \"Leveraging the Power of the Combination of CNN and Bi-directional Lstm Networks for Aircraft Engine RUL Estimation.\" 2020 Prognostics and Health Management Conference (PHM-Besan\u00e7on). IEEE, 2020.",
+                "summary": "Hybrid RUL prediction approach that combines Convolutional Neural Network (CNN) with Bi-directional Long Short-Term Memory (BDLSTM) sequentially."
+            },
+            {
+                "A Al-Dulaimi, et al.": "Al-Dulaimi, Ali, et al. \"Hybrid deep neural network model for remaining useful life estimation.\" ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2019.",
+                "summary": "Combines two DL methods sequentially: a Convolutional Neural Network (CNN) with Bi-directional Long Short-Term Memory (BDLSTM) networks where CNN extracts spatial features while BDLSTM extracts temporal features"
+            },
+            {
+                "S Zheng, et al.": "Zheng, Shuai, et al. \"Long short-term memory network for remaining useful life estimation.\" 2017 IEEE international conference on prognostics and health management (ICPHM). IEEE, 2017.",
+                "summary": "Long Short-Term Memory (LSTM) approach."
+            },
+            {
+                "Y Jiang, et al.": "Jiang, Yalan, et al. \"Remaining Useful Life Estimation Combining Two-Step Maximal Information Coefficient and Temporal Convolutional Network With Attention Mechanism.\" IEEE Access 9 (2021): 16323-16336.",
+                "summary": "A modified ensemble empirical mode decomposition (MEEMD), combined with the correlation coefficient threshold to select the sensitive intrinsic mode function (IMF) components, is proposed to reconstruct more representative features. Additionally, maximal information coefficient-based two-step feature selection (TSMIC) method is used to select the optimal feature subset. Ultimately, temporal convolutional network with attention mechanism (TCNA) is proposed."
+            },
+            {
+                "A Ellefsen, et al.": "Ellefsen, Andr\u00e9 Listou, et al. \"Remaining useful life predictions for turbofan engine degradation using semi-supervised deep architecture.\" Reliability Engineering & System Safety 183 (2019): 240-251.",
+                "summary": "Investigates the effect of unsupervised pre-training in RUL predictions utilizing a semi-supervised setup. A Genetic Algorithm (GA) is applied to tune hyper-parameters."
+            },
+            {
+                "L Liu, et al.": "Liu, Lijun, Lan Wang, and Zhen Yu. \"Remaining Useful Life Estimation of Aircraft Engines Based on Deep Convolution Neural Network and LightGBM Combination Model.\" International Journal of Computational Intelligence Systems 14.1 (2021): 1-10.",
+                "summary": "Combines deep convolution neural networks (DCNN) and the light gradient boosting machine (LightGBM) algorithm to estimate the RUL."
+            },
+            {
+                "A Ruiz-Tagle, et al.": "Ruiz-Tagle Palazuelos, Andres, Enrique L\u00f3pez Droguett, and Rodrigo Pascual. \"A novel deep capsule neural network for remaining useful life estimation.\" Proceedings of the Institution of Mechanical Engineers, Part O: Journal of Risk and Reliability 234.1 (2020): 151-167.",
+                "summary": "Extends capsule neural networks for fault prognostics and, in particular, remaining useful life estimation."
+            },
+            {
+                "C Hong, et al.": "Hong, Chang Woo, et al. \"Multivariate time series forecasting for remaining useful life of turbofan engine using deep-stacked neural network and correlation analysis.\" 2020 IEEE International Conference on Big Data and Smart Computing (BigComp). IEEE, 2020.",
+                "summary": "Stacks one dimensional convolutional neural network (1D-CNN), long short-term memory (LSTM), and bidirectional LSTM algorithm. It also includes residual network and dropout technique to improve the learning ability of the proposed model."
+            },
+            {
+                "A Falcon, et al.": "Falcon, Alex, et al. \"A Neural Turing Machine-based approach to Remaining Useful Life Estimation.\" 2020 IEEE International Conference on Prognostics and Health Management (ICPHM). IEEE, 2020.",
+                "summary": "Proposes a way to address the Remaining Useful Life estimation problem by giving an LSTM-based model the ability to interact with a content-based memory addressing system."
+            },
+            {
+                "G Babu, et al.": "Babu, Giduthuri Sateesh, Peilin Zhao, and Xiao-Li Li. \"Deep convolutional neural network based regression approach for estimation of remaining useful life.\" International conference on database systems for advanced applications. Springer, Cham, 2016.",
+                "summary": "Deep Convolutional Neural Network (CNN) based regression approach for estimating the RUL."
+            },
+            {
+                "Y Cheng, et al.": "Cheng, Yiwei, et al. \"Remaining useful life prognosis based on ensemble long short-term memory neural network.\" IEEE Transactions on Instrumentation and Measurement 70 (2020): 1-12.",
+                "summary": "The ELSTMNN contains a series of long short-term memory neural networks (LSTMNNs), each of which is trained on a unique set of historical data. A ensemble method is first proposed using Bayesian inference algorithm to integrate multiple predictions of the LSTMNNs for the optimal RUL estimation"
+            },
+            {
+                "J Li, et al.": "Li, Jialin, Xueyi Li, and David He. \"A directed acyclic graph network combined with CNN and LSTM for remaining useful life prediction.\" IEEE Access 7 (2019): 75464-75475.",
+                "summary": "Directed acyclic graph (DAG) network that combines long short term memory (LSTM) and a convolutional neural network (CNN) to predict the RUL. Different from the existing prediction models combined with CNN and LSTM, the method proposed combines CNN and LSTM organically instead of just using CNN for feature extraction."
+            },
+            {
+                "B Wang, et al.": "Wang, Biao, et al. \"Deep separable convolutional network for remaining useful life prediction of machinery.\" Mechanical Systems and Signal Processing 134 (2019): 106330.",
+                "summary": "A new deep prognostics network named deep separable convolutional network (DSCN) is proposed for RUL prediction of machinery. In the proposed DSCN, a separable convolutional building block with a residual connection is built based on separable convolutions and squeeze and excitation operations."
+            },
+            {
+                "K Deng, et al.": "Deng, Kunyuan, et al. \"A remaining useful life prediction method with long-short term feature processing for aircraft engines.\" Applied Soft Computing 93 (2020): 106344.",
+                "summary": "A long-term differential technique is proposed to extract forward differential features, which fully reflects the actual degradation trend in the entire lifetime. Then, the Fibonacci window is proposed for short-term feature extension, which makes full use of the temporal correlation of the historical data and effectively reduces the extra computational load. Finally, the CatBoost algorithm is used to predict the remaining useful life."
+            },
+            {
+                "B Maschler, et al.": "Maschler, Benjamin, et al. \"Continual learning of fault prediction for turbofan engines using deep learning with elastic weight consolidation.\" 2020 25th IEEE international conference on emerging technologies and factory automation (ETFA). Vol. 1. IEEE, 2020.",
+                "summary": "Restrictions regarding the centralized accumulation of data necessary for such automatic adaption call for a distributed approach to training these algorithms. Continual learning based algorithm for fault prediction is presented, allowing for distributed, cooperative learning by elastic weight consolidation."
+            },
+            {
+                "M Ragab, et al.": "Ragab, Mohamed, et al. \"Adversarial Transfer Learning for Machine Remaining Useful Life Prediction.\" 2020 IEEE International Conference on Prognostics and Health Management (ICPHM). IEEE, 2020.",
+                "summary": "Adversarial domain adaption approach for remaining useful life prediction, named ADARUL. Built on top of a LSTM mode. It derives invariant representation among the working conditions by removing the domain-specific information while keeping the task-specific information."
+            },
+            {
+                "PBO da Costa, et al.": "da Costa, Paulo Roberto de Oliveira, et al. \"Remaining useful lifetime prediction via deep domain adaptation.\" Reliability Engineering & System Safety 195 (2020): 106682.",
+                "summary": "Long Short-Term Neural Networks (LSTM) with a Domain Adversarial Neural Network (DANN) approach to adapt remaining useful life estimates to a target domain containing only sensor information"
+            },
+            {
+                "A Zhang, et al.": "Zhang, Ansi, et al. \"Transfer learning with deep recurrent neural networks for remaining useful life estimation.\" Applied Sciences 8.12 (2018): 2416.",
+                "summary": "Transfer learning algorithm based on Bi-directional Long Short-Term Memory (BLSTM) recurrent neural networks for RUL estimation, in which the models can be first trained on different but related datasets and then fine-tuned by the target dataset."
+            },
+            {
+                "C Hsu, et al.": "Hsu, Che-Sheng, and Jehn-Ruey Jiang. \"Remaining useful life estimation using long short-term memory deep learning.\" 2018 ieee international conference on applied system invention (icasi). IEEE, 2018.",
+                "summary": "Method is based on the long short-term memory (LSTM) structure of the recurrent neural network (RNN)"
+            },
+            {
+                "A Das, et al.": "Das, Ankit, et al. \"Deep recurrent architecture with attention for remaining useful life estimation.\" TENCON 2019-2019 IEEE Region 10 Conference (TENCON). IEEE, 2019.",
+                "summary": "Deep Long Short Term Memory (DLSTM) network with dropout at multiple layers for RUL prediction. Enhance the DLSTM model to handle the sequence in both forward and reverse direction using a Bidirectional Deep Long Short Term Memory (BiDLSTM). Finally, attention based Deep LSTM (Attn-DLSTM)"
+            },
+            {
+                "M Benker, et al.": "Benker, Maximilian, et al. \"Utilizing uncertainty information in remaining useful life estimation via Bayesian neural networks and Hamiltonian Monte Carlo.\" Journal of Manufacturing Systems 61 (2021): 799-807.",
+                "summary": "The determination of the uncertainty associated with the RUL estimate is important for the applicability of DL models in practice. In this article, Bayesian DL models, that naturally quantify uncertainty, were applied to the task of RUL estimation of simulated turbo fan engines. Inference is carried out via Hamiltonian Monte Carlo (HMC) and variational inference (VI)"
+            },
+            {
+                "Y Song, et al.": "Song, Ya, et al. \"Remaining useful life prediction of turbofan engine using hybrid model based on autoencoder and bidirectional long short-term memory.\" Journal of Shanghai Jiaotong University (Science) 23.1 (2018): 85-94.",
+                "summary": "Autoencoder is used as a feature extractor to compress condition monitoring data. BLSTM is designed to capture the bidirectional long-range dependencies of features."
+            },
+            {
+                "J Wang, et al.": "Wang, Jiujian, et al. \"Remaining useful life estimation in prognostics using deep bidirectional lstm neural network.\" 2018 Prognostics and System Health Management Conference (PHM-Chongqing). IEEE, 2018.",
+                "summary": "Data-driven approach with Bidirectional Long Short-Term Memory (BiLSTM) network for RUL estimation."
+            },
+            {
+                "Y Zhang, et al.": "Zhang, Yuxuan, et al. \"Sequential information bottleneck network for RUL prediction.\" 2019 IEEE Symposium Series on Computational Intelligence (SSCI). IEEE, 2019.",
+                "summary": "LSTM extension called sequential information bottleneck network(SIBN) and custom objetive to optimize the information bottleneck (IB)"
+            },
+            {
+                "S Zhao, et al.": "Zhao, Sen, et al. \"A recurrent neural network approach for remaining useful life prediction utilizing a trend features construction method.\" Measurement 146 (2019): 279-288.",
+                "summary": "Method for RUL prediction which depends on a trend feature representing the overall time sequence of degradation. Complete ensemble empirical mode decomposition, followed by a reconstruction procedure, is created to build the trend features. The probability distribution of sensors\u2019 measurement learned by conditional neural processes is used to evaluate the trend features."
+            },
+            {
+                "J Lli, et al.": "Li, Jialin, Xueyi Li, and David He. \"Domain adaptation remaining useful life prediction method based on AdaBN-DCNN.\" 2019 Prognostics and System Health Management Conference (PHM-Qingdao). IEEE, 2019.",
+                "summary": "A domain adaptation RUL prediction model is proposed by integrating the adaptive batch normalization (AdaBN) into deep convolutional neural network (DCNN)"
+            },
+            {
+                "M Wang, et al.": "Wang, Mengni, et al. \"Spatio-temporal graph convolutional neural network for remaining useful life estimation of aircraft engines.\" Aerospace Systems 4.1 (2021): 29-36.",
+                "summary": "Graph structure on sensor network with Pearson Correlation Coefficients among sensors and propose a method for combining the power of graph convolutional network on spatial learning and sequence learning success of temporal convolutional networks"
+            },
+            {
+                "Z Kong, et al.": "Kong, Zhengmin, et al. \"Convolution and long short-term memory hybrid deep neural networks for remaining useful life prognostics.\" Applied Sciences 9.19 (2019): 4156.",
+                "summary": "Scheme based on a health indicator (HI) and a hybrid deep neural network (DNN) model is proposed to predict RUL by analyzing equipment degradation. Explicitly, HI obtained by polynomial regression is combined with a convolutional neural network (CNN) and long short-term memory (LSTM) neural network"
+            },
+            {
+                "T Xia, et al.": "Xia, Tangbin, et al. \"An ensemble framework based on convolutional bi-directional LSTM with multiple time windows for remaining useful life estimation.\" Computers in Industry 115 (2020): 103182.",
+                "summary": "Ensemble framework based on convolutional bi-directional long short-term memory with multiple time windows (MTW CNN-BLSTM Ensemble)"
+            },
+            {
+                "S Yu, et al.": "Yu, Shuyang, et al. \"A domain adaptive convolutional LSTM model for prognostic remaining useful life estimation under variant conditions.\" 2019 Prognostics and System Health Management Conference (PHM-Paris). IEEE, 2019.",
+                "summary": "Develops a domain (working condition) adaptive CNN-LSTM (DACL) model to predict the RUL of a system based on the multi-dimensional sensor data. The DACL model combines the CNN and LSTM with domain adaptive transfer mechanism and takes the operating conditions into consideration. The features extracted by CNN of both source and target data are transformed to a higher dimensional space by reproducing kernel Hilbert space (RKHS) and the loss function is compensated by using maximum mean discrepancy (MMD) to reduce the distributions discrepancy"
+            },
+            {
+                "C Zhao, et al.": "Zhao, Chengying, et al. \"A Double-Channel Hybrid Deep Neural Network Based on CNN and BiLSTM for Remaining Useful Life Prediction.\" Sensors 20.24 (2020): 7109.",
+                "summary": "Double-channel hybrid prediction model based on the CNN and a bidirectional LSTM network."
+            },
+            {
+                "A Bala, et al.": "Bala, Abubakar, et al. \"An improved grasshopper optimization algorithm based echo state network for predicting faults in airplane engines.\" IEEE Access 8 (2020): 159773-159789.",
+                "summary": "Echo State Network (ESN) trained with an improved Grasshopper Optimization Algorithm (GOA)"
+            }
+        ]
+    },
+    "results": {
+        "A Bala, et al.": {
+            "experiments": [
+                {
+                    "technique": "ESN - GOA",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "14.45"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "20.25"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "15.07"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "21.45"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "C Zhao, et al.": {
+            "experiments": [
+                {
+                    "technique": "Double-channel CNN-LSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "12.58"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "19.34"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "12.18"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "20.03"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "231"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "2650"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "257"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "3400"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "S Yu, et al.": {
+            "experiments": [
+                {
+                    "technique": "Working condition adaptive CNN-LSTM (DACL)",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "14.41"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "26.16"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "14.36"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "25.52"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "288"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "8908"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "321"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "4843"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "T Xia, et al.": {
+            "experiments": [
+                {
+                    "technique": "Mutiple time window CNN-BLSTM ensemble",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "12.66"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Z Kong, et al.": {
+            "experiments": [
+                {
+                    "technique": "HI + CNN + LSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "16.13"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "20.46"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "17.12"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "23.26"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "303"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "3440"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "142"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "4630"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "M Wang, et al.": {
+            "experiments": [
+                {
+                    "technique": "Graph Network",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "12.76"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "17.74"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "12.07"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "18.08"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "266"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "998"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "278"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "1038"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "J Lli, et al.": {
+            "experiments": [
+                {
+                    "technique": "Domain Adaptation DCNN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "51.75"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "23.15"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD004",
+                                "value": "18.40"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "516.75"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD003",
+                                "value": "395.37"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "30.30"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "24.17"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD002",
+                                "value": "52.86"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "382.16"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD001",
+                                "value": "224.56"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "26.57"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "35.02"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "technique": "Domain Adaptation AdaBN + DCNN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "30.54"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "18.40"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD004",
+                                "value": "36.85"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "20.66"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD003",
+                                "value": "29.24"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "29.64"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "19.86"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD002",
+                                "value": "40.39"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "39.97"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD001",
+                                "value": "21.71"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "24.01"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "26.24"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "S Zhao, et al.": {
+            "experiments": [
+                {
+                    "technique": "CEEMD NNBSP + NNBSP DLSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "14.72"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "29"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "17.72"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "33.43"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "262"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "6953"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "452"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "15069"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Y Zhang, et al.": {
+            "experiments": [
+                {
+                    "technique": "SIBN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "21.59"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "J Wang, et al.": {
+            "experiments": [
+                {
+                    "technique": "BLSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "13.65"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "23.18"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "13.74"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "24.86"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "295"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "4130"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "317"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "5430"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Prognosis": {
+            "Y Song, et al.": {
+                "experiments": [
+                    {
+                        "technique": "Autoencoder + BLSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "13.61"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "Autoencoder + LSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "14.68"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "BLSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "14.29"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "LSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "15.69"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "M Benker, et al.": {
+                "experiments": [
+                    {
+                        "technique": "NN",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "13.84"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "20.74"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "14.41"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "22.73"
+                                }
+                            ],
+                            "NASAScore": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "427"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "19400"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "2977"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "10376"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "NN + Hamiltonian Monte Carlo",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "14.63"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "37.99"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "16.11"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "39.53"
+                                }
+                            ],
+                            "NASAScore": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "412"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "37029"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "571"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "62122"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "NN + Hamiltonian Monte Carlo pretrained",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "13.98"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "20.69"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "14.18"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "22.76"
+                                }
+                            ],
+                            "NASAScore": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "4.39"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "20407"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "2902"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "9817"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "NN + Variational Inference",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "14.01"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "19.40"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "14.90"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "23.10"
+                                }
+                            ],
+                            "NASAScore": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "393"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "2898"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "569"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "6695"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "DCNN",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "17.86"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "19.32"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "20.51"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "22.38"
+                                }
+                            ],
+                            "NASAScore": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "709"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "2529"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "2667"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "5976"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "DCNN + Hamiltonian Monte Carlo",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "20.84"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "32.55"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "25.73"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "36.71"
+                                }
+                            ],
+                            "NASAScore": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "2728"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "19312"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "1855"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "45306"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "DCNN + Hamiltonian Monte Carlo pretrained",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "17.76"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "19.35"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "20.39"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "22.37"
+                                }
+                            ],
+                            "NASAScore": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "698"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "2523"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "1623"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "5833"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "DCNN + Variational Inference",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "21.80"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "20.14"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "22.34"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "24.09"
+                                }
+                            ],
+                            "NASAScore": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": ""
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "A Das, et al.": {
+                "experiments": [
+                    {
+                        "technique": "Deep LSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "12.93"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "24.09"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "16.09"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "30.86"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "Bidrectional Deep LSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "12.58"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "23.76"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "18.58"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "29.37"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "Attention Deep LSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "12.22"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "23.16"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "15.61"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "28.30"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "C Hsu": {
+                "experiments": [
+                    {
+                        "technique": "LSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "16.74"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "29.43"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "18.07"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "28.40"
+                                }
+                            ],
+                            "NASAScore": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "388.68"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD002",
+                                    "value": "10654.00"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "822.19"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD004",
+                                    "value": "6370.60"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "M Hou, et al.": {
+                "experiments": [
+                    {
+                        "technique": "HI-RBM-based + Similarity-based RUL + Bi-LSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "13.28"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "12.73"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "HI-RBM-based + Bi-LSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "14.59"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "15.02"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "Signal + Bi-LSTM",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "17.85"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "17.33"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "technique": "Similarity-based",
+                        "results": {
+                            "RMSE": [
+                                {
+                                    "type": "partial",
+                                    "id": "FD001",
+                                    "value": "17.92"
+                                },
+                                {
+                                    "type": "partial",
+                                    "id": "FD003",
+                                    "value": "17.30"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "X Li, et al.": {
+            "experiments": [
+                {
+                    "technique": "Time Window + DCNN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "12.61"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "22.36"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "12.64"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "23.31"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "273.7"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "10412"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "284.1"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "12466"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "technique": "Time Window + LSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "13.52"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "24.42"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "13.54"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "24.21"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "431.7"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "14459"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "347.3"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "14322"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "H Li, et al.": {
+            "experiments": [
+                {
+                    "technique": "Time Window + MS-DCNN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "11.44"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "19.35"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "11.67"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "22.22"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "196.22"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "3747"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "241.89"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "4844"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "K San, et al.": {
+            "experiments": [
+                {
+                    "technique": "Multitask learning + DCNN (MT-CNN)",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "12.58"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "19.77"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "12.11"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "19.98"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "I Remadna, et al.": {
+            "experiments": [
+                {
+                    "technique": "DCNN + LSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "10.74"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "15.20"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "13.85"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "18.60"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "A Al-Dulaimi, et al.": {
+            "experiments": [
+                {
+                    "technique": "Pararell LSTM-CNN (HDNN)",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "13.017"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "15.24"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "12.22"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "18.156"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "245"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "1282.42"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "287.72"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "1527.42"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "S Zheng, et": {
+            "experiments": [
+                {
+                    "technique": "LSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "16.14"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "24.49"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "16.18"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "28.17"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Y Jiang, et al.": {
+            "experiments": [
+                {
+                    "technique": "MEEMD + IMF + TSMIC + TCNA (Temporal CNN with attention)",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "10.45"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "20.15"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "9.60"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "22.09"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "223.9"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "5762.28"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "242.26"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "5059.68"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "A Ellefsen, et al.": {
+            "experiments": [
+                {
+                    "technique": "Semi-supervised + GA + RBM + LSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "12.56"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "22.73"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "12.10"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "22.66"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "231"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "3366"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "251"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "2840"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "L Liu, et al.": {
+            "experiments": [
+                {
+                    "technique": "DCNN + LightGBM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "12.79"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "13.21"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "232"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "277.8"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "A Ruiz-Tagle, et al.": {
+            "experiments": [
+                {
+                    "technique": "CapsNet",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "12.58"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "16.30"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "11.71"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "18.96"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "276.34"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "1229.72"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "283.81"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "2625.64"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "C Hong, et al.": {
+            "experiments": [
+                {
+                    "technique": "Pearson Feature Removing + Residual Bi-LSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "10.51"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "A Falcon, et al.": {
+            "experiments": [
+                {
+                    "technique": "LSTM + Neural Turing Machine",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "12.50"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "G Babu, et al.": {
+            "experiments": [
+                {
+                    "technique": "DCNN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "18.45"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "30.29"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "19.82"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "29.16"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "1286.7"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "13570.0"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "1596.2"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "7886.4"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "technique": "MLP",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "37.56"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "80.03"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "37.39"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "77.37"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Y Cheng, et al.": {
+            "experiments": [
+                {
+                    "technique": "LSTM Ensemble with Bayesian algorithm (ELSTMNN)",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "18.22"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "22.85"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "J Li, et al.": {
+            "experiments": [
+                {
+                    "technique": "Directed acyclic graph network + LSTM + CNN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "11.96"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "20.34"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "12.46"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "22.43"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "229"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "2730"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "535"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "3370"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "B Wang, et al.": {
+            "experiments": [
+                {
+                    "technique": "DSCN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "10.95"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "20.47"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "10.62"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "22.62"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "260.67"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "4367.56"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "246.55"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "5168.45"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "K Deng, et al.": {
+            "experiments": [
+                {
+                    "technique": "Long-term differential feature + Fibonacci window + CatBoost",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "15.8"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "21.4"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "16.0"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "22.4"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "398.7"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "3493.2"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "584.2"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "3203.4"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "M Benjamin": {
+            "experiments": [
+                {
+                    "technique": "Continual learning + Elastic weight consolidation",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "13.03"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "24.28"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "13.60"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "26.04"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001",
+                                "value": "259"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002",
+                                "value": "4617"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003",
+                                "value": "253"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004",
+                                "value": "4367"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "M Ragab": {
+            "experiments": [
+                {
+                    "technique": "Adversarial domain adaptation training (DANN) + LSTM ",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "19.87"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "39.74"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD004",
+                                "value": "31.78"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "14.33"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD003",
+                                "value": "32.60"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "34.35"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "19.97"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD002",
+                                "value": "23.47"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "26.33"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD001",
+                                "value": "37.89"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "28.77"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "14.13"
+                            }
+                        ],
+                        "NASAScore": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "4426"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "10711"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD004",
+                                "value": "12369"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "455"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD003",
+                                "value": "3449"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "12227"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "1391"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD002",
+                                "value": "20764"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "48748"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD001",
+                                "value": "121677"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "62215"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "537"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "A Zhang, et al.": {
+            "experiments": [
+                {
+                    "technique": "Transfer learning + BLSTM (BLSTM-SDA)",
+                    "note": "results taken from PBO da Costa, et al.",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "20.8"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "14.3"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "18.3"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "25.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "13.6"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "23.4"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "20.8"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "24.1"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PBO da Costa, et al.": {
+            "experiments": [
+                {
+                    "technique": "Transfer Component Analysis (TCA) + Adversarial domain adaptation training (DANN) + NN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "94.1"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "120.0"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD004",
+                                "value": "120.0"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "94.7"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD003",
+                                "value": "107.4"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "93.5 "
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "98.7"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD002",
+                                "value": "90.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "78.9"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD001",
+                                "value": "98.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "75.3"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "77.2"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "technique": "Transfer Component Analysis (TCA) + Adversarial domain adaptation training (DANN) + DNN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "90.0"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "106.1"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD004",
+                                "value": "113.8"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "85.6"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD003",
+                                "value": "111.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "94.4"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "90.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD002",
+                                "value": "80.8"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "102.6"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD001",
+                                "value": "85.6"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "80.8"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "102.9"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "technique": "CORrelation ALignment (CORAL) + Adversarial domain adaptation training (DANN) + NN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "99.2"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "60.0"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD004",
+                                "value": "107.7"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "77.9"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD003",
+                                "value": "60.9"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "37.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "26.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD002",
+                                "value": "113.2"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "113.9"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD001",
+                                "value": "119.1"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "37.3"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "68.1"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "technique": "CORrelation ALignment (CORAL) + Adversarial domain adaptation training (DANN) + DNN",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "77.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "69.6"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD004",
+                                "value": "84.6"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "80.9"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD003",
+                                "value": "79.8"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "43.6"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "26.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD002",
+                                "value": "75.6"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "77.2"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD001",
+                                "value": "94.0"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "30.9"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "68.6"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "technique": "Adversarial domain adaptation training (DANN) + LSTM",
+                    "results": {
+                        "RMSE": [
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD002",
+                                "value": "46.4"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD003",
+                                "value": "37.3"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD001->FD004",
+                                "value": "43.5"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD001",
+                                "value": "31.2"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD003",
+                                "value": "32.2"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD002->FD004",
+                                "value": "27.7"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD001",
+                                "value": "30.6"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD002",
+                                "value": "43.1"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD003->FD004",
+                                "value": "49.7"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD001",
+                                "value": "25.4"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD002",
+                                "value": "26.9"
+                            },
+                            {
+                                "type": "partial",
+                                "id": "FD004->FD003",
+                                "value": "23.6"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "files": [
+        {
+            "name": "CMAPSS_train.zip",
+            "md5sum": "48ef37556f1feb3b758e80f90c8bc55b2f434d415053535f747261696e2e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "CMAPSS/train",
+            "type": "train"
+        },
+        {
+            "name": "CMAPSS_test.zip",
+            "md5sum": "57ae84bbdbdefac8ed9a66b9f41e109c2f434d415053535f746573742e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "CMAPSS/test",
+            "type": "test"
+        }
+    ]
+}

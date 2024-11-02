@@ -1,0 +1,183 @@
+{
+    "description": "The N-CMAPSS dataset, constructed using the Commercial Modular Aero-Propulsion System Simulation (CMAPSS) developed at NASA, offers comprehensive flight trajectories from a healthy state to failure. This dataset has gained traction in the field of prognosis and health management (PHM), with various studies proposing solutions to address its challenges. It encompasses seven failure modes related to flow degradation or subcomponent efficiency.\n\nFlights are categorized into three classes based on duration: Class 1 (1 to 3 hours), Class 2 (3 to 5 hours), and Class 3 (over 5 hours). The objective is to predict the remaining useful life (RUL) of the system until failure. RUL is assumed to linearly decrease from the maximum value (total cycles of the experiment) to 0. With 20 input time series variables, this constitutes a multivariate regression task.",
+    "designation": "New Commercial Modular Aero-Propulsion System Simulation dataset",
+    "publisher": "NASA",
+    "domain": "Drive technology",
+    "application": "Aircraft",
+    "tasks": {
+        "Prognosis": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "rul",
+            "features": [
+                "alt",
+                "Mach",
+                "TRA",
+                "T2",
+                "T24",
+                "T30",
+                "T48",
+                "T50",
+                "P15",
+                "P2",
+                "P21",
+                "P24",
+                "Ps30",
+                "P40",
+                "P50",
+                "Nf",
+                "Nc",
+                "Wf",
+                "Fc",
+                "hs"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 308489,
+            "num_units": 60,
+            "normalize_output": false
+        }
+    },
+    "license": "CC0",
+    "features": {
+        "alt": {
+            "type": "altitude",
+            "description": "Flight altitude"
+        },
+        "TRA": {
+            "type": "angle",
+            "description": "Throttle resolver angle"
+        },
+        "Mach": {
+            "type": "speed",
+            "description": "Mach number (Ratio of the speed of an object to the speed of sound)"
+        },
+        "T2": {
+            "type": "temperature",
+            "description": "Total temperature at fan inlet (R)"
+        },
+        "T24": {
+            "type": "temperature",
+            "description": "Total temperature at LPC outlet (R)"
+        },
+        "T30": {
+            "type": "temperature",
+            "description": "Total temperature at HPC outlet (R)"
+        },
+        "T48": {
+            "type": "temperature",
+            "description": "Total temperature at HPT outlet (R)"
+        },
+        "T50": {
+            "type": "temperature",
+            "description": "Total temperature at LPT outlet (R)"
+        },
+        "P15": {
+            "type": "pressure",
+            "description": "Total pressure in bypass-duct (psia)"
+        },
+        "P2": {
+            "type": "pressure",
+            "description": "Pressure at fan inlet (psia)"
+        },
+        "P21": {
+            "type": "pressure",
+            "description": "Total pressure at fan outlet (psia)"
+        },
+        "P24": {
+            "type": "pressure",
+            "description": "Total pressure at LPC outlet (psia)"
+        },
+        "Ps30": {
+            "type": "pressure",
+            "description": "Static pressure at HPC outlet (psia)"
+        },
+        "P40": {
+            "type": "pressure",
+            "description": "Total pressure at burner outlet (psia)"
+        },
+        "P50": {
+            "type": "pressure",
+            "description": "Total pressure at LPT outlet (psia)"
+        },
+        "Nf": {
+            "type": "speed",
+            "description": "Physical fan speed (rpm)"
+        },
+        "Nc": {
+            "type": "speed",
+            "description": "Physical core speed (rpm)"
+        },
+        "Wf": {
+            "type": "flow",
+            "description": "Fuel flow (pps)"
+        },
+        "Fc": {
+            "type": "categorical",
+            "description": "Flight class"
+        },
+        "hs": {
+            "type": "bool",
+            "description": "Health state"
+        }
+    },
+    "filters": {
+        "Fc": [
+            1,
+            2,
+            3
+        ]
+    },
+    "system": {
+        "1. type": "rotatory machine:turbofan engine",
+        "2. platform": "The bearing testbed is composed of an alternating current (AC) induction motor, a motor speed controller, a support shaft, two support bearings (heavy duty roller bearings), a hydraulic loading system and so on. This testbed is designed to conduct the accelerated degradation tests of rolling element bearings under different operating conditions (i.e., different radial force and rotating speed). The radial force is generated by the hydraulic loading system and applied to the housing of tested bearings, and the rotating speed is set and kept by the speed controller of the AC induction motor.",
+        "3. fault component": "Fan, LPC, HPC, HPT and/or LPT"
+    },
+    "operating_conditions": {
+        "1": "Flights between 1 and 3 hours",
+        "2": "Flights between 3 and 5 hours",
+        "3": "Flights upper 5 hours"
+    },
+    "resources": {
+        "1. storage": {
+            "a) zipped": "15GB",
+            "b) unzipped": "26GBB",
+            "c) RAM": {
+                "Train set (full)": "9GB",
+                "Test set (full)": "5GB"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Train set (full)": "13min",
+                "Test set (full)": "16min"
+            },
+            "a) unzipped": {
+                "Train set (full)": "22s",
+                "Test set (full)": "12s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Arias Chao, Manuel, et al. \"Aircraft Engine Run-to-Failure Dataset under Real Flight Conditions for Prognostics and Diagnostics.\" Data 6.1 (2021): 5.",
+        "bibitex": "@article{arias2021aircraft,\n  title={Aircraft engine run-to-failure dataset under real flight conditions for prognostics and diagnostics},\n  author={Arias Chao, Manuel and Kulkarni, Chetan and Goebel, Kai and Fink, Olga},\n  journal={Data},\n  volume={6},\n  number={1},\n  pages={5},\n  year={2021},\n  publisher={MDPI}\n}",
+        "manual_download": "https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/#turbofan-2",
+        "papers": [
+            {
+                "": "",
+                "summary": ""
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "NCMAPSS.zip",
+            "md5sum": "ce971aede97e824c6531c5e41e1db8972f4e434d415053532e7a6970",
+            "reader": "read_train",
+            "unzipped_dir": "NCMAPSS/data",
+            "type": "data"
+        }
+    ]
+}

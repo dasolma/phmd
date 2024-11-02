@@ -1,0 +1,79 @@
+{
+    "description": "Data collected fro an axial piston hydraulic pump. The rotation speed is set as 5280r/min and the corresponding spindle frequency is 88Hz. An accelerograph is installed at the end face of the pump. The sample frequency is 1k Hz. The data collected contains fault modes of normal, piston shoes and swashplate wearing, and valve plate wearing.",
+    "designation": "Axial piston hydraulic pump",
+    "publisher": "Beihang University",
+    "domain": "Process tech",
+    "application": "Water Pump",
+    "tasks": {
+        "Diagnosis": {
+            "identifier": [
+                "experiment"
+            ],
+            "target": "fault",
+            "target_labels": [
+                "normal",
+                "piston shoes and swashplate wearing",
+                "valve plate wearing"
+            ],
+            "features": [
+                "vibration"
+            ],
+            "type": "classification:multiclass",
+            "nature": "time-series",
+            "target_distribution": [
+                0.23076923076923078,
+                0.46153846153846156,
+                0.3076923076923077
+            ],
+            "min_ts_len": 256,
+            "num_units": 6,
+            "min_units_per_class": 2
+        }
+    },
+    "license": "Public download available",
+    "features": {
+        "vibration": {
+            "type": "vibration",
+            "description": "Vibration"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "76K",
+            "b) unzipped": "788K",
+            "c) RAM": {
+                "Data set (full)": "200M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "3s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "3s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Chen Lu, Yang Wang, Minvydas Ragulskis, Yujie Cheng,  Fault Diagnosis for Rotating Machinery: A Method based on Image Processing, PLOS ONE 2016",
+        "bibitex": "@article{lu2016fault,\n  title={Fault diagnosis for rotating machinery: A method based on image processing},\n  author={Lu, Chen and Wang, Yang and Ragulskis, Minvydas and Cheng, Yujie},\n  journal={PloS one},\n  volume={11},\n  number={10},\n  pages={e0164111},\n  year={2016},\n  publisher={Public Library of Science San Francisco, CA USA}\n}",
+        "manual_download": "https://doi.org/10.1371/journal.pone.0164111.s002",
+        "papers": [
+            {
+                "Chen Lu, et al.": "Chen Lu, Yang Wang, Minvydas Ragulskis, Yujie Cheng,  Fault Diagnosis for Rotating Machinery: A Method based on Image Processing, PLOS ONE 2016"
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "PBHP16.zip",
+            "md5sum": "7d68a9cd19a9ed9aecb1febed3930a082f3230313625323042656172696e672532304869647261756c696325323050756d70253230446174617365742f5042485031362e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "PBHP16/data/data of hydraulic pump",
+            "type": "data"
+        }
+    ]
+}

@@ -1,0 +1,345 @@
+{
+    "description": "?????",
+    "designation": "Condition Based Maintenance of Naval Propulsion Plants V3",
+    "publisher": "University of Genoa, Strathclyde University and Newcastle University",
+    "domain": "Drive technology",
+    "application": "Naval",
+    "tasks": {
+        "Propeller Thrust decay state coefficient (Kkt)": {
+            "identifier": [],
+            "target": "ptdsc_port",
+            "features": [
+                "l",
+                "s",
+                "gtst",
+                "gts",
+                "cppts",
+                "cpptp",
+                "stp",
+                "srp",
+                "sts",
+                "srs",
+                "htet",
+                "gogs",
+                "ff",
+                "atcs",
+                "gcoap",
+                "gcoat",
+                "ep",
+                "htep",
+                "ttcs",
+                "tcs",
+                "prs",
+                "tcp",
+                "prp",
+                "ptp",
+                "pts"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 589223
+        },
+        "2. Propeller Torque decay state coefficient (Kkq)": {
+            "identifier": [],
+            "target": "ptdsc_stbd",
+            "features": [
+                "l",
+                "s",
+                "gtst",
+                "gts",
+                "cppts",
+                "cpptp",
+                "stp",
+                "srp",
+                "sts",
+                "srs",
+                "htet",
+                "gogs",
+                "ff",
+                "atcs",
+                "gcoap",
+                "gcoat",
+                "ep",
+                "htep",
+                "ttcs",
+                "tcs",
+                "prs",
+                "tcp",
+                "prp",
+                "ptp",
+                "pts"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 589223
+        },
+        "3. Hull decay state coefficient (Khull)": {
+            "identifier": [],
+            "target": "hdsc",
+            "features": [
+                "l",
+                "s",
+                "gtst",
+                "gts",
+                "cppts",
+                "cpptp",
+                "stp",
+                "srp",
+                "sts",
+                "srs",
+                "htet",
+                "gogs",
+                "ff",
+                "atcs",
+                "gcoap",
+                "gcoat",
+                "ep",
+                "htep",
+                "ttcs",
+                "tcs",
+                "prs",
+                "tcp",
+                "prp",
+                "ptp",
+                "pts"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 589223
+        },
+        "4. GT Compressor decay state coefficient (KMcompr)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "gcdsc",
+            "features": [
+                "l",
+                "s",
+                "gtst",
+                "gts",
+                "cppts",
+                "cpptp",
+                "stp",
+                "srp",
+                "sts",
+                "srs",
+                "htet",
+                "gogs",
+                "ff",
+                "atcs",
+                "gcoap",
+                "gcoat",
+                "ep",
+                "htep",
+                "ttcs",
+                "tcs",
+                "prs",
+                "tcp",
+                "prp",
+                "ptp",
+                "pts"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 589223,
+            "num_units": 1
+        },
+        "5. GT Turbine decay state coefficient (KMturb)": {
+            "identifier": [
+                "unit"
+            ],
+            "target": "gtdsc",
+            "features": [
+                "l",
+                "s",
+                "gtst",
+                "gts",
+                "cppts",
+                "cpptp",
+                "stp",
+                "srp",
+                "sts",
+                "srs",
+                "htet",
+                "gogs",
+                "ff",
+                "atcs",
+                "gcoap",
+                "gcoat",
+                "ep",
+                "htep",
+                "ttcs",
+                "tcs",
+                "prs",
+                "tcp",
+                "prp",
+                "ptp",
+                "pts"
+            ],
+            "type": "regression",
+            "nature": "time-series",
+            "min_ts_len": 589223,
+            "num_units": 1
+        }
+    },
+    "license": "CC BY 4.0",
+    "features": {
+        "l": {
+            "type": "",
+            "description": "Lever (lp) "
+        },
+        "s": {
+            "type": "speed",
+            "description": "Speed [knots]"
+        },
+        "gtst": {
+            "type": "torque",
+            "description": "Gas Turbine shaft torque (GTT) [kN m]"
+        },
+        "gts": {
+            "type": "speed",
+            "description": "Gas Turbine Speed (GT rpm) [rpm]"
+        },
+        "cppts": {
+            "type": "",
+            "description": "Controllable Pitch Propeller Thrust stbd (CPP T stbd)[N]"
+        },
+        "cpptp": {
+            "type": "",
+            "description": "Controllable Pitch Propeller Thrust port (CPP T port)[N]"
+        },
+        "stp": {
+            "type": "torque",
+            "description": "Shaft Torque port (Q port) [kN]"
+        },
+        "srp": {
+            "type": "speed",
+            "description": "Shaft rpm port (rpm port)[rpm]"
+        },
+        "sts": {
+            "type": "torque",
+            "description": "Shaft Torque stbd (Q stdb) [kN]"
+        },
+        "srs": {
+            "type": "speed",
+            "description": "Shaft rpm stbd (rpm stbd) [rpm]"
+        },
+        "htet": {
+            "type": "",
+            "description": "HP Turbine exit temperature (T48) [C]"
+        },
+        "gogs": {
+            "type": "speed",
+            "description": "Generator of Gas speed (GG rpm) [rpm]"
+        },
+        "ff": {
+            "type": "flow",
+            "description": "Fuel flow (mf) [kg/s]"
+        },
+        "atcs": {
+            "type": "",
+            "description": "ABB Tic control signal (ABB Tic) []"
+        },
+        "gcoap": {
+            "type": "pressure",
+            "description": "GT Compressor outlet air pressure (P2) [bar]"
+        },
+        "gcoat": {
+            "type": "temperature",
+            "description": "GT Compressor outlet air temperature (T2) [C]"
+        },
+        "ep": {
+            "type": "pressure",
+            "description": "External Pressure (Pext) [bar]"
+        },
+        "htep": {
+            "type": "pressure",
+            "description": "HP Turbine exit pressure (P48) [bar]"
+        },
+        "ttcs": {
+            "type": "",
+            "description": "TCS tic control signal (TCS tic) []"
+        },
+        "tcs": {
+            "type": "",
+            "description": "Thrust coefficient stbd (Kt stbd) []"
+        },
+        "prs": {
+            "type": "speed",
+            "description": "Propeller rps stbd (rps prop stbd) [rps]"
+        },
+        "tcp": {
+            "type": "",
+            "description": "Thrust coefficient port (Kt port) []"
+        },
+        "prp": {
+            "type": "speed",
+            "description": "Propeller rps port (rps prop port) [rps]"
+        },
+        "ptp": {
+            "type": "torque",
+            "description": "Propeller Torque port (Q prop port) [Nm]"
+        },
+        "pts": {
+            "type": "torque",
+            "description": "Propeller Torque stbd (Q prop stbd) [Nm]"
+        },
+        "ptdsc": {
+            "type": "torque",
+            "description": "Propeller Torque decay state coefficient (Kkq)"
+        },
+        "hdsc": {
+            "type": "",
+            "description": "Hull decay state coefficient (Khull)"
+        },
+        "gcdsc": {
+            "type": "",
+            "description": "GT Compressor decay state coefficient (KMcompr)"
+        },
+        "gtdsc": {
+            "type": "",
+            "description": "GT Turbine decay state coefficient (KMturb)"
+        }
+    },
+    "filters": {},
+    "system": {},
+    "resources": {
+        "1. storage": {
+            "a) zipped": "34M",
+            "b) unzipped": "121M",
+            "c) RAM": {
+                "Data set (full)": "400M"
+            }
+        },
+        "2. load time (SSD disk)": {
+            "a) zipped": {
+                "Data set (full)": "5s"
+            },
+            "a) unzipped": {
+                "Data set (full)": "4s"
+            }
+        }
+    },
+    "references": {
+        "citation": "Cipollini, Francesca, Luca Oneto, Andrea Coraddu, Alan John Murphy, and Davide Anguita. \"Condition-based maintenance of naval propulsion systems with supervised data analysis.\" Ocean Engineering 149 (2018): 268-278.",
+        "bibitex": "@article{cipollini2018condition,\n  title={Condition-based maintenance of naval propulsion systems with supervised data analysis},\n  author={Cipollini, Francesca and Oneto, Luca and Coraddu, Andrea and Murphy, Alan John and Anguita, Davide},\n  journal={Ocean Engineering},\n  volume={149},\n  pages={268--278},\n  year={2018},\n  publisher={Elsevier}\n}",
+        "manual_download": "https://sites.google.com/view/cbm-anomaly-detection",
+        "papers": [
+            {
+                "1Cipollini,F. et al.": "Cipollini,F. and Oneto,L. and Coraddu, A. and Murphy, A.J. and Anguita, D. - Journal: Reliability Engineering & System Safety - Title: Condition-Based Maintenance of Naval Propulsion Systems: Data Analysis with Minimal Feedback - Volume: Under review - Year: 2017.",
+                "2Cipollini,F. et al.": " Cipollini,F. and Oneto,L. and Coraddu, A. and Murphy, A.J. and Anguita, D. - Journal: Ocean Engineering - Title: Condition-Based Maintenance of Naval Propulsion Systems with Supervised Data Analysis - Volume: Under review - Year: 2017.",
+                "Coraddu, A. et all": "Coraddu, A. and Oneto, L. and Ghio, A. and Savio, S. and Anguita, D. and Figari, M. - Journal: Proceedings of the Institution of Mechanical Engineers Part M: Journal of Engineering for the Maritime Environment - Number: 1 - Pages: 136-153 - Title: Machine learning approaches for improving condition-based maintenance of naval propulsion plants - Volume: 230 - Year: 2016"
+            }
+        ]
+    },
+    "results": {},
+    "files": [
+        {
+            "name": "CBMv3.zip",
+            "md5sum": "67238c32ebb630cd5236755c42217de32f32303137253230436f6e646974696f6e253230426173652532304d61696e74656e616e63652532306f662532304e6176616c25323050726f70756c73696f6e25323053797374656d7325323056332f43424d76332e7a6970",
+            "reader": "read_data",
+            "unzipped_dir": "CBMv3/",
+            "type": "data"
+        }
+    ]
+}
