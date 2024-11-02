@@ -1,7 +1,7 @@
 {
     "description": "This data set consists of measurement from piezeoelectric (PZT) sensors that are mounted on aluminum specimen that were tested to fatigue conditions. Fatigue cracks developed in the specimen and failure was declared at a particular crack length. The actuator sends out a wave which is measured by the receiver. The distance between the actuator and receiver is 161 mm. If a crack has formed along the wave propagation path, the received signal will change, which can be used for diagnosis and prognosis purposes. During testing, measurements are acquired two times for each measurement point. \n\nEight specimens (named 1X.Y through 8X.Y) were investigated (specimen 1X.Y-6X.Y are to be used for training and 7X.Y-8X.Y are to be used for validation). A hydraulic material testing machine working at 5Hz at room temperature conducted the fatigue testing. Both constant amplitude loading and variable amplitude loading cases were studied. 1X.Y-7X.Y were under constant amplitude fatigue loading and 8X.Y was under variable amplitude loading. During testing, an optical microscope was used intermittently to identify the location of crack appearance and top measure crack length. \n\nThere are two two repetitions for each measurement. Each measurement contains two variables \u201cch1\u201d, and \u201cch2\u201d, which correspond to the actuation signal and received signal, both of which are measured in Volts.\n\nThe objective of this data challenge is to predict the crack lengths of lap joint.",
     "designation": "PHM Data Challenge 2019 - Fatigue Cracks",
-    "publisher": "PHM Society",
+    "publisher": "PHM Society / NASA",
     "domain": "Materials",
     "application": "Aluminum",
     "tasks": {
@@ -21,7 +21,7 @@
             "nature": "time-series"
         }
     },
-    "license": "Public download available",
+    "license": "CC0",
     "features": {
         "ch1": {
             "type": "voltage",

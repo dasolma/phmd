@@ -1,7 +1,7 @@
 {
     "description": "The dataset comprises measurements collected during multiple runs of a CMP (Chemical Mechanical Planarization) tool for specific wafers over time. Each row in the data represents a snapshot of all measurement variables at a particular time during the CMP process. The objective is to predict the average rate of material removal from the wafer based on these measurements.",
     "designation": "PHM Data Challenge 2016 - Semiconductor CMP",
-    "publisher": "PHM Society",
+    "publisher": "PHM Society / NASA",
     "application": "Industrial Plant",
     "domain": "Production system",
     "tasks": {
@@ -39,7 +39,7 @@
             "num_units": 1994
         }
     },
-    "license": "Public download available",
+    "license": "CC0",
     "features": {
         "MACHINE_DATA": {
             "type": "position",

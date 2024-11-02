@@ -31,6 +31,7 @@
             "min_units_per_class": 3
         }
     },
+    "license": "Public download available",
     "filters": {},
     "system": {
         "type": "bearing",
