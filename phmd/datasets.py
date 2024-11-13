@@ -776,6 +776,14 @@ def search(**filters):
     - Filters are non case-insensitive and partially matched (i.e., a filter of "bio" would match "biology").
 
     """
+    valid_filters = ['task', 'name', 'domain', 'application', 'features', 'publisher', 'target']
+    invalid_filters = [f for f in filters.keys() if f not in valid_filters]
+    if len(invalid_filters) > 0:
+        invalid_filters = ','.join(invalid_filters)
+        valid_filters = ','.join(valid_filters)
+        print(f"The filters {invalid_filters} are invalid. Valid filters are: {valid_filters}")
+        return
+
     return_names = False
     if 'return_names' in filters:
         return_names = filters['return_names']
@@ -800,12 +808,14 @@ def search(**filters):
         meta = read_meta(dataset_name)
 
         for task_name, task in meta['tasks'].items():
+            print(dataset_name)
             data['publisher'].append(meta['publisher'])
             data['name'].append(dataset_name)
             data['domain'].append(meta['domain'])
             data['nature'].append(task['nature'])
             data['application'].append(meta['application'])
-            data['task [target var]'].append(f"{task_name} [{task['target']}]")
+            data['task [target var]'].append(f"{task_name} [{task['target']}] "
+                                             f" {'x ' + str(len(task['target_labels'])) if 'target_labels' in task else ''}")
             data['data nature'].append(task['nature'])
             if len(meta['features']) == 0:
                 features = ["Unkown"]
@@ -819,6 +829,9 @@ def search(**filters):
     del data['publisher']
     for col, filter in filters.items():
         if col == 'task':
+            col = 'task [target var]'
+
+        if col == 'target':
             col = 'task [target var]'
 
         df = df[df[col].str.lower().str.contains(filter.lower())]
