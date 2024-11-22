@@ -776,7 +776,7 @@ def search(**filters):
     - Filters are non case-insensitive and partially matched (i.e., a filter of "bio" would match "biology").
 
     """
-    valid_filters = ['task', 'name', 'domain', 'application', 'features', 'publisher', 'target']
+    valid_filters = ['task', 'name', 'domain', 'application', 'features', 'publisher', 'target', 'nature']
     invalid_filters = [f for f in filters.keys() if f not in valid_filters]
     if len(invalid_filters) > 0:
         invalid_filters = ','.join(invalid_filters)
