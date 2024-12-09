@@ -186,7 +186,7 @@ The output informs the user about the status of the dataset, indicating whether 
 The `Task` class allows for setting various attributes to configure the reading of fold sets:
 
 - **folds** *(Int)*: Defaults to 5 or the maximum number of folds depending on the number of units present in the dataset.
-- **preprocess** *(Str)*: Defaults to *None*. Other valid options include *std* for standardization and *norm* for normalization of data.
+- **preprocess** *(Object)*: Defaults to *None*. This attribute can be set to a valid Scikit-learn transformer, which must implement both the fit and transform methods.
 - **normalize_output** *(Bool)*: Defaults to *False*. In tasks with continuous targets, such as RUL, normalizing the output is common. When set to *True*, the target column will be normalized.
 - **test_pct** *(Float)*: Defaults to 0.3, specifying the percentage of data used for the test set.
 - **return_test** *(Bool)*: Defaults to *True*. If set to *False*, only the validation and training sets are returned.
