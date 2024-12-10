@@ -1,4 +1,5 @@
-# phmd: Prognosis Healgth Management Datasets tool
+![PHMD Logo](./images/phmd_logo.svg)
+# PHMD: Prognosis Healgth Management Datasets tool
 
 The library `phmd` is designed to facilitate access to datasets in the context of industrial prognosis and health management (PHM). The main goal is to streamline automated processing, enabling researchers and practitioners to obtain, manipulate, and analyze data relevant to their work in an easy maner. 
 
