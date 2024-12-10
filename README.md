@@ -192,9 +192,20 @@ The `Task` class allows for setting various attributes to configure the reading 
 - **return_test** *(Bool)*: Defaults to *True*. If set to *False*, only the validation and training sets are returned.
 - **random_state** *(Int)*: Sets the random seed used to split the data. Changing this value results in a different data split.
 
+### Examples  
+
+In the *examples* directory, you will find two Jupyter notebooks demonstrating how to benchmark models across multiple datasets using this tool. These examples showcase the tool's versatility and practical application in two critical areas: **diagnosis** and **prognosis**.  
+
+- **Diagnosis Example**: This notebook focuses on fault diagnosis tasks, illustrating how the tool can be used to train, evaluate, and compare machine learning models across various datasets. The example demonstrates steps such as dataset loading, preprocessing, and implementing cross-validation for reproducibility.  
+
+- **Prognosis Example**: This notebook highlights the application of the tool for remaining useful life (RUL) prediction and other prognostic tasks. It showcases the ability to handle time-series data, configure tasks, and generate performance metrics that allow researchers to validate their models effectively.  
+
+These examples not only serve as tutorials for getting started with the tool but also provide insights into how it facilitates benchmarking and promotes reproducible research across multiple datasets.
+  
+
 ## ACKNOWLEDGMENT
 
-This work has been supported by Grant PID2019-109152GBI00/AEI/10.13039/501100011033 (Agencia Estatal de Investigacion), Spain and by the Ministry of Science and Education of Spain through the national program "Ayudas para contratos para la formacion de investigadores en empresas (DIN2019)", of State Programme of Science Research and Innovations 2017-2020.
+This work has been supported by Grant PID2023-147198NB-I00 funded by MICIU/AEI/10.13039/501100011033  (Agencia Estatal de Investigación) and by FEDER, UE, and by the Ministry of Science and Education of Spain through the national program “Ayudas para contratos para la formación de investigadores en empresas (DIN2019-010887 / AEI / 10.13039/50110001103)”, of State Programme of Science Research and Innovations 2017-2020.
 
 
 
