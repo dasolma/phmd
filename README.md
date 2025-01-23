@@ -203,6 +203,23 @@ In the *examples* directory, you will find two Jupyter notebooks demonstrating h
 
 These examples not only serve as tutorials for getting started with the tool but also provide insights into how it facilitates benchmarking and promotes reproducible research across multiple datasets.
   
+## Citation
+
+If you used this package in your research, please cite it:
+
+```
+@article{SOLISMARTIN2025102039,
+	title = {PHMD: An easy data access tool for prognosis and health management datasets},
+	journal = {SoftwareX},
+	volume = {29},
+	pages = {102039},
+	year = {2025},
+	issn = {2352-7110},
+	doi = {https://doi.org/10.1016/j.softx.2025.102039},
+	url = {https://www.sciencedirect.com/science/article/pii/S2352711025000068},
+	author = {David Solís-Martín and Juan Galán-Páez and Joaquín Borrego-Díaz},
+}
+```
 
 ## ACKNOWLEDGMENT
 
