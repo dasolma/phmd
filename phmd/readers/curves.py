@@ -1,6 +1,6 @@
 import os
 import scipy as scipy
-from phm_datasets.readers import base as b
+from phmd.readers import base as b
 import pandas as pd
 import pickle as pk
 import random
@@ -41,17 +41,17 @@ def read_data(file_path, task: dict = None, filters: dict = {}):
 
 
     def ffilter(dirs, files):
-        if 'data' in filters and filters['data'] == "curves":
+        if filters is not None and 'data' in filters and filters['data'] == "curves":
             files = [f for f in files if '.pk' in f]
-        if 'data' in filters and filters['data'] == "results":
+        if filters is not None and 'data' in filters and filters['data'] == "results":
             files = [f for f in files if '.csv' in f and 'processed' not in f]
 
-        #files = random.sample(files, len(files))
-        #files = files[:1000]
+        files = random.sample(files, len(files))
+        files = files[:1000]
 
         return dirs, files
 
-    if (('data' in filters) and (filters['data'] == "curves") and
+    if (filters is not None) and (('data' in filters) and (filters['data'] == "curves") and
             os.path.exists(os.path.join(file_path, 'processed.csv'))):
         X = pd.read_csv(os.path.join(file_path, 'processed.csv'))
         X = X[~X.val_loss.isnull()]
@@ -63,7 +63,7 @@ def read_data(file_path, task: dict = None, filters: dict = {}):
 
         X = X[0]
 
-        if 'data' in filters and filters['data'] == "curves":
+        if (filters is not None) and 'data' in filters and filters['data'] == "curves":
             X['size'] = X.groupby(['unit']).val_loss.transform('size')
             X = X[X['size'] > 10]
             X = X[X.final_loss < 2]
@@ -72,7 +72,12 @@ def read_data(file_path, task: dict = None, filters: dict = {}):
 
             del X['size']
 
-        if ('data' in filters) and (filters['data'] == "curves"):
+        if (filters is not None) and ('data' in filters) and (filters['data'] == "curves"):
             X.to_csv(os.path.join(file_path, 'processed.csv'), index=False)
+
+
+        if 'train_loss' in X.columns:
+            X = X[~X.train_loss.isnull()]
+            X = X[~X.val_loss.isnull()]
 
     return X

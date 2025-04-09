@@ -410,7 +410,7 @@ def read_meta(dataset_name: str):
 
 
 def load(dataset_name: str, task: str, cache_dir: str = None,
-         filters: dict = None, params: dict = None, force_download: bool = False, unzip: bool = False):
+         filters: dict = None, params: dict = None, force_download: bool = False, unzip: bool = False, filter_cols=True):
     """
     Loads specified subsets of a dataset, with options for task-specific filtering, caching, and optional download/unzip operations.
 
@@ -479,12 +479,12 @@ def load(dataset_name: str, task: str, cache_dir: str = None,
     _task = _get_task(meta, task)
 
     if ('split_data' in _task) and (_task['split_data']):
-        result = __load_dataset(dataset_name, datasets[0], cache_dir=cache_dir, task=task, filters=filters, params=params)
+        result = __load_dataset(dataset_name, datasets[0], cache_dir=cache_dir, task=task, filters=filters,
+                                params=params, filter_cols=filter_cols)
     else:
         result = tuple(
-            __load_dataset(dataset_name, dataset, cache_dir=cache_dir, task=task, filters=filters, params=params) for
-            dataset
-            in datasets)
+            __load_dataset(dataset_name, dataset, cache_dir=cache_dir, task=task, filters=filters,
+                           params=params, filter_cols=filter_cols) for dataset in datasets)
 
     end_time = time.time()
 
@@ -907,6 +907,16 @@ class Task:
         self.test_pct = 0.3
         self.return_test = True
         self.random_state = 666
+        self.filters = {}
+
+    def load(self):
+
+        return load(
+            dataset_name=self.dataset.dataset_name,
+            task=self.name,
+            filters=self.filters,
+            filter_cols=False,
+        )
 
     def load_fold(self, fold: int):
         if fold < 0 or fold >= self.folds:
@@ -920,7 +930,8 @@ class Task:
             preprocess=self.preprocess,
             normalize_output=self.normalize_output,
             return_test=self.return_test,
-            test_pct=self.test_pct
+            test_pct=self.test_pct,
+            filters=self.filters,
         )
 
         set_keys = ",".join(list(sets.keys()))
