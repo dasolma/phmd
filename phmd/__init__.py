@@ -17,5 +17,5 @@ def show_citation_info(meta):
     cite_tab = "\n\t".join(meta['references']['bibitex'].split("\n"))
     print(f"\t{cite_tab}")
     print(f"You can download the dataset manually from:  {meta['references']['manual_download']}")
-    print(f"\n** If you find this tool useful, please cite our SoftwareX paper.\n")
+    print(f"\n** If you find this tool useful, please cite our SoftwareX paper: \n\tSolís-Martín, David, Juan Galán-Páez, and Joaquín Borrego-Díaz. \"PHMD: An easy data access tool for prognosis and health management datasets.\" SoftwareX 29 (2025): 102039.\n")
 

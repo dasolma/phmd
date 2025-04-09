@@ -1,6 +1,6 @@
 import os
 import scipy as scipy
-from phmd.readers import base as b
+from phm_datasets.readers import base as b
 import pandas as pd
 import pickle as pk
 import random
@@ -20,7 +20,7 @@ def read_file(f, file_path, _):
         X['num_epochs'] = X.shape[0]
 
         run_hash = path_parts[-1].split('_')[-2]
-        unit = f"{path_parts[-4]}_{path_parts[-3]}_{path_parts[-2]}_{run_hash}"
+        unit = f"{path_parts[-4]}_{path_parts[-3]}_{path_parts[-2]}_{run_hash[:5]}"
         X['unit'] = unit
 
 
@@ -54,6 +54,7 @@ def read_data(file_path, task: dict = None, filters: dict = {}):
     if (('data' in filters) and (filters['data'] == "curves") and
             os.path.exists(os.path.join(file_path, 'processed.csv'))):
         X = pd.read_csv(os.path.join(file_path, 'processed.csv'))
+        X = X[~X.val_loss.isnull()]
 
     else:
 
@@ -70,5 +71,8 @@ def read_data(file_path, task: dict = None, filters: dict = {}):
             X['val_loss'] = X.val_loss.clip(-4, 4)
 
             del X['size']
+
+        if ('data' in filters) and (filters['data'] == "curves"):
+            X.to_csv(os.path.join(file_path, 'processed.csv'), index=False)
 
     return X

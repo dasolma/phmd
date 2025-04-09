@@ -173,7 +173,7 @@ This work has been supported by Grant PID2019-109152GBI00/AEI/10.13039/501100011
 
 setup(name="phmd",
       url="https://github.com/dasolma/phmd",
-      version="2024.0.01",
+      version="2025.0.01",
       description=DESCRIPTION,
       long_description=LONG_DESCRIPTION,
       long_description_content_type='text/markdown',

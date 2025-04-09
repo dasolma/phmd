@@ -1,0 +1,96 @@
+{
+    "description": "Learning curves extracted from training different architectures over 59 datasets",
+    "designation": "Machine Learning",
+    "publisher": "David Solis (dsolis@us.es). Universidad de Sevilla",
+    "domain": "Learning Curves",
+    "application": "Training acceleration",
+    "tasks": {
+        "Learning Curves": {
+            "identifier": ["unit"],
+            "split_by": ["dataset"],
+            "target": "final_loss",
+            "features": ["train_loss", "val_loss"],
+            "type": "regression",
+            "num_units": 3000,
+            "min_ts_len": 10,
+            "normalize_output": false,
+            "nature": "time-series"
+        }
+
+    },
+
+    "license": "",
+
+    "features": {
+        "train_loss": {
+            "type": "training curve",
+            "description": "training loss curve data points"
+        },
+        "validation_loss": {
+            "type": "training curve",
+            "description": "validation loss curve data points"
+        }
+    },
+
+    "filters": {
+        "data": ["curves", "results"]
+    },
+    
+    "system": {
+    },
+
+
+    "resources": {
+        "1. storage": {
+            "a) zipped": "",
+            "b) unzipped": "",
+            "c) RAM": {
+                "Data set (full)": ""
+            }
+        },
+
+        "2. load time (SSD disk)" : {
+            "a) zipped" : {
+                "Data set (full)": ""
+            },
+
+            "a) unzipped" : {
+                "Data set (full)": ""
+            }
+        }
+    },
+
+    "references": {
+        "bibitex": "@article{solis2025model,\n  title={A Model for Learning-Curve Estimation in Efficient Neural Architecture Search and Its Application in Predictive Health Maintenance},\n  author={Sol{\\'\\i}s-Mart{\\'\\i}n, David and Gal{\\'a}n-P{\\'a}ez, Juan and Borrego-D{\\'\\i}az, Joaqu{\\'\\i}n},\n  journal={Mathematics},\n  volume={13},\n  number={4},\n  pages={555},\n  year={2025},\n  publisher={Multidisciplinary Digital Publishing Institute}\n}\n",
+        "citation": "Solís-Martín, David, Juan Galán-Páez, and Joaquín Borrego-Díaz. \"A Model for Learning-Curve Estimation in Efficient Neural Architecture Search and Its Application in Predictive Health Maintenance.\" Mathematics 13.4 (2025): 555.",
+        "manual_download": "",
+        "papers": [
+                {
+
+                }
+
+            ] 
+    },
+
+    "results": { 
+    },
+
+    "files": [
+        {
+            "name": "curves.zip",
+            "md5sum": "2d7680d6a9be8cc1289b3ea3f11e5cb92f506572666f726d616e63652532304375727665732f6375727665732e7a6970",
+            "urls": [
+                {
+                    "mirror": "pcloud",
+                    "url": "https://filedn.eu/loXpIrTnEJNpqcMnQVXex9m/PhmDatasets/Performance%20Curves/curves.zip"
+                }
+
+            ],
+
+            "reader": "read_data",
+            "unzipped_dir": "curves/data",
+            "type": "data"
+        }
+    ]
+}
+
