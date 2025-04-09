@@ -46,9 +46,6 @@ def read_data(file_path, task: dict = None, filters: dict = {}):
         if filters is not None and 'data' in filters and filters['data'] == "results":
             files = [f for f in files if '.csv' in f and 'processed' not in f]
 
-        files = random.sample(files, len(files))
-        files = files[:1000]
-
         return dirs, files
 
     if (filters is not None) and (('data' in filters) and (filters['data'] == "curves") and
