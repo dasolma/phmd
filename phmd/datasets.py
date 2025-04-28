@@ -808,7 +808,6 @@ def search(**filters):
         meta = read_meta(dataset_name)
 
         for task_name, task in meta['tasks'].items():
-            print(dataset_name)
             data['publisher'].append(meta['publisher'])
             data['name'].append(dataset_name)
             data['domain'].append(meta['domain'])
