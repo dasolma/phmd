@@ -179,13 +179,17 @@ setup(name="phmd",
       long_description_content_type='text/markdown',
       packages=find_packages(),
       install_requires=["gdown==5.2.0",
-                        "pandas==2.0.3",
+                        'pandas==2.0.3; python_version<"3.12"',
+                        'pandas==2.2.1; python_version>="3.12"',
                         "h5py==3.11.0",
-                        "scipy==1.10.1",
+                        'scipy==1.10.1; python_version<"3.12"',
+                        'scipy==1.13.0; python_version>="3.12"',
                         "openpyxl==3.1.5",
                         "tabulate==0.9.0",
-                        "PyWavelets==1.4.1",
-                        "scikit-learn==1.3.2"
+                        'PyWavelets==1.4.1; python_version<"3.12"',
+                        'PyWavelets==1.8.0; python_version>="3.12"',
+                        'scikit-learn==1.3.2; python_version<"3.12"',
+                        'scikit-learn==1.5.0; python_version>="3.12"'
                         ],
       entry_points={
           "console_scripts": []
@@ -193,6 +197,7 @@ setup(name="phmd",
       license = 'GNU GPL',
       classifiers=[
           "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.12",
           "Operating System :: OS Independent",
       ],
       package_data={
